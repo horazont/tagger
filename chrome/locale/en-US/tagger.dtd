@@ -1,0 +1,209 @@
+<!ENTITY tagger.note "Please note: Tagger is not fail-proof. It might mess up your whole tag database, especially if not carefully configurated. So double-check all changed data before saving it finally to disk.">
+<!ENTITY tagger.window.title "Tagger">
+<!ENTITY tagger.window.trackName "Track name">
+<!ENTITY tagger.window.albumName "Album name">
+<!ENTITY tagger.window.artistName "Artist">
+<!ENTITY tagger.window.albumArtistName "Album artist">
+<!ENTITY tagger.window.composerName "Composer">
+<!ENTITY tagger.window.genre "Genre">
+<!ENTITY tagger.window.year "Year">
+<!ENTITY tagger.window.trackNumber "Track No.">
+<!ENTITY tagger.window.trackCount "Track Ct.">
+<!ENTITY tagger.window.discNumber "Disc No.">
+<!ENTITY tagger.window.discCount "Disc Ct.">
+<!ENTITY tagger.window.comment "Comment">
+<!ENTITY tagger.window.all "All">
+<!ENTITY tagger.window.selcountlabel "Selection count: ">
+<!ENTITY tagger.window.parserhelp "?">
+<!ENTITY tagger.window.help "Help">
+<!ENTITY tagger.window.previewbtn.tooltip "Generate preview">
+<!ENTITY tagger.window.enabled "Enabled">
+<!ENTITY tagger.window.preview "Preview">
+<!ENTITY tagger.window.fieldcolwith "10em">
+<!ENTITY tagger.window.replace "Replace with">
+<!ENTITY tagger.window.settings "Settings">
+<!ENTITY tagger.window.hookselection "Hook selection">
+<!ENTITY tagger.window.hookselection.tooltip "While this button is pressed, you only have to click at items in the list to add them to the list.">
+<!ENTITY tagger.window.takeselection "Append selection">
+<!ENTITY tagger.window.takeselection.tooltip "Append the currently selected items to the list.">
+<!ENTITY tagger.window.moveup "Up">
+<!ENTITY tagger.window.movedown "Down">
+<!ENTITY tagger.window.remove "Remove">
+<!ENTITY tagger.window.clear "Clear">
+<!ENTITY tagger.window.load "Load">
+<!ENTITY tagger.window.save "Save">
+<!ENTITY tagger.window.execute "Execute">
+<!ENTITY tagger.window.delete "Delete">
+<!ENTITY tagger.window.true "yes">
+<!ENTITY tagger.window.false "no">
+<!ENTITY tagger.window.null "null">
+<!ENTITY tagger.window.list.head.number "#">
+<!ENTITY tagger.window.caseinsensitive "Case insensitive">
+<!ENTITY tagger.window.selection "Selection">
+<!ENTITY tagger.window.regexpflags.g.tooltiptext "Match multiple times">
+<!ENTITY tagger.window.gentools.caption "Create">
+<!ENTITY tagger.window.modtools.caption "Modify">
+<!ENTITY tagger.window.storetools.caption "Store">
+<!ENTITY tagger.window.macrotools.caption "Macros">
+<!ENTITY tagger.window.tagfromfile.caption "From file name">
+<!ENTITY tagger.window.tagfromfile.description "Tagger core feature: Using this controls you may generate metadata for your tracks based on how the files are namend and / or in which directories these are located.">
+<!ENTITY tagger.window.tagfromfile.autoupcase "Automatic upper case">
+<!ENTITY tagger.window.tagfromfile.autoupcase.tooltip "If checked, each char after a space will be upper cased. Highly recommended on non-unix os.">
+<!ENTITY tagger.window.tagfromfile.replace_ "Replace _ with spaces.">
+<!ENTITY tagger.window.tagfromfile.directorysupport "Directory support">
+<!ENTITY tagger.window.tagfromfile.directorysupport.tooltip "If checked, no tokens will apply to the directory separator and you may specify a slashes as static characters.">
+<!ENTITY tagger.window.tagfromfile.filenamefmt "File name format">
+<!ENTITY tagger.window.tagfromfile.keeptags "Keep existing tags">
+<!ENTITY tagger.window.tagfromfile.keeptags.tooltip "If checked, existent tags will not be overwritten.">
+<!ENTITY tagger.window.tagfromfile.retag "Retag selected files">
+<!ENTITY tagger.window.tagfromfile.labelwidth "7em">
+<!ENTITY tagger.window.tracktype.caption "TrackType.org">
+<!ENTITY tagger.window.tracktype.description "TrackType.org lookup is not implemented yet.">
+<!ENTITY tagger.window.fromtextfile.caption "Text file">
+<!ENTITY tagger.window.fromtextfile.description "Assign tags to selected files from the data contained in a specified text file according to a specified pattern.">
+<!ENTITY tagger.window.fromtextfile.patterninfile "Pattern in file">
+<!ENTITY tagger.window.fromtextfile.patterninfile.tooltip "If this is checked, the first line of the file will be interpreted as the pattern. Otherwise you have to specify one above.">
+<!ENTITY tagger.window.fromtextfile.pattern "Data pattern">
+<!ENTITY tagger.window.fromtextfile.pattern.tooltip "This pattern will be used to parse the text file. You can use the same tokens as in the Name-&gt;Tags functionallity. Additionally you can use \t to denote a tab character (#9) and \n to denote a newline (#10 and/or #13).">
+<!ENTITY tagger.window.fromtextfile.textfile "Text file:">
+<!ENTITY tagger.window.fromtextfile.textfile.tooltip "This is the file from which the data will be read.">
+<!ENTITY tagger.window.fromtextfile.selectfile "...">
+<!ENTITY tagger.window.fromtextfile.selectfile.tooltip "Click here to invoke a dialog to select the file.">
+<!ENTITY tagger.window.fromtextfile.encoding "Encoding">
+<!ENTITY tagger.window.fromtextfile.encoding.tooltip "Specify the encoding of the text file here. On recent Linuxes, UTF-8 is probably the encoding of your choice, otherwise try the default.">
+<!ENTITY tagger.window.fromtextfile.skip "Skip entries">
+<!ENTITY tagger.window.fromtextfile.skip.tooltip "Skip that much matches from the input.">
+<!ENTITY tagger.window.fromtextfile.apply "Apply data from text file to tracks in list">
+<!ENTITY tagger.window.fromtextfile.apply.tooltip "Apply the data in the text file to the items in the list.">
+<!ENTITY tagger.window.progress.caption "Progress">
+<!ENTITY tagger.window.progress.retagging "Retagging files">
+<!ENTITY tagger.window.progress.lastobject "Last object: ">
+<!ENTITY tagger.window.savetags.caption "To file metadata">
+<!ENTITY tagger.window.savetags.selecttags "Select the tags to save. They will be written as metadata to the files, according to the given file format. This is only limited by the capability of Songbird to write this data.">
+<!ENTITY tagger.window.savetags.button "Save tags of selected items">
+<!ENTITY tagger.window.settags.caption "Set &amp; combine">
+<!ENTITY tagger.window.settags.description "Set the selected tags of all selected files to the given value. You may also use the extended tokens of the Tags-&gt;Name section.">
+<!ENTITY tagger.window.settags.button "Set tags on selected files">
+<!ENTITY tagger.window.replace.caption "Replace">
+<!ENTITY tagger.window.replace.description "Use the controls below perform simple replacement actions.">
+<!ENTITY tagger.window.replace.regexp "Regular expression support">
+<!ENTITY tagger.window.replace.regexp.tooltip "If this is checked, the search fields are interpreted as regular expressions. You can reference each subpattern with $n, where n is the index of the subpattern starting at 1.">
+<!ENTITY tagger.window.replace.pattern "Search pattern">
+<!ENTITY tagger.window.replace.button "Execute replacement on selected files">
+<!ENTITY tagger.window.tools.caption "Tools">
+<!ENTITY tagger.window.tools.target.caption "Target fields">
+<!ENTITY tagger.window.tools.target.description "These fields will be affected by the tools.">
+<!ENTITY tagger.window.tools.casing.caption "Correct casing">
+<!ENTITY tagger.window.tools.casing.description "This tool will auto-correct the casing of the selected metadata fields. For example, “a track name” will be changed into “A Track Name”">
+<!ENTITY tagger.window.tools.casing.button "Correct casing">
+<!ENTITY tagger.window.tools.utf8.caption "UTF8 tools">
+<!ENTITY tagger.window.tools.utf8.description "Sometimes weird character combinations like Ã¤ appear in tags. This is an utf8 encoding mistake which can be corrected by Tagger.">
+<!ENTITY tagger.window.tools.utf8.correct.button "Correct utf8">
+<!ENTITY tagger.window.tagtofile.caption "To file name">
+<!ENTITY tagger.window.tagtofile.description "Use the tag information to construct file names and to locate the files at the specific location.">
+<!ENTITY tagger.window.tagtofile.targetdir "Target directory">
+<!ENTITY tagger.window.tagtofile.targetdir.tooltip "This will be the root directory to which the files will be moved.">
+<!ENTITY tagger.window.tagtofile.oldname "Old name:">
+<!ENTITY tagger.window.tagtofile.newname "New name:">
+<!ENTITY tagger.window.tagtofile.selecttargetdir.tooltip "Press to invoke a selection dialog.">
+<!ENTITY tagger.window.tagtofile.pattern "File name pattern">
+<!ENTITY tagger.window.tagtofile.pattern.tooltip "This pattern will be used to place and name the files. Press the &tagger.window.parserhelp;-button to get more help.">
+<!ENTITY tagger.window.tagtofile.presencefilter "Tag Presence Filter">
+<!ENTITY tagger.window.tagtofile.presencefilter.tooltip "Defines which tags need to exist to rename/move the files. Files which do not match these criterias will not be changed.">
+<!ENTITY tagger.window.tagtofile.presencefilter.none "No filtering">
+<!ENTITY tagger.window.tagtofile.presencefilter.none.warning "Note: This will lead to problems if tags which do not exist are the only text in a directory nesting layer.">
+<!ENTITY tagger.window.tagtofile.presencefilter.auto "Detect by pattern">
+<!ENTITY tagger.window.tagtofile.presencefilter.auto.note "Good choice">
+<!ENTITY tagger.window.tagtofile.presencefilter.custom "Custom filter">
+<!ENTITY tagger.window.tagtofile.presencefilter.custom.description "These checked tags need to exist and to be non-empty to affect the file.">
+<!ENTITY tagger.window.tagtofile.onlylocal "Only local files">
+<!ENTITY tagger.window.tagtofile.onlylocal.tooltip "If checked, only files available on this computer will be moved around.">
+<!ENTITY tagger.window.tagtofile.keepextension "Keep extension">
+<!ENTITY tagger.window.tagtofile.keepextension.tooltip "If checked, the old file extension will be automatically re-appended to the final file name.">
+<!ENTITY tagger.window.tagtofile.rename "Rename selected files">
+<!ENTITY tagger.window.tracknumbers.caption "Track numbers">
+<!ENTITY tagger.window.tracknumbers.description "Add the items you want to edit to the list below using the two buttons, order them like you want and then hit apply to give them consecutive track numbers.">
+<!ENTITY tagger.window.tracknumbers.apply "Apply track numbers to tracks in list">
+<!ENTITY tagger.window.tracknumbers.apply.tooltip "Apply the shown track numbers to the tracks.">
+<!ENTITY tagger.window.tracknumbers.offset "Offset">
+<!ENTITY tagger.window.tracknumbers.offset.tooltip "This value will be added to the shown numbers.">
+<!ENTITY tagger.window.macro.editor.caption "Macro editor">
+<!ENTITY tagger.window.macro.editor.description "Tagger now has support for building macros. Macros are a list, or better, a tree, of actions and conditions. Using a rather simple set of basic instructions, you can easily build complex scripts you may then execute to reorder your library. Since the editor is a little more space-hungry, it is placed in a dedicated tab. You can also open it via the Tools menu.">
+<!ENTITY tagger.window.macro.editor.open "Open macro editor now">
+<!ENTITY tagger.window.macro.list.caption "Available macros">
+<!ENTITY tagger.window.macro.list.execute.tooltip "Execute the currently selected macro.">
+<!ENTITY tagger.window.macro.list.edit "Edit">
+<!ENTITY tagger.window.macro.list.edit.tooltip "Opens the selected macro in a new tab for editing.">
+<!ENTITY tagger.window.macro.list.import "Import">
+<!ENTITY tagger.window.macro.list.import.tooltip "Import a macro from a file.">
+<!ENTITY tagger.window.macro.list.export "Export">
+<!ENTITY tagger.window.macro.list.export.tooltip "Export the selected macro to a file.">
+<!ENTITY tagger.window.macro.list.delete "&tagger.window.delete;">
+<!ENTITY tagger.window.macro.list.delete.tooltip "Delete the selected macro from the library.">
+<!ENTITY tagger.window.macro.list.nomacros "No macros available">
+<!ENTITY tagger.window.macro.exporttarget "Select file to export to">
+<!ENTITY tagger.window.actions.actionlistplaceholder "[ActionList]">
+<!ENTITY tagger.window.actions.conditionlistplaceholder "[ConditionList]">
+<!ENTITY tagger.window.actions.recond "Regular expression match">
+<!ENTITY tagger.window.actions.expression "Expression">
+<!ENTITY tagger.window.actions.attribute "Attribute">
+<!ENTITY tagger.window.actions.actions "Actions">
+<!ENTITY tagger.window.actions.trueactions "Actions on match">
+<!ENTITY tagger.window.actions.falseactions "Actions on mismatch">
+<!ENTITY tagger.window.actions.conditions "Conditions">
+<!ENTITY tagger.window.actions.condlink_and "All conditions must match">
+<!ENTITY tagger.window.actions.condlink_or "One or more conditions must match">
+<!ENTITY tagger.window.actions.condlink_xor "An uneven number of conditions must match">
+<!ENTITY tagger.window.actions.conditionlink "Condition operator">
+<!ENTITY tagger.window.actions.conditional "Conditional actions">
+<!ENTITY tagger.window.actions.invert "Invert condition">
+<!ENTITY tagger.window.actions.match "String match">
+<!ENTITY tagger.window.actions.value "Value">
+<!ENTITY tagger.window.actions.matchmode "Match mode">
+<!ENTITY tagger.window.actions.match.exact "Exact match">
+<!ENTITY tagger.window.actions.match.begin "Begins with">
+<!ENTITY tagger.window.actions.match.end "Ends with">
+<!ENTITY tagger.window.actions.match.contains "Contains">
+<!ENTITY tagger.window.actions.subcondition "Condition list">
+<!ENTITY tagger.window.actions.actionlist "Action list">
+<!ENTITY tagger.window.actions.trim "Remove leading/trailing blanks">
+<!ENTITY tagger.window.actions.confirmdelete "Do you really want to delete this item and all of its contents?">
+<!ENTITY tagger.window.actions.caption "Tagger Macro Editor">
+<!ENTITY tagger.window.actions.addaction "Add action">
+<!ENTITY tagger.window.actions.addaction.general "General">
+<!ENTITY tagger.window.actions.addaction.peritem "Operating on one item">
+<!ENTITY tagger.window.actions.addaction.selection "Operating on selection">
+<!ENTITY tagger.window.actions.addcondition "Add condition">
+<!ENTITY tagger.window.actions.editproperty "Edit property">
+<!ENTITY tagger.window.actions.delete "&tagger.window.delete;">
+<!ENTITY tagger.window.actions.newmacro "New macro">
+<!ENTITY tagger.window.actions.load "&tagger.window.load;">
+<!ENTITY tagger.window.actions.save "&tagger.window.save;">
+<!ENTITY tagger.window.actions.execute "&tagger.window.execute;">
+<!ENTITY tagger.window.actions.action "Action / Property">
+<!ENTITY tagger.window.actions.parameter "Parameter">
+<!ENTITY tagger.window.actions.cut "Cut">
+<!ENTITY tagger.window.actions.copy "Copy">
+<!ENTITY tagger.window.actions.paste "Paste">
+<!ENTITY tagger.window.actions.foreachselected "For each item in selection do">
+<!ENTITY tagger.window.actions.condselect "Select by condition">
+<!ENTITY tagger.window.actions.source "Source">
+<!ENTITY tagger.window.actions.wholelibrary "Whole media list">
+<!ENTITY tagger.window.actions.filteredlibrary "Current media view">
+<!ENTITY tagger.window.actions.currentselection "Current selection">
+<!ENTITY tagger.window.actions.importselection "Import selection">
+<!ENTITY tagger.window.actions.optimize "Short evaluation">
+<!ENTITY tagger.window.actions.noconditions "A &tagger.window.actions.conditional; could not be evaluated since no conditions were assigned. No actions were executed.">
+<!ENTITY tagger.window.actions.emptyselection "A &tagger.window.actions.foreachselected; could not be executed since the selection was empty.">
+<!ENTITY tagger.window.actions.workinprogress "Macro is running ... ">
+<!ENTITY tagger.window.actions.metadata "Macro metadata">
+<!ENTITY tagger.window.actions.commitcache "Add to commit cache">
+<!ENTITY tagger.window.actions.flushcommitcache "Flush commit cache">
+<!ENTITY tagger.window.actions.clearcommitcache "Clear commit cache">
+<!ENTITY tagger.window.actions.attributes "Attributes">
+<!ENTITY tagger.window.macrodlg.manage "Manage macros">
+<!ENTITY tagger.window.macrodlg.list.caption "&tagger.window.macro.list.caption;">
+<!ENTITY tagger.window.macrodlg.list.new "» New (double click)">
+<!ENTITY tagger.window.macrodlg.askoverwrite "The macro “&#37;s” already exists. Do you want to overwrite it?">
+<!ENTITY tagger.window.macrodlg.askdelete "Do you really want to delete “&#37;s”?">
+<!ENTITY tagger.window.macrodlg.newfilename "Give a name for the new macro file">

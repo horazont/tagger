@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<!DOCTYPE overlay SYSTEM "chrome://tagger/locale/options.dtd">
+
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/content/bindings/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/skin/songbird.css" type="text/css" title="Skin"?>
+
+<overlay id="tagger-prefs-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+         
+  <prefwindow id="BrowserPreferences">
+    <prefpane id="taggerPrefsPane" label="Tagger"
+      onpaneload="PreferencesController.init();"
+      onpaneunload="PreferencesController.unload();"
+      image="chrome://tagger/skin/pane-icon.png">
+      <preferences>
+        <preference id="prefAutoCommit"
+          type="bool"
+          name="extensions.tagger.autocommit"/>
+        <preference id="prefDoNotAsk"
+          type="bool"
+          name="extensions.tagger.donotask"/>
+        <preference id="prefFilterFileNames"
+          type="bool"
+          name="extensions.tagger.filterfilenames"/>
+        <preference id="prefOSFlag"
+          type="int"
+          name="extensions.tagger.osflag"/>
+        <preference id="prefFilterReplace"
+          type="bool"
+          name="extensions.tagger.filter.replace"/>
+        <preference id="prefFilterReplacement"
+          type="string"
+          name="extensions.tagger.filter.replacement"/>
+      </preferences>
+      <script type="text/javascript" src="scripts/prefsOverlay.js"/>
+      <tabbox flex="1">
+        <tabs>
+          <tab label="&tagger.options.general.title;"/>
+          <tab label="&tagger.options.extended.title;"/>
+        </tabs>
+        <tabpanels flex="1">
+          <vbox>
+            <groupbox>
+              <caption label="&tagger.options.general.title;"/>
+              <vbox>
+                <description>&tagger.options.general.description;</description>
+                <separator class="thin"/>
+                <checkbox id="general-autocommit" 
+                  label="&tagger.options.general.autocommit;"
+                  preference="prefAutoCommit"
+                  tooltiptext="&tagger.options.general.autocommit.tooltip;"/>
+                <checkbox id="general-donotask"
+                  label="&tagger.options.general.donotask;"
+                  preference="prefDoNotAsk"
+                  tooltiptext="&tagger.options.general.donotask.tooltip;"/>
+              </vbox>
+            </groupbox>
+            <groupbox>
+              <caption label="&tagger.options.filter.title;"/>
+              <vbox>
+                <description>&tagger.options.filter.description;</description>
+                <separator class="thin"/>
+                <checkbox id="filter-enabled"
+                  label="&tagger.options.enabled;"
+                  preference="prefFilterFileNames"/>
+                <groupbox>
+                  <caption><checkbox 
+                    id="filter-replace"
+                    label="&tagger.options.filter.replace;"
+                    preference="prefFilterReplace"
+                    tooltip="&tagger.options.filter.replace.tooltip;"/></caption>
+                  <hbox>
+                    <label value="&tagger.options.filter.replacement;"/>
+                    <textbox id="filter-replacement"
+                      preference="prefFilterReplacement"/>
+                  </hbox>
+                </groupbox>
+              </vbox>
+            </groupbox>
+          </vbox>
+          
+          <vbox>
+            <groupbox>
+              <caption label="&tagger.options.osflag.title;"/>
+              <description>&tagger.options.osflag.description;</description>
+              <separator class="thin"/>
+              <menulist id="extended-osflag" preference="prefOSFlag">
+                <menupopup>
+                  <menuitem value="0" label="&tagger.options.osflag.unixoid;" oncommand="PreferencesController.changeOSFlag(this.value)"/>
+                  <menuitem value="1" label="&tagger.options.osflag.microsoftoid;" oncommand="PreferencesController.changeOSFlag(this.value)"/>
+                </menupopup>
+              </menulist>
+            </groupbox>
+          </vbox>
+        </tabpanels>
+      </tabbox>
+      <strings>
+        <jsstr id="options-osflag-warning" label="&tagger.options.osflagwarning;"/>
+        <jsstr id="options-osflag-mustbeset" label="&tagger.options.osflagmustbeset;"/>
+        <jsstr id="options-refreshwarning" label="&tagger.options.refreshwarning;"/>
+      </strings>
+
+    </prefpane>
+  </prefwindow>
+</overlay>

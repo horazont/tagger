@@ -1,0 +1,10 @@
+content tagger  chrome/content/
+locale  tagger  en-US  chrome/locale/en-US/
+locale  tagger  de  chrome/locale/de/
+locale  tagger  de-DE  chrome/locale/de-DE/
+locale  tagger  fr  chrome/locale/fr/
+skin    tagger  classic/1.0 chrome/skin/
+
+overlay chrome://songbird/content/xul/layoutWithBrowserOverlay.xul chrome://tagger/content/scripts-overlay.xul
+overlay chrome://songbird/content/xul/layoutWithBrowserOverlay.xul chrome://tagger/content/menu-overlay.xul
+overlay chrome://browser/content/preferences/preferences.xul chrome://tagger/content/prefs-overlay.xul

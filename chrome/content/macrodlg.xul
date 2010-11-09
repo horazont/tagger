@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/content/bindings/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/skin/songbird.css" type="text/css" title="Skin"?>
+
+<?xml-stylesheet href="chrome://tagger/skin/pane.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://tagger/locale/tagger.dtd">
+<dialog id="tagger-macrodlg"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  buttons="accept,cancel"
+  onload="sizeToContent(); MacroDlg.init();"
+  ondialogaccept="return MacroDlg.buttonAccept();"
+  onunload="MacroDlg.burn();"
+  title="&tagger.window.macrodlg.manage;">
+  
+  <script type="text/javascript" src="scripts/helper/notifier.js"/>
+  <script type="text/javascript" src="scripts/helper/macro-list.js"/>
+  <script type="text/javascript" src="scripts/macrodlg.js"/>
+  
+  <menupopup id="list-popup">
+    <menuitem label="&tagger.window.delete;" oncommand="MacroDlg.deleteMacro();"/>
+  </menupopup>
+  
+  <vbox>
+    <label value="&tagger.window.macrodlg.list.caption;"/>
+    <listbox style="width: 300px" rows="10" id="macro-list">
+      <listitem id="macro-new" label="&tagger.window.macrodlg.list.new;" ondblclick="MacroDlg.createNew();" selected="true"/>
+    </listbox>
+  </vbox>
+  
+  <strings>
+    <jsstr id="overwrite" label="&tagger.window.macrodlg.askoverwrite;"/>
+    <jsstr id="newfilename" label="&tagger.window.macrodlg.newfilename;"/>
+    <jsstr id="delete" label="&tagger.window.macrodlg.askdelete;"/>
+  </strings>
+</dialog>

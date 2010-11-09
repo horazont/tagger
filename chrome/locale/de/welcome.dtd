@@ -1,0 +1,16 @@
+<!ENTITY tagger.welcome.headline "Willkommen zu Tagger!">
+<!ENTITY tagger.welcome.description "Diese Seite wird Ihnen eine kurze Einführung in Tagger geben.">
+<!ENTITY tagger.welcome.features "Was Tagger tun kann:">
+<!ENTITY tagger.welcome.feature1 "Tags / Metadaten aus den Dateinamen der Lieder erzeugen.">
+<!ENTITY tagger.welcome.feature2 "Dateien umbenennen und/oder verschieben auf Basis der Taginformationen.">
+<!ENTITY tagger.welcome.feature3 "Taginformationen aus Textdateien lesen und auf Lieder anwenden.">
+<!ENTITY tagger.welcome.feature4 "Suchen-und-Ersetzen in Tags">
+<!ENTITY tagger.welcome.feature5 "Leere Tags schnell und effizient mit Informationen füllen oder bestehende überschreiben.">
+<!ENTITY tagger.welcome.feature6 "Tagänderungen speichern">
+<!ENTITY tagger.welcome.feature7 "Mit Makros mehrere Aktionen in einem Rutsch ausführen">
+<!ENTITY tagger.welcome.howtouse "Wie verwendet man Tagger?">
+<!ENTITY tagger.welcome.howtouse.description "Um Tagger zu verwenden, laden Sie es einfach in die rechte Seitenleiste. Schon stehen Ihnen alle Fähigkeiten von Tagger zur Verfügung.">
+<!ENTITY tagger.welcome.howtouse.noteaboutfocustrack "Bitte beachten Sie, dass Tagger meistens mit der aktuellen Selektion arbeitet. Seien sie also vorsichtig, wenn Sie Add-Ons verwenden, die die Selektion verändern (zum Beispiel FocusTrack).">
+<!ENTITY tagger.welcome.howtouse.tooltips "Um die Verwendung von Tagger noch einfacher zu gestalten, hat nahezu jedes Element Tooltips, die angezeigt werden, wenn Sie mit der Maus ein paar Sekunden über dem Element verharren.">
+<!ENTITY tagger.welcome.about "Informationen über Tagger und Kontaktmöglichkeiten mit dem Autor finden sie im Hilfemenü unter &quot;Über Tagger...&quot;">
+<!ENTITY tagger.welcome.stoptalking "Hör' auf zu labern, lass es mich testen!">

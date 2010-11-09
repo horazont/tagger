@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/content/bindings/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/skin/songbird.css" type="text/css" title="Skin"?>
+
+<?xml-stylesheet href="chrome://tagger/skin/pane.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://tagger/locale/tagger.dtd">
+<window id="tagger-actions"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  title="&tagger.window.actions.caption;"
+  onload="actions_onLoad(this)"
+  onbeforeunload="return false;"
+  onunload="actions_onUnload(this)">
+  
+  <html:link rel="icon" href="chrome://tagger/skin/actions-favicon.png"/>
+  
+  <script type="text/javascript" src="scripts/helper/utils.js"/>
+  <script type="text/javascript" src="scripts/helper/action-clipboard.js"/>
+  <script type="text/javascript" src="scripts/helper/action-serializer.js"/>
+  <script type="text/javascript" src="scripts/helper/action-state.js"/>
+  <script type="text/javascript" src="scripts/helper/tokenparser.js"/>
+  <script type="text/javascript" src="scripts/helper/tokenparser2.js"/>
+  <script type="text/javascript" src="scripts/helper/prefobserve.js"/>
+  <script type="text/javascript" src="scripts/helper/notifier.js"/>
+  <script type="text/javascript" src="scripts/helper/macro-list.js"/>
+  <script type="text/javascript" src="scripts/helper/commit.js"/>
+  <script type="text/javascript" src="scripts/actions.js"/>
+  
+  <!-- General -->
+  <script type="text/javascript" src="scripts/actions/actionlist.js"/>
+  <script type="text/javascript" src="scripts/actions/conditional.js"/>
+  <script type="text/javascript" src="scripts/actions/flushcommitcache.js"/>
+  <script type="text/javascript" src="scripts/actions/clearcommitcache.js"/>
+  
+  <!-- Selection -->
+  <script type="text/javascript" src="scripts/actions/importselection.js"/>
+  <script type="text/javascript" src="scripts/actions/condselect.js"/>
+  <script type="text/javascript" src="scripts/actions/foreachselected.js"/>
+  
+  <!-- Per item -->
+  <script type="text/javascript" src="scripts/actions/set.js"/>
+  <script type="text/javascript" src="scripts/actions/replace.js"/>
+  <script type="text/javascript" src="scripts/actions/fromfilename.js"/>
+  <script type="text/javascript" src="scripts/actions/commitcache.js"/>
+  <script type="text/javascript" src="scripts/actions/debugalert.js"/>
+  
+  <!-- Conditions -->
+  <script type="text/javascript" src="scripts/conditions/match.js"/>
+  <script type="text/javascript" src="scripts/conditions/recond.js"/>
+  <script type="text/javascript" src="scripts/conditions/subcondition.js"/>
+
+  <menupopup id="treepopup" onpopupshowing="TaggerActions.treePopupOnPopup(this);">
+    <menu label="&tagger.window.actions.addaction;" id="treepopup-new">
+      <menupopup id="treepopup-new-submenu">
+        <menu label="&tagger.window.actions.addaction.general;" id="treepopup-new-general">
+          <menupopup id="treepopup-new-general-submenu">
+          </menupopup>
+        </menu>
+        <menu label="&tagger.window.actions.addaction.selection;" id="treepopup-new-selection">
+          <menupopup id="treepopup-new-selection-submenu">
+          </menupopup>
+        </menu>
+        <menu label="&tagger.window.actions.addaction.peritem;" id="treepopup-new-peritem">
+          <menupopup id="treepopup-new-peritem-submenu">
+          </menupopup>
+        </menu>
+      </menupopup>
+    </menu>
+    <menu label="&tagger.window.actions.addcondition;" id="treepopup-newcond">
+      <menupopup id="treepopup-newcond-submenu">
+      </menupopup>
+    </menu>
+    <menuseparator id="treepopup-separator-ccp"/>
+    <menuitem label="&tagger.window.actions.editproperty;" id="treepopup-edit" oncommand="TaggerActions.treePopupEditProperty(this);"/>
+    <menuitem label="&tagger.window.actions.cut;" id="treepopup-cut" oncommand="TaggerActions.treePopupCopy(this, true);"/>
+    <menuitem label="&tagger.window.actions.copy;" id="treepopup-copy" oncommand="TaggerActions.treePopupCopy(this, false);"/>
+    <menuitem label="&tagger.window.actions.paste;" id="treepopup-paste" oncommand="TaggerActions.treePopupPaste(this);"/>
+    <menuseparator id="treepopup-separator-delete"/>
+    <menuitem label="&tagger.window.actions.delete;" id="treepopup-delete" oncommand="TaggerActions.treePopupDeleteAction(this);"/>
+  </menupopup>
+  <toolbar hidden="true" id="progress-bar">
+    <hbox>
+      <label value="&tagger.window.actions.workinprogress;"/>
+      <progressmeter mode="undetermined" flex="1"/>
+    </hbox>
+  </toolbar>
+  <toolbox id="tool-bar">
+    <toolbar>
+      <toolbarbutton label="&tagger.window.actions.newmacro;" oncommand="TaggerActions.newMacro();"/>
+      <toolbarbutton label="&tagger.window.actions.load;" oncommand="TaggerActions.loadMacro();"/>
+      <toolbarbutton label="&tagger.window.actions.save;" oncommand="TaggerActions.saveMacro();"/>
+      <toolbarbutton label="&tagger.window.actions.execute;" oncommand="TaggerActions.execMacro();"/>
+      <toolbarbutton label="&tagger.window.help;" oncommand="TaggerActions.help();"/>
+      <!--<toolbarbutton label="tmp" oncommand="TaggerActions.tmp();"/>-->
+      <toolbarspring/>
+      <toolbarbutton label="↧" oncommand="TaggerActions.toggleMetaSection();" id="meta-button"/>
+    </toolbar>
+  </toolbox>
+  <groupbox hidden="true" id="meta-section">
+    <caption label="&tagger.window.actions.metadata;"/>
+    <hbox>
+      <!--<grid>
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+        <rows>
+          <row>
+            <label value="Author"/>
+            <textbox/>
+          </row>
+          <row>
+            <label value="Version"/>
+            <textbox/>
+          </row>
+          <row>
+            <label value="URL"/>
+            <textbox/>
+          </row>
+        </rows>
+      </grid>-->
+      <grid>
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+        <rows>
+          <row>
+            <label value="Description"/>
+            <textbox multiline="true" rows="5" id="meta-description"/>
+          </row>
+        </rows>
+      </grid>
+    </hbox>
+  </groupbox>
+  <hbox flex="1">
+    <vbox flex="1">
+      <tree id="tree" flex="1" rows="10" context="treepopup" ondblclick="TaggerActions.treeDblClick(this);"
+        style="margin: 0; margin-left: -1px; margin-top: -1px">
+        <treecols>
+          <treecol flex="1" label="&tagger.window.actions.action;" primary="true" />
+          <splitter class="tree-splitter" />
+          <treecol flex="1" label="&tagger.window.actions.parameter;" />
+        </treecols>
+        <treechildren id="tree-root">
+        </treechildren>
+      </tree>
+    </vbox>
+    <toolbar orient="vertical" id="side-tool-bar">
+      <toolbarbutton label="↑" oncommand="TaggerActions.treeMoveUp();"/>
+      <toolbarbutton label="↓" oncommand="TaggerActions.treeMoveDown();"/>
+    </toolbar>
+  </hbox>
+  
+  <strings>
+    <jsstr id="trackName" label="&tagger.window.trackName;"/>
+    <jsstr id="artistName" label="&tagger.window.artistName;"/>
+    <jsstr id="albumName" label="&tagger.window.albumName;"/>
+    <jsstr id="albumArtistName" label="&tagger.window.albumArtistName;"/>
+    <jsstr id="composerName" label="&tagger.window.composerName;"/>
+    <jsstr id="genre" label="&tagger.window.genre;"/>
+    <jsstr id="year" label="&tagger.window.year;"/>
+    <jsstr id="trackNumber" label="&tagger.window.trackNumber;"/>
+    <jsstr id="trackCount" label="&tagger.window.trackCount;"/>
+    <jsstr id="discNumber" label="&tagger.window.discNumber;"/>
+    <jsstr id="discCount" label="&tagger.window.discCount;"/>
+    <jsstr id="comment" label="&tagger.window.comment;"/>
+    
+    <jsstr id="recond" label="&tagger.window.actions.recond;"/>
+    <jsstr id="expression" label="&tagger.window.actions.expression;"/>
+    <jsstr id="attribute" label="&tagger.window.actions.attribute;"/>
+    <jsstr id="actions" label="&tagger.window.actions.actions;"/>
+    <jsstr id="trueactions" label="&tagger.window.actions.trueactions;"/>
+    <jsstr id="falseactions" label="&tagger.window.actions.falseactions;"/>
+    <jsstr id="conditions" label="&tagger.window.actions.conditions;"/>
+    <jsstr id="conditional" label="&tagger.window.actions.conditional;"/>
+    <jsstr id="conditionlink" label="&tagger.window.actions.conditionlink;"/>
+    <jsstr id="invert" label="&tagger.window.actions.invert;"/>
+    <jsstr id="condlink_and" label="&tagger.window.actions.condlink_and;"/>
+    <jsstr id="condlink_or" label="&tagger.window.actions.condlink_or;"/>
+    <jsstr id="condlink_xor" label="&tagger.window.actions.condlink_xor;"/>
+    <jsstr id="optimize" label="&tagger.window.actions.optimize;"/>
+    
+    <jsstr id="match" label="&tagger.window.actions.match;"/>
+    <jsstr id="value" label="&tagger.window.actions.value;"/>
+    <jsstr id="matchmode" label="&tagger.window.actions.matchmode;"/>
+    <jsstr id="match.exact" label="&tagger.window.actions.match.exact;"/>
+    <jsstr id="match.begin" label="&tagger.window.actions.match.begin;"/>
+    <jsstr id="match.end" label="&tagger.window.actions.match.end;"/>
+    <jsstr id="match.contains" label="&tagger.window.actions.match.contains;"/>
+    <jsstr id="caseinsensitive" label="&tagger.window.caseinsensitive;"/>
+    
+    <jsstr id="pattern" label="&tagger.window.replace.pattern;"/>
+    <jsstr id="replacewith" label="&tagger.window.replace;"/>
+    <jsstr id="replace" label="&tagger.window.replace.caption;"/>
+    <jsstr id="regexpsupport" label="&tagger.window.replace.regexp;"/>
+    <jsstr id="globalmatch" label="&tagger.window.regexpflags.g.tooltiptext;"/>
+    <jsstr id="trim" label="&tagger.window.actions.trim;"/>
+    
+    <jsstr id="subcondition" label="&tagger.window.actions.subcondition;"/>
+    <jsstr id="actionlist" label="&tagger.window.actions.actionlist;"/>
+    <jsstr id="foreachselected" label="&tagger.window.actions.foreachselected;"/>
+    
+    <jsstr id="condselect" label="&tagger.window.actions.condselect;"/>
+    <jsstr id="source" label="&tagger.window.actions.source;"/>
+    <jsstr id="wholelibrary" label="&tagger.window.actions.wholelibrary;"/>
+    <jsstr id="filteredlibrary" label="&tagger.window.actions.filteredlibrary;"/>
+    <jsstr id="currentselection" label="&tagger.window.actions.currentselection;"/>
+    
+    <jsstr id="importselection" label="&tagger.window.actions.importselection;"/>
+
+    <jsstr id="all" label="&tagger.window.all;"/>
+    <jsstr id="deletionconfirmation" label="&tagger.window.actions.confirmdelete;"/>
+    
+    <jsstr id="settags" label="&tagger.window.settags.caption;"/>
+    <jsstr id="actionlistplaceholder" label="&tagger.window.actions.actionlistplaceholder;"/>
+    <jsstr id="conditionlistplaceholder" label="&tagger.window.actions.conditionlistplaceholder;"/>
+    
+    <jsstr id="noconditions" label="&tagger.window.actions.noconditions;"/>
+    <jsstr id="emptyselection" label="&tagger.window.actions.emptyselection;"/>
+    
+    <jsstr id="fromfilename" label="&tagger.window.tagfromfile.caption;"/>
+    <jsstr id="autoupcase" label="&tagger.window.tagfromfile.autoupcase;"/>
+    <jsstr id="replace_" label="&tagger.window.tagfromfile.replace_;"/>
+    <jsstr id="directorysupport" label="&tagger.window.tagfromfile.directorysupport;"/>
+    <jsstr id="keepexisting" label="&tagger.window.tagfromfile.keeptags;"/>
+    <jsstr id="filenameformat" label="&tagger.window.tagfromfile.filenamefmt;"/>
+    
+    <jsstr id="commitcache" label="&tagger.window.actions.commitcache;"/>
+    <jsstr id="flushcommitcache" label="&tagger.window.actions.flushcommitcache;"/>
+    <jsstr id="attributes" label="&tagger.window.actions.attributes;"/>
+    <jsstr id="clearcommitcache" label="&tagger.window.actions.clearcommitcache;"/>
+    
+    <jsstr id="null" label="&tagger.window.null;"/>
+    <jsstr id="true" label="&tagger.window.true;"/>
+    <jsstr id="false" label="&tagger.window.false;"/>
+
+  </strings>
+</window>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+     xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>tagger@sotecware.net</em:id>
+    <em:type>2</em:type>
+    <em:name>Tagger</em:name>
+    <em:version>0.9.1.5</em:version> <!-- change also in tracktype-query.js and about.xul -->
+    <em:creator>Jonas Wielicki</em:creator>
+
+
+    <em:description>Generating, modifying and saving tags (metadata) right in Songbird.</em:description>
+    <em:optionsURL>chrome://tagger/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://tagger/skin/addon-icon.png</em:iconURL>
+    <em:targetApplication>
+      <Description>
+        <em:id>songbird@songbirdnest.com</em:id>
+        <em:minVersion>1.2.0</em:minVersion>
+        <em:maxVersion>1.9.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- Register a pane to be displayed below the service sidebar.
+         See http://wiki.songbirdnest.com/Developer/Articles/Getting_Started/Display_Panes -->
+    <songbird:displayPane>
+      <Description>
+        <songbird:contentTitle>Tagger</songbird:contentTitle>
+        <songbird:contentUrl>chrome://tagger/content/tagger.xul</songbird:contentUrl>
+        <songbird:contentIcon>chrome://tagger/skin/pane-icon.png</songbird:contentIcon>
+        <songbird:defaultWidth>340</songbird:defaultWidth>
+        <songbird:defaultHeight>440</songbird:defaultHeight>
+        <songbird:suggestedContentGroups>sidebar</songbird:suggestedContentGroups>
+        <songbird:showOnInstall>true</songbird:showOnInstall>
+      </Description>
+    </songbird:displayPane>
+
+  </Description>
+</RDF>

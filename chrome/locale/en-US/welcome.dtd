@@ -1,0 +1,16 @@
+<!ENTITY tagger.welcome.headline "Welcome to Tagger!">
+<!ENTITY tagger.welcome.description "This page will give you a short introduction about Tagger.">
+<!ENTITY tagger.welcome.features "What Tagger can do:">
+<!ENTITY tagger.welcome.feature1 "Generate tags out of the file name of a media entry using a user defined pattern.">
+<!ENTITY tagger.welcome.feature2 "Rename and move files according to their tag information.">
+<!ENTITY tagger.welcome.feature3 "Read data from a text file and build tags using a specified data pattern.">
+<!ENTITY tagger.welcome.feature4 "Perform a search &amp; replace operation on tags.">
+<!ENTITY tagger.welcome.feature5 "Fill empty tags with user defined values or override all tags.">
+<!ENTITY tagger.welcome.feature6 "Save tag changes to disk.">
+<!ENTITY tagger.welcome.feature7 "Using macros, you can execute a bunch of actions with one click.">
+<!ENTITY tagger.welcome.howtouse "How to use Tagger?">
+<!ENTITY tagger.welcome.howtouse.description "To use Tagger, just load it into the right sidebar. Now you have the full power of Tagger right at your fingertips.">
+<!ENTITY tagger.welcome.howtouse.noteaboutfocustrack "Please note: The use of add-ons which change the selection (e.g. FocusTrack) might be dangerous, since Tagger always operates on the current selection. So make sure to disable them or at least make sure they do not change the selection unexpectedly.">
+<!ENTITY tagger.welcome.howtouse.tooltips "To make it even easier to use, Tagger has tooltips which give you essential information about the features. Nevertheless, Tagger should be usable easily by everyone who used a tag generation program before.">
+<!ENTITY tagger.welcome.about "Tagger has also an entry in the Help menu to show a dialog with information about the Tagger version and its developer.">
+<!ENTITY tagger.welcome.stoptalking "Stop talking now, let me test it!">

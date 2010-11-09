@@ -1,0 +1,39 @@
+<!ENTITY tagger.close "Fermer">
+<!ENTITY tagger.parserhelp.title "Aide de l'analyseur syntaxique">
+<!ENTITY tagger.parserhelp.description "L'analyseur de la syntaxe des noms de fichier prend en compte une chaine de caractères comportant des mots-clés. Les mots-clés connus sont ceux listés ci-dessous. Ils vont indiquer à l'analyseur à quelle position dans le nom de fichier il pourra trouver la donnée en question. Tout ce qui est n'est pas précédé par un caractère &#37; n'est pas un mot-clé et sera considéré comme une portion statique du nom de fichier. Dans ce qui suit, un &quot;terme&quot; est soit une suite de parties statiques consécutives dans le modèle, ou bien un mot-clé.">
+<!ENTITY tagger.parserhelp.tokenlist "Mots-clés de l'analyseur">
+<!ENTITY tagger.parserhelp.token "Mot-clé">
+<!ENTITY tagger.parserhelp.tokendescription "Description">
+<!ENTITY tagger.parserhelp.matches "Format">
+<!ENTITY tagger.parserhelp.matches.numbers "chiffres">
+<!ENTITY tagger.parserhelp.matches.anything "n'importe quoi">
+<!ENTITY tagger.parserhelp.matches.year "2 ou 4 chiffres">
+<!ENTITY tagger.parserhelp.aliases "Synonymes">
+<!ENTITY tagger.parserhelp.keyt "Titre de la piste">
+<!ENTITY tagger.parserhelp.keya "Artiste">
+<!ENTITY tagger.parserhelp.keyb "Nom de l'album">
+<!ENTITY tagger.parserhelp.keyn "Numéro de la piste">
+<!ENTITY tagger.parserhelp.keyy "Année de publication de l'album">
+<!ENTITY tagger.parserhelp.keyc "Numéro du CD">
+<!ENTITY tagger.parserhelp.keyx "Ancienne extension du nom de fichier (seulement pour &quot;Écrire les balises dans le nom de fichier&quot;).">
+<!ENTITY tagger.parserhelp.keyr "Artiste de l'album">
+<!ENTITY tagger.parserhelp.keyo "Compositeur">
+<!ENTITY tagger.parserhelp.keycomment "Commentaire">
+<!ENTITY tagger.parserhelp.keytrackCount "Nombre total de pistes">
+<!ENTITY tagger.parserhelp.keydiscCount "Nombre total de disques">
+<!ENTITY tagger.parserhelp.keyg "Genre">
+<!ENTITY tagger.parserhelp.keyasterisk "Ce qui se trouve là sera ignoré (seulement pour &quot;Créer les balises par nom de fichier&quot;).">
+<!ENTITY tagger.parserhelp.samplehead "Exemple">
+<!ENTITY tagger.parserhelp.sample1 "Considérant un nom de fichier tel que : 01 - mon artiste - mon titre - autre chose dont je n'ai pas besoin.ogg">
+<!ENTITY tagger.parserhelp.sample2 "Le modèle recommandé serait alors :">
+<!ENTITY tagger.parserhelp.sample3 "Considérant une structure de dossiers telle que : Artiste/Album/N°Piste Titre.ogg">
+<!ENTITY tagger.parserhelp.sample4 "Le modèle recommandé serait alors :">
+<!ENTITY tagger.parserhelp.modhead "Modificateurs">
+<!ENTITY tagger.parserhelp.moddescription "Plusieurs altérations de comportement peuvent être appliquées aux mots-clés. Ceci n'est disponible que dans le mode &quot;Écrire les balises dans le nom de fichier&quot;.">
+<!ENTITY tagger.parserhelp.modinit "C'est le premier caractère de chaque mot-clé. Il introduit le mot-clé et doit être présent.">
+<!ENTITY tagger.parserhelp.moddot "Optionnel. Lorsque le premier caractère après le &#37; est un double-point, la totalité de la chaine est considérée littéralement, sans faire aucun remplacement ou analyse, à l'exception du premier &quot;.&quot; qui sera ôté.">
+<!ENTITY tagger.parserhelp.moddefault "Optionnel. Indique la valeur par défaut dans le cas où le champ mentionné est absent ou vide. Pour des nombres, saisissez-les simplement à la suite du point d'interrogation (?). Entourez les chaines de caractères par des doubles quotes, au même endroit. Par exemple, &#37;?0:2c&#37; donnera &apos;00&apos; si aucun numéro de disque n'est précisé. De même, &#37;?&quot;[Misc]&quot;b&#37; donnera &apos;[Misc]&apos;  si le champ &apos;Nom de l'album&apos; est vide.">
+<!ENTITY tagger.parserhelp.modcolon "Optionnel. Après le double-point, vous pouvez spécifier un nombre. Tagger complètera tout nombre généré par ce mot-clé avec des zéros à gauche, jusqu'à concurrence de ce nombre de caractères.">
+<!ENTITY tagger.parserhelp.modquestion "Optionnel. Lorsque ceci est spécifié, le mot-clé est optionnel. Cela signifie que si la balise qu'il représente est vide ou n'existe pas, le mot-clé sera ignoré (au lieu de générer une erreur lors de la détection automatique des mots-clés requis).">
+<!ENTITY tagger.parserhelp.modquestion2 "Pour chaque point d'interrogation spécifié supplémentaire, un terme sera ignoré et passé outre si le mot-clé n'existe pas ou est vide. Un terme est soit une partie statique du modèle, ou bien un mot-clé.">
+<!ENTITY tagger.parserhelp.modkey "Un des mot-clés spécifiés dans le tableau ci-dessus.">

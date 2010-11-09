@@ -1,0 +1,7 @@
+
+/** Make the menu item red so that it stands out **/
+#tagger-helloworld-menuitem
+{
+  color: red ! important;
+}
+

@@ -1,0 +1,20 @@
+.tagger-tab .tab-text {
+  font-size: 8pt;
+}
+
+.tagger-primary-tabs {
+
+}
+
+.tagger-secondary-tabs {
+  padding-top: 1px !important;
+  margin-top: 0px !important;
+}
+
+.tagger-groupbox-hack {
+  margin: -8px;
+}
+
+window > link {
+    display: block;
+}

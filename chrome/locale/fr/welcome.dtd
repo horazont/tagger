@@ -1,0 +1,16 @@
+<!ENTITY tagger.welcome.headline "Bienvenue dans Tagger !">
+<!ENTITY tagger.welcome.description "Cette page vous présentera brièvement Tagger.">
+<!ENTITY tagger.welcome.features "Ce que Tagger peut faire :">
+<!ENTITY tagger.welcome.feature1 "Générer des balises à partir du nom du fichier du média, selon un modèle défini par vous.">
+<!ENTITY tagger.welcome.feature2 "Renommer et déplacer des fichiers à partir du contenu de leurs balises.">
+<!ENTITY tagger.welcome.feature3 "Lire des données dans un fichier texte selon un modèle défini par vous, et construire des balises à partir de celles-ci.">
+<!ENTITY tagger.welcome.feature4 "Effectuer des recherches et remplacements de texte à l'intérieur des balises.">
+<!ENTITY tagger.welcome.feature5 "Remplir des balises vides par des valeurs définies par vous, ou écraser les valeurs existantes.">
+<!ENTITY tagger.welcome.feature6 "Écrire les balises dans le fichier sur le disque (car elles ne sont par défaut écrites que dans la base de données de Songbird).">
+<!ENTITY tagger.welcome.feature7 "Grâce aux macros, vous pouvez exécuter tout un tas d'actions en un seul clic.">
+<!ENTITY tagger.welcome.howtouse "Comment utiliser Tagger ?">
+<!ENTITY tagger.welcome.howtouse.description "Pour utiliser Tagger, affichez-le simplement dans le panneau latéral droit. Toute la puissance de Tagger est là, sous vos doigts !">
+<!ENTITY tagger.welcome.howtouse.noteaboutfocustrack "Notez que l'utilisation de modules complémentaires qui modifient la sélection (comme FocusTrack) peut être dangereuse, car Tagger opère toujours sur la sélection courante. Veuillez donc les désactiver, ou au moins vous assurer qu'ils ne modifient pas la sélection de façon inattendue.">
+<!ENTITY tagger.welcome.howtouse.tooltips "Pour rendre les choses encore plus faciles, Tagger possède des infobulles qui vous donnent les informations essentielles à propos des fonctions. Cependant, Tagger devrait être aisément utilisable par toute personne ayant déjà employé un programme de gestion de balises.">
+<!ENTITY tagger.welcome.about "Tagger a aussi une entrée dans le menu Aide qui vous informe au sujet de la version de Tagger et de son développeur.">
+<!ENTITY tagger.welcome.stoptalking "Assez parlé, laissez-moi tester ça !">

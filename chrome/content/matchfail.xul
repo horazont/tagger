@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://tagger/locale/matchfail.dtd">
+
+<window
+  id="tagger-matchfail"
+  onload="sizeToContent();"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&tagger.matchfail.title;">
+  <script type="text/javascript" src="scripts/matchfail.js"/>
+  <vbox>
+    <description>&tagger.matchfail.description;</description>
+    <hbox>
+      <button id="skip" label="&tagger.matchfail.skip;" onclick="TaggerMatchfail.Controller.skip();"/>
+      <button id="skip" label="&tagger.matchfail.skipall;" onclick="TaggerMatchfail.Controller.skipAll();"/>
+    </hbox>
+    <groupbox>
+      <caption label="&tagger.matchfail.manual.caption;"/>
+      <vbox>
+        <description>&tagger.matchfail.manual.description;</description>
+        <hbox>
+          <label value="&tagger.matchfail.fileName;" style="width:10em"/>
+          <textbox id="fileName" value=""/>
+        </hbox>
+        <hbox>
+          <label value="&tagger.matchfail.trackName;" style="width:10em"/>
+          <textbox id="trackName" value=""/>
+        </hbox>
+        <hbox>
+          <label value="&tagger.matchfail.albumName;" style="width:10em"/>
+          <textbox id="albumName" value=""/>
+        </hbox>
+        <hbox>
+          <label value="&tagger.matchfail.artistName;" style="width:10em"/>
+          <textbox id="artistName" value=""/>
+        </hbox>
+        <button id="setinfo" label="&tagger.matchfail.setinfo;" onclick="TaggerMatchfail.Controller.setInfo();"/>
+      </vbox>
+    </groupbox>
+  </vbox>
+</window>

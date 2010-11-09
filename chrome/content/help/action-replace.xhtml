@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html [
+  <!ENTITY % taggerDTD SYSTEM "chrome://tagger/locale/tagger.dtd" >
+  %taggerDTD;
+  <!ENTITY % helpDTD SYSTEM "chrome://tagger/locale/tagger-help.dtd" >
+  %helpDTD;
+  <!ENTITY % actionsHelpDTD SYSTEM "chrome://tagger/locale/actions-help.dtd" >
+  %actionsHelpDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>&td.title;</title>
+  </head>
+  <body>
+    <div style="float:right;"><a href="chrome://tagger/content/help/actions.xhtml">&td.action.backtooverview;</a></div><h1>&td.actions.title;</h1>
+    <h2>&td.action.title; &tagger.window.replace.caption;</h2>
+    <h3>&td.action.abstract;</h3>
+    <p>&td.action.replace.abstract;</p>
+    <h3>&td.action.properties;</h3>
+    <ul>
+      <li><h4>&tagger.window.actions.attribute;</h4>
+      <p>&td.action.property.replace.attribute;</p></li>
+      <li><h4>&tagger.window.replace.pattern;</h4>
+      <p>&td.action.property.pattern;</p></li>
+      <li><h4>&tagger.window.replace;</h4>
+      <p>&td.action.property.replacewith;</p></li>
+      <li><h4>&tagger.window.replace.regexp;</h4>
+      <p>&td.action.property.regexpsupport;</p></li>
+      <li><h4>&tagger.window.caseinsensitive;</h4>
+      <p>&td.action.property.ignorecase;</p></li>
+      <li><h4>&tagger.window.regexpflags.g.tooltiptext;</h4>
+      <p>&td.action.property.globalmatch;</p></li>
+    </ul>
+    <h3>&td.action.context;</h3>
+    <ul>
+      <li><span style="font-weight: bold">&td.action.needscontext;</span>&td.action.replace.needscontext;</li>
+      <li><span style="font-weight: bold">&td.action.providescontext;</span>&td.action.replace.providescontext;</li>
+    </ul>
+    <div style="float:right;"><a href="chrome://tagger/content/help/actions.xhtml">&td.action.backtooverview;</a></div>
+  </body>
+</html>

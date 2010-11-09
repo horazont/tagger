@@ -1,0 +1,11 @@
+<!ENTITY tagger.matchfail.title "Keine Übereinstimmung">
+<!ENTITY tagger.matchfail.description "Das Lied passt nicht in das Schema:">
+<!ENTITY tagger.matchfail.fileName "Dateiname: ">
+<!ENTITY tagger.matchfail.trackName "Titel: ">
+<!ENTITY tagger.matchfail.albumName "Albumname: ">
+<!ENTITY tagger.matchfail.artistName "Künstlername: ">
+<!ENTITY tagger.matchfail.skip "Dieses Überspringen">
+<!ENTITY tagger.matchfail.setinfo "Manuelle Eingaben verwenden">
+<!ENTITY tagger.matchfail.skipall "Alle Lieder mit Problemen überspringen">
+<!ENTITY tagger.matchfail.manual.caption "Manuell einstellen">
+<!ENTITY tagger.matchfail.manual.description "Sie können die Werte für dieses Lied unten manuell eingeben:">

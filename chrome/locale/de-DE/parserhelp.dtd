@@ -1,0 +1,39 @@
+<!ENTITY tagger.close "Schließen">
+<!ENTITY tagger.parserhelp.title "Parser-Hilfe">
+<!ENTITY tagger.parserhelp.description "Der Parser für Dateinamen erhält ein Schema, welches ein paar Tokens enthält. Die gültigen Tokens sind die unten gezeigten. Sie geben an, wo in den Daten Tagger eine bestimmte Sache findet. Alles, was nicht mit einem Prozent-Zeichen beginnt, wird als statischer Teil angenommen, welcher für die genaue Bestimmung hilfreich ist. Im Folgenden ist ein „Term“ entweder eine Gruppe von aufeinanderfolgenden statischen Anteilen im Suchmuster oder ein Token.">
+<!ENTITY tagger.parserhelp.tokenlist "Parser-Tokens">
+<!ENTITY tagger.parserhelp.token "Token">
+<!ENTITY tagger.parserhelp.tokendescription "Description">
+<!ENTITY tagger.parserhelp.matches "Matches">
+<!ENTITY tagger.parserhelp.matches.numbers "digits">
+<!ENTITY tagger.parserhelp.matches.anything "anything">
+<!ENTITY tagger.parserhelp.matches.year "2 or 4 digits">
+<!ENTITY tagger.parserhelp.aliases "Aliases">
+<!ENTITY tagger.parserhelp.keyt "Liedname">
+<!ENTITY tagger.parserhelp.keya "Künstler">
+<!ENTITY tagger.parserhelp.keyb "Das Album zu dem das Lied gehört">
+<!ENTITY tagger.parserhelp.keyn "Liednummer">
+<!ENTITY tagger.parserhelp.keyy "Das Jahr, in dem das Album veröffentlicht wurde">
+<!ENTITY tagger.parserhelp.keyc "Die Nummer der CD, auf dem das Lied ist">
+<!ENTITY tagger.parserhelp.keyx "Die alte Dateierweiterung der Datei (nur beim Verschieben/Umbenennen)">
+<!ENTITY tagger.parserhelp.keyr "Albumkünstlername">
+<!ENTITY tagger.parserhelp.keyo "Komponist">
+<!ENTITY tagger.parserhelp.keycomment "Kommentar">
+<!ENTITY tagger.parserhelp.keytrackCount "Anzahl der Lieder">
+<!ENTITY tagger.parserhelp.keydiscCount "Anzahl der CDs">
+<!ENTITY tagger.parserhelp.keyg "Genre">
+<!ENTITY tagger.parserhelp.keyasterisk "Kann alles sein. Was auch immer da ist, es wird ignoriert (kann nicht beim Verschieben/Umbenennen vorkommen).">
+<!ENTITY tagger.parserhelp.samplehead "Beispiel">
+<!ENTITY tagger.parserhelp.sample1 "Bei einem Dateinamen wie: 01 - Künstler - Titel - Irgendein anderer Kram.ogg">
+<!ENTITY tagger.parserhelp.sample2 "Wäre das empfohlene Schema: ">
+<!ENTITY tagger.parserhelp.sample3 "Bei einer Ordnerstruktur wie: Künstler/Album/Liednummer Titel.ogg">
+<!ENTITY tagger.parserhelp.sample4 "Wäre das empfohlene Schema: ">
+<!ENTITY tagger.parserhelp.modhead "Modifikatoren">
+<!ENTITY tagger.parserhelp.moddescription "Diese Modifikatoren können beim Verschieben/Umbenennen noch zusätzlich verwandt werden:">
+<!ENTITY tagger.parserhelp.modinit "Das erste Zeichen von jedem Token. Muss immer da sein.">
+<!ENTITY tagger.parserhelp.moddot "Optional. When the first character after the &amp;#37; is a colon, the whole part is taken as a literal, not performing any replacement or parsing, except the first ”.”, which will be removed.">
+<!ENTITY tagger.parserhelp.moddefault "Optional. Setzt einen Standardwert für den Fall, dass das Feld leer ist oder fehlt. Für Zahlen reicht es, sie direkt hinter dem Fragezeichen anzugeben. Textinhalte müssen in Anführungszeichen (&quot;) eingeklammert werden. Beispiel: &#37;?0:2c&#37; wird zu „00”, wenn keine CD-Nummer angegeben ist. &#37;?&quot;[Verschiedenes]&quot;album&#37; wird zu „[Verschiedenes]”, wenn das Album-Feld leer ist.">
+<!ENTITY tagger.parserhelp.modcolon "Optional. Nach dem Doppelpunkt muss eine Zahl stehen. Tagger wird so gegebenenfalls so viele voranstehende Nullen zu jeder Zahl hinzufügen, die in dem von diesem Token erzeugten Text vorkommt.">
+<!ENTITY tagger.parserhelp.modquestion "Optional. Wenn das Fragezeichen angegeben ist, wird dieses Token als Optional angesehen. Das bedeutet, wenn der Tag, zu dem es gehört, nicht existiert oder leer ist, wird das Token einfach übersprungen (anstatt eine Fehlermeldung zu bringen).">
+<!ENTITY tagger.parserhelp.modquestion2 "Für jedes weitere Fragezeichen wird ein weiterer Term übersprungen.">
+<!ENTITY tagger.parserhelp.modkey "Einer der Schlüsselzeichen, die schon oben genannt wurden.">

@@ -1,0 +1,11 @@
+<!ENTITY tagger.matchfail.title "Match fail">
+<!ENTITY tagger.matchfail.description "A track did not match the given scheme.">
+<!ENTITY tagger.matchfail.fileName "File name: ">
+<!ENTITY tagger.matchfail.trackName "Track name: ">
+<!ENTITY tagger.matchfail.albumName "Album name: ">
+<!ENTITY tagger.matchfail.artistName "Artist name: ">
+<!ENTITY tagger.matchfail.skip "Skip this track">
+<!ENTITY tagger.matchfail.setinfo "Manual tag">
+<!ENTITY tagger.matchfail.skipall "Skip all track with problems">
+<!ENTITY tagger.matchfail.manual.caption "Manual tagging">
+<!ENTITY tagger.matchfail.manual.description "You may specify values for the three attributes instead of skipping the file.">

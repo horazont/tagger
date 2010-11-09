@@ -1,0 +1,81 @@
+<!ENTITY td.actions.overview1 "Depuis la version 0.9.0.0, Tagger vous offre la possibilité de de créer, enregistrer, charger et exécuter des petits scripts appelés macros, pour automatiser la mise à jour des balises de vos médias.">
+<!ENTITY td.actions.overview2 "Ces macros ne sont ni plus ni moins qu'une combinaison d'actions préfédinies. À la différence des actions habituelles de Tagger, les actions dans les macros opèrent sur une sélection virtuelle d'éléments médias, cette sélection pouvant même être modifiée par certaines actions. Ceci rend les macros très flexibles, peremettant d'exécuter une très grande variété de travaux.">
+<!ENTITY td.actions.overview3 "Notez qu'en raison de la nature de la sélection virtuelle, vous devrez probablement ajouter une action <i>&tagger.window.actions.importselection;</i> en première ligne de votre script : ceci permettra d'importer la sélection de pistes que vous aurez faite dans la vue média en cours et de l'utiliser comme sélection virtuelle dans la macro.">
+<!ENTITY td.actions.title "Les actions dans les macros">
+<!ENTITY td.actions.conditions.title "Les conditions dans les actions">
+<!ENTITY td.actions.conditions "Certaines actions peuvent contenir des conditions. En fonction du type de l'action, ce qui se produira alors sera différent selon que la condition est remplie ou non.">
+<!ENTITY td.action.title "Action(s) : ">
+<!ENTITY td.action.abstract "Description">
+<!ENTITY td.action.properties "Propriétés">
+<!ENTITY td.action.context "Contexte">
+<!ENTITY td.action.context.item "élément média">
+<!ENTITY td.action.context.none "<em>aucun</em>">
+<!ENTITY td.action.needscontext "Contexte requis : ">
+<!ENTITY td.action.providescontext "Contexte fourni : ">
+<!ENTITY td.action.backtooverview "Retour à la vue d'ensemble">
+<!ENTITY td.condition.title "Condition(s) : ">
+<!ENTITY td.action.property.actions "Cette propriété contient la liste des actions qui seront exécutées dans l'ordre indiqué.">
+<!ENTITY td.action.property.condlink "Définit comment les conditions sont évaluées globalement : ou bien toutes les conditions doivent être vérifiées et être remplies, ou bien une au moins, ou bien un nombre impair d'entre elles (c'est aussi connu sous le nom de “ou exclusif”).">
+<!ENTITY td.action.property.invert "Inverse le résultat de l'évaluation globale de toutes les conditions.">
+<!ENTITY td.action.property.optimize "Si ceci est mis à <i>vrai</i>, l'évaluation s'arrête dès qu'un résultat est déterminé. Par exemple, si <i>&tagger.window.actions.conditionlink;</i> est mis à <i>&tagger.window.actions.condlink_and;</i> et si une condition n'est pas remplie, cela n'a pas de sens de continuer à évaluer les autres conditions, puisqu'il n'y a plus aucune possibilité d'obtenir un résultat autre que <i>faux</i> !<br/> Cependant, dans quelques cas, vous voudrez que toutes vos conditions soient évaluées explicitement, par exemple si vous avez placé des actions à l'intérieur des conditions qui ne seraient pas exécutées par ailleurs.">
+<!ENTITY td.action.property.conditions "Une liste de conditions qui doivent être vérifiées dans l'ordre indiqué.">
+<!ENTITY td.action.property.trueactions "Ces actions sont exécutées si l'évaluation globale des conditions retourne un résultat positif.">
+<!ENTITY td.action.property.falseactions "Ces actions cependant sont exécutées si l'évaluation globale des conditions retourne un résultat négatif.">
+<!ENTITY td.action.property.replace.attribute "C'est l'attribut sur lequel opérera l'action de remplacement. Si ceci est mis à “&tagger.window.all;”, l'opération de remplacement sera effectuée sur la totalité des attributs.">
+<!ENTITY td.action.property.attribute "Cet attribut du média courant sera utilisé par cette opération.">
+<!ENTITY td.action.property.pattern "Cette propriété définit le motif qui sera recherché par l'action.">
+<!ENTITY td.action.property.replacewith "Chaque occurence de ce motif trouvée sera remplacée par le valeur définie dans cette propriété.">
+<!ENTITY td.action.property.regexpsupport "Si le support des expressions régulières est activé, le motif sera analysé comme une expression régulière. Dans le motif de remplacement, vous pourrez alors faire référence à n'importe quel sous-motif placé dans l'expression recherchée par “$n“, où “n“ est le numéro du sous-motif, en commençant à 1.">
+<!ENTITY td.action.property.ignorecase "Indique si la casse des lettres dans la donnée cherchée doit être ignorée.">
+<!ENTITY td.action.property.globalmatch "Indique si le motif peut être recherché plusieurs fois dans un même attribut.">
+<!ENTITY td.action.property.source "Definit quelle source doit fournir les éléments qui seront filtrés par la condition.">
+<!ENTITY td.action.property.matchmode "Définit le mode de recherche de la chaine dans l'attribut.">
+<!ENTITY td.action.property.value "La chaine à rechercher dans l'attribut.">
+<!ENTITY td.action.property.trim "Si ceci est activé, les caractères et lignes vides en début ou fin de la chaine d'entrée seront enlevés avant la comparaison effective.">
+<!ENTITY td.action.property.expression "L'expression régulière qui doit être utilisée par cette opération.">
+<!ENTITY td.action.property.attributes "Une sélection d'attributs qui seront écrits dans les fichiers.">
+<!ENTITY td.action.property.filenameformat "Comme dans la fonctionalité d'origine <i>À partir d'un nom de fichier</i>, vous devez préciser le modèle qui décrit où les métadonnées peuvent être trouvées dans le nom de fichier.">
+<!ENTITY td.action.property.keeptags "Si activé, les balises qui devraient être modifiées mais qui contiennent déjà une valeur seront ignorées.">
+<!ENTITY td.action.property.replace_ "Si activé, tout caractère souligné _ (underscore) dans le nom de fichier en entrée sera remplacé par un espace.">
+<!ENTITY td.action.property.dirsupport "Ceci vous permet de prendre en compte les noms de dossiers dans le modèle du nom de fichier.">
+<!ENTITY td.action.property.autoupcase "Cette fonctionalité permet de déterminer de façon heuristique quelles parties du nom de fichier devraient être en majuscules ou non. Ceci n'est pas nécessaire pour les systèmes Unixoïdes, car ceux-ci prenant en compte la casse des noms de fichiers, Songbird stocke les noms de fichiers directement dans leur forme originale.">
+<!ENTITY td.action.actionlist.abstract "Contient une liste d'actions qui seront exécutées dans l'ordre voulu">
+<!ENTITY td.action.actionlist.needscontext "<em>dépend des actions considérées</em>">
+<!ENTITY td.action.actionlist.providescontext "&td.action.context.none;">
+<!ENTITY td.action.conditional.abstract "Évalue des conditions et exécute des actions différentes selon que les conditions sont remplies ou non.">
+<!ENTITY td.action.conditional.needscontext "<em>dépend des actions et des conditions considérées</em>">
+<!ENTITY td.action.conditional.providescontext "&td.action.context.none;">
+<!ENTITY td.action.set.abstract "Assigne un valeur à tout attribut d'un élément média, ou combine plusieurs attributs d'un élément média.">
+<!ENTITY td.action.set.properties "Ces propriétés prennent les mêmes valeurs que celles que vous pouvez définir dans l'onglet <i>&tagger.window.settags.caption;</i> de Tagger ; cependant, si vous marquez une valeur comme étant vide (en utilisant la case à cocher dans la fenêtre de dialogue de l'éditeur de propriété, pas en entrant la chaine “vide”), la balise correspondante sera ignorée.">
+<!ENTITY td.action.set.needscontext "&td.action.context.item;">
+<!ENTITY td.action.set.providescontext "&td.action.context.none;">
+<!ENTITY td.action.replace.abstract "Effectue une opération de recherche et de remplacement sur tout attribut d'un élément média.">
+<!ENTITY td.action.replace.needscontext "&td.action.context.item;">
+<!ENTITY td.action.replace.providescontext "&td.action.context.none;">
+<!ENTITY td.action.importselection.abstract "Utilise les pistes actuellement sélectionnées dans Songbird pour construire une sélection virtuelle qui sera traitée par les actions.">
+<!ENTITY td.action.importselection.needscontext "&td.action.context.none;">
+<!ENTITY td.action.importselection.providescontext "&td.action.context.none;">
+<!ENTITY td.action.clearcommitcache.abstract "Retire tous les éléments du cache d'écriture vers les fichiers (sans écrire dans les fichiers).">
+<!ENTITY td.action.clearcommitcache.needscontext "&td.action.context.none;">
+<!ENTITY td.action.clearcommitcache.providescontext "&td.action.context.none;">
+<!ENTITY td.action.flushcommitcache.abstract "Écrit dans leurs fichiers respectifs les métadonnées de tous les éléments présents dans le cache d'écriture (et vide le cache). <br/><br/>Notez que tant que cette action n'aura pas été effectuée, les balises auront été mises à jour dans la bibliothèque de Songbird mais pas dans les fichiers médias eux-même. Notez aussi que ceci ne dépend pas du règlage du paramètre <i>Écrire les changements automatiquement</i> des options de Tagger.">
+<!ENTITY td.action.flushcommitcache.needscontext "&td.action.context.none;">
+<!ENTITY td.action.flushcommitcache.providescontext "&td.action.context.none;">
+<!ENTITY td.action.commitcache.abstract "Ajoute l'élément courant au cache d'écriture vers les fichiers (mais n'écrit pas encore la modification dans le fichier lui-même).">
+<!ENTITY td.action.commitcache.needscontext "&td.action.context.item;">
+<!ENTITY td.action.commitcache.providescontext "&td.action.context.none;">
+<!ENTITY td.action.fromfilename.abstract "Cette action analyse le nom de fichier de l'élément média courant en utilisant le modèle en question, dans le but d'en extraire la valeur des métadonnées.">
+<!ENTITY td.action.fromfilename.needscontext "&td.action.context.item;">
+<!ENTITY td.action.fromfilename.providescontext "&td.action.context.none;">
+<!ENTITY td.action.condselect.abstract "Construit une sélection virtuelle à partir d'une source en utilisant des conditions pour y choisir les éléments médias.<br/><br/>La source peut être la biliothèque complète, toutes les pistes de la vue média actuelle ou bien la sélection <i>virtuelle</i> en cours.">
+<!ENTITY td.action.condselect.needscontext "<em>dépend des conditions considérées</em>">
+<!ENTITY td.action.condselect.providescontext "&td.action.context.none;">
+<!ENTITY td.action.foreachselected.abstract "Boucle dans la sélection virtuelle en course et effectue les actions en question sur chaque élément.">
+<!ENTITY td.action.foreachselected.needscontext "<em>dépend des actions considérées</em>">
+<!ENTITY td.action.foreachselected.providescontext "&td.action.context.item;">
+<!ENTITY td.action.match.abstract "Effectue une opération de comparaison de chaine sur un attribut d'un élément média.">
+<!ENTITY td.action.match.needscontext "&td.action.context.item;">
+<!ENTITY td.action.recond.abstract "Effectue une opération de comparaison par expression régulière sur un attribut d'un élément média.">
+<!ENTITY td.action.recond.needscontext "&td.action.context.item;">
+<!ENTITY td.action.subcondition.abstract "Regroupe plusieurs conditions en une, permettant ainsi de leur appliquer un opérateur global et éventuellement d'inverser le résultat évalué.">
+<!ENTITY td.action.subcondition.needscontext "<em>dépend des conditions considérées</em>">

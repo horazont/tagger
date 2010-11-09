@@ -1,0 +1,7 @@
+tagger
+tagger.xpi
+screenshot*.png
+tokenlist.txt
+changelog*.txt
+*~
+*.bak

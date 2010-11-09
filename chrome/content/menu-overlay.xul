@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://tagger/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tagger/locale/menu-overlay.dtd">
+<overlay id="tagger-menu-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+ 
+  
+  <menupopup id="menu_ToolsPopup">
+   <!-- No need for this anymore. If anybody complains, I will readd it (with a
+       little fancier UI I think... 
+    <menuitem id="tagger-menuitem"
+            label="&tagger.menuitem.label;"
+            accesskey="&tagger.menuitem.accesskey;"
+            insertafter="devToolsSeparator"
+            oncommand="Tagger.Controller.openTestWindow();" /> -->
+   <!-- No need for this anymore. Tagger is now directly integrated into the 
+        default preferences dialog. -->
+   <!--
+    <menuitem 
+      id="menu_Tools-tagger-options"
+      label="&tagger.options.label;"
+      oncommand="window.openDialog('chrome://tagger/content/options.xul', '', 'modal=yes', window);"
+    /> -->
+    
+    <menuitem
+      id="menu_Tools-tagger-macroeditor"
+      label="&tagger.macroeditor.label;"
+      insertafter="devToolsSeparator"
+      oncommand="window.gBrowser.loadOneTab(&quot;chrome://tagger/content/actions.xul&quot;);"/>
+  </menupopup>
+  
+  <menupopup id="menu_HelpPopup">
+    <menuitem id="tagger-about-menuitem"
+        label="&tagger.about.label;"
+        oncommand="window.openDialog('chrome://tagger/content/about.xul', '', 'modal=yes');" />
+  </menupopup>
+
+</overlay>

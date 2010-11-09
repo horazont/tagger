@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://tagger/locale/parserhelp.dtd">
+
+<window
+  id="tagger-parserhelp"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&tagger.parserhelp.title;">
+  <vbox style="overflow: auto" flex="1">
+    <hbox>
+      <description flex="1">&tagger.parserhelp.description;</description>
+      <vbox><button label="&tagger.close;" onclick="window.close();"/></vbox>
+    </hbox>
+    <groupbox>
+      <caption label="&tagger.parserhelp.tokenlist;"/>
+      <grid>
+        <cols>
+          <column/>
+          <column flex="1"/>
+          <column/>
+        </cols>
+        <rows>
+          <row>
+            <label value="&tagger.parserhelp.token;" style="font-weight: bold"/>
+            <label value="&tagger.parserhelp.tokendescription;" style="font-weight: bold"/>
+            <label value="&tagger.parserhelp.matches;" style="font-weight: bold"/>
+            <label value="&tagger.parserhelp.aliases;" style="font-weight: bold"/>
+          </row>
+          <row>
+            <label value="%title%"/>
+            <description>&tagger.parserhelp.keyt;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value="%t%, %trackName%"/>
+          </row>
+          <row>
+            <label value="%artist%"/>
+            <description>&tagger.parserhelp.keya;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value="%a%, %artistName%"/>
+          </row>
+          <row>
+            <label value="%album%"/>
+            <description>&tagger.parserhelp.keyb;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value="%b%, %albumName%"/>
+          </row>
+          <row>
+            <label value="%albumArtist%"/>
+            <description>&tagger.parserhelp.keyr;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value="%albumArtistName%"/>
+          </row>
+          <row>
+            <label value="%genre%"/>
+            <description>&tagger.parserhelp.keyg;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value=""/>
+          </row>
+          <row>
+            <label value="%composer%"/>
+            <description>&tagger.parserhelp.keyo;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value="%composerName%"/>
+          </row>
+          <row>
+            <label value="%comment%"/>
+            <description>&tagger.parserhelp.keycomment;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value=""/>
+          </row>
+          <row>
+            <label value="%track%"/>
+            <description>&tagger.parserhelp.keyn;</description>
+            <label value="&tagger.parserhelp.matches.numbers;"/>
+            <label value="%n%, %trackNumber%"/>
+          </row>
+          <row>
+            <label value="%disc%"/>
+            <description>&tagger.parserhelp.keyc;</description>
+            <label value="&tagger.parserhelp.matches.numbers;"/>
+            <label value="%c%, %discNumber%"/>
+          </row>
+          <row>
+            <label value="%trackCount%"/>
+            <description>&tagger.parserhelp.keytrackCount;</description>
+            <label value="&tagger.parserhelp.matches.numbers;"/>
+            <label value="%totalTracks%"/>
+          </row>
+          <row>
+            <label value="%discCount%"/>
+            <description>&tagger.parserhelp.keydiscCount;</description>
+            <label value="&tagger.parserhelp.matches.numbers;"/>
+            <label value="%totalDiscs%"/>
+          </row>
+          <row>
+            <label value="%year%"/>
+            <description>&tagger.parserhelp.keyy;</description>
+            <label value="&tagger.parserhelp.matches.year;"/>
+            <label value="%y%"/>
+          </row>
+          <row>
+            <label value="%ext%"/>
+            <description>&tagger.parserhelp.keyx;</description>
+            <label value=""/>
+            <label value="%x%, %extension%"/>
+          </row>
+          <row>
+            <label value="%*%"/>
+            <description>&tagger.parserhelp.keyasterisk;</description>
+            <label value="&tagger.parserhelp.matches.anything;"/>
+            <label value=""/>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+    <groupbox>
+      <caption label="&tagger.parserhelp.samplehead;"/>
+      <label value="&tagger.parserhelp.sample1;"/>
+      <hbox>
+        <label value="&tagger.parserhelp.sample2;"/><label value="%track% - %artist% - %trackName% - %*%"/>
+      </hbox>
+      <label value="&tagger.parserhelp.sample3;"/>
+      <hbox>
+        <label value="&tagger.parserhelp.sample4;"/><label value="%artist%/%album%/%track% %title%"/>
+      </hbox>
+    </groupbox>
+    <groupbox>
+      <caption label="&tagger.parserhelp.modhead;"/>
+      <description>&tagger.parserhelp.moddescription;</description>
+      <grid>
+        <cols>
+          <column/>
+          <column flex="1"/>
+        </cols>
+        <rows>
+          <row>
+            <label value="%"/>
+            <description>&tagger.parserhelp.modinit;</description>
+          </row>
+          <row>
+            <label value="."/>
+            <description style="width: 30em">&tagger.parserhelp.moddot;</description>
+          </row>
+          <row>
+            <label value=":"/>
+            <description style="width: 30em">&tagger.parserhelp.modcolon;</description>
+          </row>
+          <row>
+            <label value="?"/>
+            <vbox>
+              <description style="width: 30em">&tagger.parserhelp.modquestion;</description>
+              <description style="width: 30em">&tagger.parserhelp.moddefault;</description>
+              <description style="width: 30em">&tagger.parserhelp.modquestion2;</description>
+            </vbox>
+          </row>
+          <row>
+            <label value="&tagger.parserhelp.token;"/>
+            <description style="width: 30em">&tagger.parserhelp.modkey;</description>
+          </row>
+          <row>
+            <label value="%"/>
+            <label/>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+  </vbox>
+</window>

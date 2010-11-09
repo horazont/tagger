@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://tagger/locale/welcome.dtd">
+<window id="tagger-welcome"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&tagger.welcome.headline;">
+  <groupbox>
+    <vbox>
+      <text value="&tagger.welcome.headline;" style="font-size: x-large;"/>
+      <text value="&tagger.welcome.description;" style="font-weight: bold;"/>
+      <separator class="thin"/>
+      <text value="&tagger.welcome.features;" style="font-size: large;"/>
+      <text value="&tagger.welcome.feature1;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <text value="&tagger.welcome.feature2;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <text value="&tagger.welcome.feature3;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <text value="&tagger.welcome.feature4;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <text value="&tagger.welcome.feature5;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <text value="&tagger.welcome.feature6;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <text value="&tagger.welcome.feature7;" style="margin: 0.3em; margin-left: 2.5em;"/>
+      <separator class="thin"/>
+      <text value="&tagger.welcome.howtouse;" style="font-size: large;"/>
+      <description>&tagger.welcome.howtouse.description;</description>
+      <description style="font-style: italic">&tagger.welcome.howtouse.noteaboutfocustrack;</description>
+      <description>&tagger.welcome.howtouse.tooltips;</description>
+      <description>&tagger.welcome.about;</description>
+      <separator class="thin"/>
+      <hbox>
+        <button label="&tagger.welcome.stoptalking;" onclick="window.close();" style="font-weight: bold"/>
+      </hbox>
+    </vbox>
+  </groupbox>
+</window>

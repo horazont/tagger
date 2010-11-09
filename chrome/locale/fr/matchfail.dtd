@@ -1,0 +1,11 @@
+<!ENTITY tagger.matchfail.title "Correspondance non trouvée">
+<!ENTITY tagger.matchfail.description "Une piste ne correspond pas au schéma indiqué.">
+<!ENTITY tagger.matchfail.fileName "Nom de fichier :">
+<!ENTITY tagger.matchfail.trackName "Titre :">
+<!ENTITY tagger.matchfail.albumName "Album :">
+<!ENTITY tagger.matchfail.artistName "Artiste :">
+<!ENTITY tagger.matchfail.skip "Ignorer cette piste">
+<!ENTITY tagger.matchfail.setinfo "Balise manuelle">
+<!ENTITY tagger.matchfail.skipall "Ignorer toutes les pistes qui ont des problèmes">
+<!ENTITY tagger.matchfail.manual.caption "Modification manuelle des balises">
+<!ENTITY tagger.matchfail.manual.description "Vous pouvez indiquer des valeurs pour les trois attributs au lieu d'ignorer ce fichier.">

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/content/commonDialog.css" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/dialog/commonDialog.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://tagger/locale/tagger-edit-prop.dtd">
+<!-- ABOUT BOX - Specified in install.rdf and loaded by the Extension Manager -->
+<dialog title="&editprop;" 
+  autostretch="always"
+  ondialogaccept="TaggerEditProp.acceptEvaluate();"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="dialog">
+  <!-- hidechrome="true"
+  onload="taggerThemedDialogLoad(document.getElementById('dialog'));"> -->
+  <vbox id="dialog-content-box">
+    <script type="text/javascript" src="scripts/helper/utils.js"/>
+    <script type="text/javascript" src="scripts/actions.js"/>
+    <script type="text/javascript" src="scripts/edit-prop.js"/>
+    <groupbox>
+      <caption label="&editprop.headline;"/>
+      <hbox>
+        <checkbox id="edit-bool" hidden="true" onchange="TaggerEditProp.onChange();"/>
+        <label id="propname" flex="1"/>
+      </hbox>
+      <vbox style="width: 25em">
+        <textbox id="edit-string" hidden="true" onkeypress="TaggerEditProp.onChange();"/>
+        <textbox type="number" id="edit-int" hidden="true" onchange="TaggerEditProp.onChange();"/>
+        <menulist id="edit-enum" hidden="true" onchange="TaggerEditProp.onChange();">
+          <menupopup>
+          </menupopup>
+        </menulist>
+        <listbox id="edit-set" hidden="true" onchange="TaggerEditProp.onChange();"/>
+        <textbox id="edit-text" flex="1" onkeypress="TaggerEditProp.onChange();"
+          hidden="true" multiline="true" rows="5"/>
+      </vbox>
+      <checkbox id="set-null" hidden="true" label="Set null"/>
+    </groupbox>
+  </vbox>
+</dialog>

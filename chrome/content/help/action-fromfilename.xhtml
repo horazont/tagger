@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html [
+  <!ENTITY % taggerDTD SYSTEM "chrome://tagger/locale/tagger.dtd" >
+  %taggerDTD;
+  <!ENTITY % helpDTD SYSTEM "chrome://tagger/locale/tagger-help.dtd" >
+  %helpDTD;
+  <!ENTITY % actionsHelpDTD SYSTEM "chrome://tagger/locale/actions-help.dtd" >
+  %actionsHelpDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>&td.title;</title>
+  </head>
+  <body>
+    <div style="float:right;"><a href="chrome://tagger/content/help/actions.xhtml">&td.action.backtooverview;</a></div><h1>&td.actions.title;</h1>
+    <h2>&td.action.title; &tagger.window.tagfromfile.caption;</h2>
+    <h3>&td.action.abstract;</h3>
+    <p>&td.action.fromfilename.abstract;</p>
+    <h3>&td.action.properties;</h3>
+    <ul>
+      <li><h4>&tagger.window.tagfromfile.filenamefmt;</h4>
+      <p>&td.action.property.filenameformat;</p></li>
+      <li><h4>&tagger.window.tagfromfile.autoupcase;</h4>
+      <p>&td.action.property.autoupcase;</p></li>
+      <li><h4>&tagger.window.tagfromfile.replace_;</h4>
+      <p>&td.action.property.replace_;</p></li>
+      <li><h4>&tagger.window.tagfromfile.directorysupport;</h4>
+      <p>&td.action.property.dirsupport;</p></li>
+      <li><h4>&tagger.window.tagfromfile.keeptags;</h4>
+      <p>&td.action.property.keeptags;</p></li>
+    </ul>
+    <h3>&td.action.context;</h3>
+    <ul>
+      <li><span style="font-weight: bold">&td.action.needscontext;</span>&td.action.fromfilename.needscontext;</li>
+      <li><span style="font-weight: bold">&td.action.providescontext;</span>&td.action.fromfilename.providescontext;</li>
+    </ul>
+    <div style="float:right;"><a href="chrome://tagger/content/help/actions.xhtml">&td.action.backtooverview;</a></div>
+  </body>
+</html>

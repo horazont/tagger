@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+*** Tagger Songbird addon
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+<http://www.mozilla.org/MPL/>
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+License for the specific language governing rights and limitations
+under the License.
+
+Alternatively, the contents of this file may be used under the terms
+of the GNU General Public license (the  "GPL License"), in which case the
+provisions of GPL License are applicable instead of those
+above.
+
+
+For feedback and questions about the Tagger Songbird addon please mail me,
+Jonas Wielicki:
+<j.wielicki@sotecware.net>
+- or -
+Leave a comment at:
+<http://addons.songbirdnest.com/addons/1554>                                 -->
+
+
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/content/bindings/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/skin/songbird.css" type="text/css" title="Skin"?>
+
+<?xml-stylesheet href="chrome://tagger/skin/pane.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://tagger/locale/tagger.dtd">
+<window id="tagger-window"
+  width="340"
+  height="490"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  persist="width height top left"
+  title="&tagger.window.title;"
+  windowtype="tagger:sidebar">
+  
+  <script type="text/javascript" src="scripts/helper/utils.js"/>
+  <script type="text/javascript" src="scripts/helper/helper.js"/>
+  <script type="text/javascript" src="scripts/helper/tokenparser.js"/>
+  <script type="text/javascript" src="scripts/helper/tokenparser2.js"/>
+  <script type="text/javascript" src="scripts/controller/retag.js"/>
+  <script type="text/javascript" src="scripts/controller/savetag.js"/>
+  <script type="text/javascript" src="scripts/controller/settag.js"/>
+  <script type="text/javascript" src="scripts/controller/rename.js"/>
+  <script type="text/javascript" src="scripts/controller/numbers.js"/>
+  <script type="text/javascript" src="scripts/controller/replace.js"/>
+  <script type="text/javascript" src="scripts/controller/fromtext.js"/>
+  <script type="text/javascript" src="scripts/controller/macros.js"/>
+  <script type="text/javascript" src="scripts/controller/tools.js"/>
+  <script type="text/javascript" src="scripts/helper/commit.js"/>
+  <script type="text/javascript" src="scripts/helper/prefobserve.js"/>
+  <script type="text/javascript" src="scripts/helper/notifier.js"/>
+  <script type="text/javascript" src="scripts/helper/macro-list.js"/>
+  <script type="text/javascript" src="scripts/helper/action-state.js"/>
+  <script type="text/javascript" src="scripts/helper/action-serializer.js"/>
+  <script type="text/javascript" src="scripts/actions.js"/>
+  <!-- General -->
+  <script type="text/javascript" src="scripts/actions/actionlist.js"/>
+  <script type="text/javascript" src="scripts/actions/conditional.js"/>
+  <script type="text/javascript" src="scripts/actions/clearcommitcache.js"/>
+  <script type="text/javascript" src="scripts/actions/flushcommitcache.js"/>
+  
+  <!-- Selection -->
+  <script type="text/javascript" src="scripts/actions/importselection.js"/>
+  <script type="text/javascript" src="scripts/actions/condselect.js"/>
+  <script type="text/javascript" src="scripts/actions/foreachselected.js"/>
+  
+  <!-- Per item -->
+  <script type="text/javascript" src="scripts/actions/set.js"/>
+  <script type="text/javascript" src="scripts/actions/replace.js"/>
+  <script type="text/javascript" src="scripts/actions/fromfilename.js"/>
+  <script type="text/javascript" src="scripts/actions/commitcache.js"/>
+  <script type="text/javascript" src="scripts/actions/debugalert.js"/>
+  
+  <!-- Conditions -->
+  <script type="text/javascript" src="scripts/conditions/match.js"/>
+  <script type="text/javascript" src="scripts/conditions/recond.js"/>
+  <script type="text/javascript" src="scripts/conditions/subcondition.js"/>
+  <script type="text/javascript" src="scripts/tagger.js"/>
+  <stringbundleset id="stringbundleset">
+     <stringbundle id="tagger-strings" src="chrome://tagger/locale/overlay.properties"/>
+  </stringbundleset>
+  <vbox flex="1" style="overflow: auto">
+    <tabbox flex="1" id="tagger-tabs">
+      <tabs class="tagger-primary-tabs">
+        <tab class="tagger-tab" label="&tagger.window.gentools.caption;"/>
+        <tab class="tagger-tab" label="&tagger.window.modtools.caption;"/>
+        <tab class="tagger-tab" label="&tagger.window.storetools.caption;"/>
+        <tab class="tagger-tab" label="&tagger.window.macrotools.caption;"/>
+      </tabs>
+      <tabpanels flex="1">
+        <vbox>
+          <tabbox flex="1" id="tagger-gentools-tabs">
+            <tabs class="tagger-secondary-tabs">
+              <tab class="tagger-tab" label="&tagger.window.tagfromfile.caption;"/>
+              <!-- <tab class="tagger-tab" label="&tagger.window.tracktype.caption;"/> -->
+              <tab class="tagger-tab" label="&tagger.window.tracknumbers.caption;"/>
+              <tab class="tagger-tab" label="&tagger.window.fromtextfile.caption;"/>
+            </tabs>
+            <tabpanels flex="1">
+              <vbox style="overflow: auto">
+                <description>&tagger.window.tagfromfile.description;</description>
+                <groupbox>
+                  <caption label="&tagger.window.settings;"/>
+                  <checkbox id="retag-autoupcase" label="&tagger.window.tagfromfile.autoupcase;" tooltiptext="&tagger.window.tagfromfile.autoupcase.tooltip;"/>
+                  <checkbox id="retag-replace_" label="&tagger.window.tagfromfile.replace_;" checked="true"/>
+                  <checkbox id="retag-directorysupport" label="&tagger.window.tagfromfile.directorysupport;" tooltiptext="&tagger.window.tagfromfile.directorysupport.tooltip;" checked="false"/>
+                  <checkbox id="retag-keeptags" label="&tagger.window.tagfromfile.keeptags;" tooltiptext="&tagger.window.tagfromfile.keeptags.tooltip;" checked="true"/>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.tagfromfile.filenamefmt;"/>
+                  <hbox>
+                    <textbox value="%artist% - %title%" tooltip="formattooltip" id="retag-filenamefmt" flex="1"/>
+                    <button id="retag-help" label="&tagger.window.parserhelp;" oncommand="TaggerController.openParserHelp();"/>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption><button id="retag-preview" label="&tagger.window.preview;" oncommand="TaggerController.retag.previewFileNameFormat();" tooltiptext="&tagger.window.previewbtn.tooltip;"/></caption>
+                  <vbox style="overflow: auto">
+                    <label id="retag-filenamefmt-preview" value="" style="width:250px"/>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.trackName;"/>
+                      <label id="retag-filenamefmt-preview-title" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.albumName;"/>
+                      <label id="retag-filenamefmt-preview-album" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.artistName;"/>
+                      <label id="retag-filenamefmt-preview-artist" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.albumArtistName;"/>
+                      <label id="retag-filenamefmt-preview-albumArtist" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.trackNumber;"/>
+                      <label id="retag-filenamefmt-preview-number" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.discNumber;"/>
+                      <label id="retag-filenamefmt-preview-disknumber" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.year;"/>
+                      <label id="retag-filenamefmt-preview-year" value=""/>
+                    </hbox>
+                    <hbox align="center">
+                      <label style="width:&tagger.window.tagfromfile.labelwidth;" value="&tagger.window.composerName;"/>
+                      <label id="retag-filenamefmt-preview-composer" value=""/>
+                    </hbox>
+                  </vbox>
+                </groupbox>
+                <button id="retag" label="&tagger.window.tagfromfile.retag;" oncommand="TaggerController.retag.doRetag();"/>
+              </vbox>
+              <!-- <vbox style="overflow: auto">
+                <tabbox id="tagger-tracktype-tabs">
+                  
+                </tabbox>
+              </vbox> -->
+              <vbox style="overflow: auto">
+                <description>&tagger.window.tracknumbers.description;</description>
+                <groupbox>
+                  <caption label="&tagger.window.selection;"/>
+                  <toolbar>
+                    <toolbarbutton type="checkbox" label="&tagger.window.hookselection;" 
+                      tooltiptext="&tagger.window.hookselection.tooltip;"
+                      oncommand="if (!TaggerController.setHookState(this.checked, TaggerController.numbers.xul.list)) { this.checked = false; }"
+                      id="numbers-hookselection"/>
+                    <toolbarbutton label="&tagger.window.takeselection;"
+                      tooltiptext="&tagger.window.takeselection.tooltip;"
+                      oncommand="TaggerController.takeButtonClick(this, TaggerController.numbers.xul.list);"
+                      id="numbers-takeselection"/>
+                    <toolbarspacer flex="1"/>
+                    <toolbarbutton label="&tagger.window.clear;"
+                      oncommand="TaggerController.clearList(TaggerController.numbers.xul.list);"/>
+                  </toolbar>
+                  <hbox>
+                    <listbox flex="1" rows="8" id="numbers-list" style="margin: 0; margin-top: -1px">
+                      <listcols>
+                        <listcol style="width: 3em" />
+                        <splitter class="tree-splitter" />
+                        <listcol flex="1" />
+                        <splitter class="tree-splitter" />
+                        <listcol flex="1" />
+                      </listcols>
+                      <listhead>
+                        <listheader label="&tagger.window.list.head.number;"/>
+                        <listheader label="&tagger.window.artistName;"/>
+                        <listheader label="&tagger.window.trackName;"/>
+                      </listhead>
+                    </listbox>
+                    <toolbar orient="vertical">
+                      <toolbarbutton label="↑"
+                        oncommand="TaggerController.moveUp(TaggerController.numbers.xul.list);"/>
+                      <toolbarbutton label="↓"
+                        oncommand="TaggerController.moveDown(TaggerController.numbers.xul.list);"/>
+                      <toolbarbutton label="✗"
+                        oncommand="TaggerController.remove(TaggerController.numbers.xul.list);"/>
+                    </toolbar>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.settings;"/>
+                  <hbox>
+                    <label value="&tagger.window.tracknumbers.offset;"/>
+                    <textbox id="numbers-offset" type="number" value="0" min="0"
+                      increment="1" flex="1"
+                      tooltiptext="&tagger.window.tracknumbers.offset.tooltip;"/>
+                  </hbox>
+                </groupbox>
+                <button label="&tagger.window.tracknumbers.apply;"
+                  tooltiptext="&tagger.window.tracknumbers.apply.tooltip;"
+                  oncommand="TaggerController.numbers.apply();"/>
+              </vbox>
+              <vbox>
+                <description>&tagger.window.fromtextfile.description;</description>
+                <groupbox>
+                  <caption label="&tagger.window.fromtextfile.pattern;"/>
+                  <hbox>
+                    <textbox id="fromtextfile-pattern" flex="1"
+                      tooltiptext="&tagger.window.fromtextfile.pattern.tooltip;"/>
+                    <button oncommand="TaggerController.openParserHelp();"
+                      label="&tagger.window.parserhelp;"/>
+                  </hbox>
+                  <checkbox label="&tagger.window.fromtextfile.patterninfile;"
+                    tooltiptext="&tagger.window.fromtextfile.patterninfile.tooltip;"
+                    oncommand="TaggerController.fromtext.patternInFileClick(this);"
+                    id="fromtextfile-patterninfile"/>
+                </groupbox>
+                <groupbox class="groupbox-slim">
+                  <caption label="&tagger.window.selection;"/>
+                  <toolbar>
+                    <toolbarbutton type="checkbox" label="&tagger.window.hookselection;" 
+                      tooltiptext="&tagger.window.hookselection.tooltip;"
+                      oncommand="if (!TaggerController.setHookState(this.checked, TaggerController.fromtext.xul.list)) { this.checked = false; }"
+                      id="numbers-hookselection"/>
+                    <toolbarbutton label="&tagger.window.takeselection;"
+                      tooltiptext="&tagger.window.takeselection.tooltip;"
+                      oncommand="TaggerController.takeButtonClick(this, TaggerController.fromtext.xul.list);"
+                      id="numbers-takeselection"/>
+                    <toolbarspacer flex="1"/>
+                    <toolbarbutton label="&tagger.window.clear;"
+                      oncommand="TaggerController.clearList(TaggerController.fromtext.xul.list);"/>
+                  </toolbar>
+                  <hbox>
+                    <listbox flex="1" rows="8" id="fromtextfile-list" style="margin: 0; margin-top: -1px">
+                      <listcols>
+                        <listcol style="width: 3em" />
+                        <splitter class="tree-splitter" />
+                        <listcol flex="1" />
+                        <splitter class="tree-splitter" />
+                        <listcol flex="1" />
+                      </listcols>
+                      <listhead>
+                        <listheader label="&tagger.window.list.head.number;"/>
+                        <listheader label="&tagger.window.artistName;"/>
+                        <listheader label="&tagger.window.trackName;"/>
+                      </listhead>
+                    </listbox>
+                    <toolbar orient="vertical">
+                      <toolbarbutton label="↑"
+                        oncommand="TaggerController.moveUp(TaggerController.fromtext.xul.list);"/>
+                      <toolbarbutton label="↓"
+                        oncommand="TaggerController.moveDown(TaggerController.fromtext.xul.list);"/>
+                      <toolbarbutton label="✗"
+                        oncommand="TaggerController.remove(TaggerController.fromtext.xul.list);"/>
+                    </toolbar>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.fromtextfile.textfile;"/>
+                  <hbox>
+                    <textbox id="fromtextfile-textfile" flex="1"
+                      tooltiptext="&tagger.window.fromtextfile.textfile.tooltip;"/>
+                    <button label="&tagger.window.fromtextfile.selectfile;"
+                      tooltiptext="&tagger.window.fromtextfile.selectfile.tooltip;"
+                      oncommand="TaggerController.fromtext.selectSourceFile(this);"/>
+                  </hbox>
+                  <hbox>
+                    <label value="&tagger.window.fromtextfile.encoding;"/>
+                    <textbox id="fromtextfile-encoding" flex="1"
+                      tooltiptext="&tagger.window.fromtextfile.encoding.tooltip;"/>
+                  </hbox>
+                  <hbox>
+                    <label value="&tagger.window.fromtextfile.skip;"/>
+                    <textbox id="fromtextfile-skip" type="number" value="0" min="0"
+                      increment="1" flex="1"
+                      tooltiptext="&tagger.window.fromtextfile.skip.tooltip;"/>
+                  </hbox>
+                </groupbox>
+                <button label="&tagger.window.fromtextfile.apply;"
+                  tooltiptext="&tagger.window.fromtextfile.apply.tooltip;"
+                  oncommand="TaggerController.fromtext.doFromText();"/>
+              </vbox>
+            </tabpanels>
+          </tabbox>
+        </vbox>
+        <vbox>
+          <tabbox flex="1" id="tagger-modtools-tabs">
+            <tabs class="tagger-secondary-tabs">
+              <tab class="tagger-tab" label="&tagger.window.settags.caption;"/>
+              <tab class="tagger-tab" label="&tagger.window.replace.caption;"/>
+              <tab class="tagger-tab" label="&tagger.window.tools.caption;"/>
+            </tabs>
+            <tabpanels flex="1">
+              <vbox style="overflow: auto">
+                <description>&tagger.window.settags.description;</description>
+                <groupbox>
+                  <caption label="&tagger.window.settings;"/>
+                  <checkbox id="settags-keeptags" label="&tagger.window.tagfromfile.keeptags;" tooltiptext="&tagger.window.tagfromfile.keeptags.tooltip;" checked="true"/>
+                </groupbox>
+                <checkbox id="settags-all" label="&tagger.window.all;" checked="false" 
+                  oncommand="TaggerController.set.setAllClick(this);"/>
+                <grid>
+                  <columns>
+                    <column/>
+                    <column flex="1"/>
+                  </columns>
+                  <rows>
+                    <row>
+                      <label value="&tagger.window.enabled;"/>
+                      <label value="&tagger.window.replace;"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-trackName" 
+                        label="&tagger.window.trackName;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-trackName-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-albumName" 
+                        label="&tagger.window.albumName;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-albumName-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-artistName" 
+                        label="&tagger.window.artistName;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-artistName-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-albumArtistName" 
+                        label="&tagger.window.albumArtistName;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-albumArtistName-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-composerName" 
+                        label="&tagger.window.composerName;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-composerName-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-genre" 
+                        label="&tagger.window.genre;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-genre-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-year" 
+                        label="&tagger.window.year;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-year-value" flex="1"
+                        disabled="true"/>
+                    </row>
+                    <row>
+                      <checkbox id="settags-trackNumber" 
+                        label="&tagger.window.trackNumber;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <hbox>
+                        <textbox id="settags-trackNumber-value" flex="1"
+                          disabled="true"/>
+                        <checkbox id="settags-totalTracks"
+                          label="&tagger.window.trackCount;" checked="false"
+                          oncommand="TaggerController.set.switchCheckBox(this);"/>
+                        <textbox id="settags-totalTracks-value" flex="1"
+                          disabled="true"/>
+                      </hbox>
+                    </row>
+                    <row>
+                      <checkbox id="settags-discNumber" 
+                        label="&tagger.window.discNumber;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <hbox>
+                        <textbox id="settags-discNumber-value" flex="1"
+                          disabled="true"/>
+                        <checkbox id="settags-totalDiscs"
+                          label="&tagger.window.discCount;" checked="false"
+                          oncommand="TaggerController.set.switchCheckBox(this);"/>
+                        <textbox id="settags-totalDiscs-value" flex="1"
+                          disabled="true"/>
+                      </hbox>
+                    </row>
+                    <row>
+                      <checkbox id="settags-comment" 
+                        label="&tagger.window.comment;" checked="false" 
+                        oncommand="TaggerController.set.switchCheckBox(this);"/>
+                      <textbox id="settags-comment-value" flex="1" 
+                        disabled="true" multiline="true" rows="5"/>
+                    </row>
+                  </rows>
+                </grid>
+                <button id="settags" label="&tagger.window.settags.button;" oncommand="TaggerController.set.setTags();"/>
+              </vbox>
+              <vbox style="overflow: auto">
+                <description>&tagger.window.replace.description;</description>
+                <groupbox>
+                  <caption label="&tagger.window.settings;"/>
+                  <checkbox id="replace-enableregexp" 
+                    label="&tagger.window.replace.regexp;" 
+                    tooltiptext="&tagger.window.replace.regexp.tooltip;"/>
+                </groupbox>
+                <checkbox id="replace-all" label="&tagger.window.all;" checked="false" oncommand="TaggerController.replace.switchAll(this);"/>
+                <grid>
+                  <columns>
+                    <column/>
+                    <column flex="1"/>
+                    <column flex="1"/>
+                    <column/>
+                    <column/>
+                  </columns>
+                  <rows>
+                    <row>
+                      <label value="&tagger.window.enabled;"/>
+                      <label value="&tagger.window.replace.pattern;"/>
+                      <label value="&tagger.window.replace;"/>
+                      <label value="g" 
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <label value="i" 
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-trackName" 
+                        label="&tagger.window.trackName;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-trackName-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-trackName-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-trackName-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-trackName-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-albumName" 
+                        label="&tagger.window.albumName;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-albumName-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-albumName-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-albumName-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-albumName-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-artistName" 
+                        label="&tagger.window.artistName;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-artistName-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-artistName-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-artistName-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-artistName-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-albumArtistName" 
+                        label="&tagger.window.albumArtistName;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-albumArtistName-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-albumArtistName-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-albumArtistName-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-albumArtistName-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-composerName" 
+                        label="&tagger.window.composerName;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-composerName-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-composerName-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-composerName-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-composerName-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-genre" 
+                        label="&tagger.window.genre;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-genre-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-genre-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-genre-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-genre-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-year" 
+                        label="&tagger.window.year;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-year-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-year-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-year-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-year-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-trackNumber"  
+                        label="&tagger.window.trackNumber;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-trackNumber-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-trackNumber-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-trackNumber-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-trackNumber-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-discNumber"   
+                        label="&tagger.window.discNumber;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-discNumber-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-discNumber-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-discNumber-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-discNumber-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                    <row>
+                      <checkbox id="replace-comment" 
+                        label="&tagger.window.comment;" checked="false" 
+                        oncommand="TaggerController.replace.onCheck(this);"/>
+                      <textbox id="replace-comment-search" flex="1" 
+                        disabled="true"/>
+                      <textbox id="replace-comment-replace" flex="1" 
+                        disabled="true"/>
+                      <checkbox id="replace-comment-rg" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.regexpflags.g.tooltiptext;"/>
+                      <checkbox id="replace-comment-ri" checked="true"
+                        disabled="true"
+                        tooltiptext="&tagger.window.caseinsensitive;"/>
+                    </row>
+                  </rows>
+                </grid>
+                <button id="replace" label="&tagger.window.replace.button;" oncommand="TaggerController.replace.doReplace();"/>
+
+              </vbox>
+              <vbox style="overflow: auto">
+                <groupbox>
+                  <caption label="&tagger.window.tools.target.caption;"/>
+                  <hbox>
+                    <vbox flex="1">
+                      <checkbox id="tools-target-trackName" label="&tagger.window.trackName;" checked="true"/>
+                      <checkbox id="tools-target-albumName" label="&tagger.window.albumName;" checked="true"/>
+                      <checkbox id="tools-target-artistName" label="&tagger.window.artistName;" checked="true"/>
+                      <checkbox id="tools-target-albumArtistName" label="&tagger.window.albumArtistName;" checked="true"/>
+                    </vbox>
+                    <vbox flex="1">
+                      <checkbox id="tools-target-composerName" label="&tagger.window.composerName;" checked="true"/>
+                      <checkbox id="tools-target-genre" label="&tagger.window.genre;" checked="true"/>
+                      <checkbox id="tools-target-comment" label="&tagger.window.comment;" checked="false"/>
+                    </vbox>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.tools.casing.caption;"/>
+                  <description>&tagger.window.tools.casing.description;</description>
+                  <button label="&tagger.window.tools.casing.button;" oncommand="TaggerController.tools.doTool('doCorrectCasing');"/>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.tools.utf8.caption;"/>
+                  <description>&tagger.window.tools.utf8.description;</description>
+                  <button label="&tagger.window.tools.utf8.correct.button;" oncommand="TaggerController.tools.doTool('doCorrectUTF8');"/>
+                </groupbox>
+              </vbox>
+            </tabpanels>
+          </tabbox>
+        </vbox>
+        <vbox>
+          <tabbox flex="1" id="tagger-storetools-tabs">
+            <tabs class="tagger-secondary-tabs">
+              <tab class="tagger-tab" label="&tagger.window.tagtofile.caption;"/>
+              <tab class="tagger-tab" label="&tagger.window.savetags.caption;"/>
+            </tabs>
+            <tabpanels flex="1">
+              <vbox style="overflow: auto">
+                <description>&tagger.window.tagtofile.description;</description>
+                <groupbox>
+                  <caption label="&tagger.window.settings;"/>
+                  <checkbox id="tagtofile-keepextension" label="&tagger.window.tagtofile.keepextension;" tooltiptext="&tagger.window.tagtofile.keepextension.tooltip;" checked="true"/>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.tagtofile.targetdir;"/>
+                  <hbox>
+                    <textbox id="tagtofile-targetdir" tooltiptext="&tagger.window.tagtofile.targetdir.tooltip;" value="" flex="1"/>
+                    <button id="tagtofile-selecttargetdir" label="..." tooltiptext="&tagger.window.tagtofile.selecttargetdir.tooltip;" oncommand="TaggerController.rename.selectTargetDir();"/>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption label="&tagger.window.tagtofile.pattern;"/>
+                  <hbox>
+                    <textbox id="tagtofile-pattern" tooltiptext="&tagger.window.tagtofile.pattern.tooltip;" value="%artist%/%??album%/%artist% - %??track% %title%" flex="1"/>
+                    <button id="tagtofile-help" label="&tagger.window.parserhelp;" oncommand="TaggerController.openParserHelp();"/>
+                  </hbox>
+                </groupbox>
+                <groupbox>
+                  <caption><button id="tagtofile-preview" label="&tagger.window.preview;" tooltiptext="&tagger.window.previewbtn.tooltip;" oncommand="TaggerController.rename.previewRename();"/></caption>
+                  <vbox style="overflow: auto">
+                    <label value="&tagger.window.tagtofile.oldname;"/>
+                    <label id="tagtofile-oldname" value=""/>
+                    <label value="&tagger.window.tagtofile.newname;"/>
+                    <label id="tagtofile-newname" value=""/>
+                  </vbox>
+                </groupbox>
+                <groupbox>
+                  <caption>
+                    <hbox flex="1">
+                      <vbox pack="center">
+                        <label value="&tagger.window.tagtofile.presencefilter;: "/>
+                      </vbox>
+                      <menulist id="tagtofile-presencefilter" flex="1" tooltiptext="&tagger.window.tagtofile.presencefilter.tooltip;" style="font-size: 50%">
+                        <menupopup style="font-size: 50%">
+                          <menuitem value="0" label="&tagger.window.tagtofile.presencefilter.none;" oncommand="TaggerController.rename.selectExistanceFilter(this.value);"/>
+                          <menuitem value="1" label="&tagger.window.tagtofile.presencefilter.auto;" selected="true" oncommand="TaggerController.rename.selectExistanceFilter(this.value);"/>
+                          <menuitem value="2" label="&tagger.window.tagtofile.presencefilter.custom;" oncommand="TaggerController.rename.selectExistanceFilter(this.value);"/>
+                        </menupopup>
+                      </menulist>
+                    </hbox>
+                  </caption>
+                  <description id="tagtofile-presencefilter-none" style="display: none">&tagger.window.tagtofile.presencefilter.none.warning;</description>
+                  <description id="tagtofile-presencefilter-auto">&tagger.window.tagtofile.presencefilter.auto.note;</description>
+                  <vbox id="tagtofile-presencefilter-custom" style="display: none">
+                    <description>&tagger.window.tagtofile.presencefilter.custom.description;</description>
+                    <hbox>
+                      <vbox flex="1">
+                        <checkbox id="tagtofile-trackName" label="&tagger.window.trackName;" checked="false"/>
+                        <checkbox id="tagtofile-albumName" label="&tagger.window.albumName;" checked="false"/>
+                        <checkbox id="tagtofile-artistName" label="&tagger.window.artistName;" checked="false"/>
+                        <checkbox id="tagtofile-albumArtistName" label="&tagger.window.albumArtistName;" checked="false"/>
+                        <checkbox id="tagtofile-composerName" label="&tagger.window.composerName;" checked="false"/>
+                      </vbox>
+                      <vbox flex="1">
+                        <checkbox id="tagtofile-genre" label="&tagger.window.genre;" checked="false"/>
+                        <checkbox id="tagtofile-year" label="&tagger.window.year;" checked="false"/>
+                        <checkbox id="tagtofile-trackNumber" label="&tagger.window.trackNumber;" checked="false"/>
+                        <checkbox id="tagtofile-discNumber" label="&tagger.window.discNumber;" checked="false"/>
+                        <checkbox id="tagtofile-comment" label="&tagger.window.comment;" checked="false"/>
+                      </vbox>
+                    </hbox>
+                  </vbox>
+                </groupbox>
+                <!-- <checkbox id="tagtofile-onlylocal" label="&tagger.window.tagtofile.onlylocal;" tooltiptext="&tagger.window.tagtofile.onlylocal.tooltip;" checked="true"/> -->
+                <button id="tagtofile" label="&tagger.window.tagtofile.rename;" oncommand="TaggerController.rename.doRename();"/>
+              </vbox>
+              <vbox style="overflow: auto">
+                <description>&tagger.window.savetags.selecttags;</description>
+                <groupbox>
+                  <caption><checkbox id="save-all" label="&tagger.window.all;" checked="true" oncommand="TaggerController.save.saveAllClick(this);"/></caption>
+                  <hbox>
+                    <vbox flex="1">
+                      <checkbox id="save-title" label="&tagger.window.trackName;" checked="true"/>
+                      <checkbox id="save-album" label="&tagger.window.albumName;" checked="true"/>
+                      <checkbox id="save-artist" label="&tagger.window.artistName;" checked="true"/>
+                      <checkbox id="save-albumArtist" label="&tagger.window.albumArtistName;" checked="true"/>
+                      <checkbox id="save-composer" label="&tagger.window.composerName;" checked="true"/>
+                    </vbox>
+                    <vbox flex="1">
+                      <checkbox id="save-genre" label="&tagger.window.genre;" checked="true"/>
+                      <checkbox id="save-year" label="&tagger.window.year;" checked="true"/>
+                      <checkbox id="save-trackNumber" label="&tagger.window.trackNumber;" checked="true"/>
+                      <checkbox id="save-discNumber" label="&tagger.window.discNumber;" checked="true"/>
+                      <checkbox id="save-comment" label="&tagger.window.comment;" checked="true"/>
+                    </vbox>
+                  </hbox>
+                </groupbox>
+                <button id="savetags" label="&tagger.window.savetags.button;" oncommand="TaggerController.save.saveTags();"/>
+              </vbox>
+            </tabpanels>
+          </tabbox>
+        </vbox>
+        <vbox>
+          <groupbox>
+            <caption label="&tagger.window.macro.editor.caption;"/>
+            <description>&tagger.window.macro.editor.description;</description>
+            <button label="&tagger.window.macro.editor.open;"
+              oncommand="TaggerController.openMacroEditor();"/>
+          </groupbox>
+          <groupbox>
+            <caption label="&tagger.window.macro.list.caption;"/>
+            <menupopup id="macro-list-popup">
+              <menuitem label="&tagger.window.actions.execute;" oncommand="TaggerController.macros.execute();"/>
+              <!-- <menuitem label="&tagger.window.macro.list.edit;" oncommand="TaggerController.macros.edit();"/>-->
+              <menuitem label="&tagger.window.macro.list.export;" oncommand="TaggerController.macros.export();"/>
+              <menuitem label="&tagger.window.macro.list.delete;" oncommand="TaggerController.macros.delete();"/>
+            </menupopup>
+            <listbox rows="10" id="macro-list" style="padding: 0">
+              <listitem label="&tagger.window.macro.list.nomacros;"
+                disabled="true" id="macro-list-nomacros"/>
+            </listbox>
+            <hbox>
+              <button label="&tagger.window.macro.list.import;"
+                tooltiptext="&tagger.window.macro.list.import.tooltip;"
+                oncommand="TaggerController.macros.import();"/>
+            </hbox>
+          </groupbox>
+        </vbox>
+      </tabpanels>
+    </tabbox>
+    <groupbox>
+      <caption label="&tagger.window.progress.caption;"/>
+      <!-- <label id="progressLabel" value=""/> -->
+      <hbox>
+        <vbox>
+          <image src="chrome://tagger/skin/pane-icon.png" style="width: 16px; height: 16px"/>
+        </vbox> 
+        <progressmeter id="progress" mode="determined" value="0" max="1" flex="1"/>
+      </hbox>
+    </groupbox>
+  </vbox>
+  
+  <strings>
+    <jsstr id="macros-askdelete" label="&tagger.window.macrodlg.askdelete;"/>
+    <jsstr id="macros-askoverwrite" label="&tagger.window.macrodlg.askoverwrite;"/>
+    <jsstr id="macros-exporttarget" label="&tagger.window.macro.exporttarget;"/>
+  </strings>
+</window>

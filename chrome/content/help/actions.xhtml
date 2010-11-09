@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html [
+  <!ENTITY % taggerDTD SYSTEM "chrome://tagger/locale/tagger.dtd" >
+  %taggerDTD;
+  <!ENTITY % helpDTD SYSTEM "chrome://tagger/locale/tagger-help.dtd" >
+  %helpDTD;
+  <!ENTITY % actionsHelpDTD SYSTEM "chrome://tagger/locale/actions-help.dtd" >
+  %actionsHelpDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>&td.title;</title>
+  </head>
+  <body>
+    <h1>&td.title;</h1>
+    <h2>&td.overview;</h2>
+    <p>&td.actions.overview1;</p>
+    <p>&td.actions.overview2;</p>
+    <p>&td.actions.overview3;</p>
+    <h2>&td.actions.title;</h2>
+    <ul>
+      <li>&tagger.window.actions.addaction.general;
+        <ul>
+          <li><a href="chrome://tagger/content/help/action-actionlist.xhtml">&tagger.window.actions.actionlist;</a></li>
+          <li><a href="chrome://tagger/content/help/action-conditional.xhtml">&tagger.window.actions.conditional;</a></li>
+          <li><a href="chrome://tagger/content/help/action-clearcommitcache.xhtml">&tagger.window.actions.clearcommitcache;</a></li>
+          <li><a href="chrome://tagger/content/help/action-flushcommitcache.xhtml">&tagger.window.actions.flushcommitcache;</a></li>
+        </ul>
+      </li>
+      <li>&tagger.window.actions.addaction.peritem;
+        <ul>
+          <li><a href="chrome://tagger/content/help/action-set.xhtml">&tagger.window.settags.caption;</a></li>
+          <li><a href="chrome://tagger/content/help/action-replace.xhtml">&tagger.window.replace.caption;</a></li>
+          <li><a href="chrome://tagger/content/help/action-fromfilename.xhtml">&tagger.window.tagfromfile.caption;</a></li>
+          <li><a href="chrome://tagger/content/help/action-commitcache.xhtml">&tagger.window.actions.commitcache;</a></li>
+        </ul>
+      </li>
+      <li>&tagger.window.actions.addaction.selection;
+        <ul>
+          <li><a href="chrome://tagger/content/help/action-importselection.xhtml">&tagger.window.actions.importselection;</a></li>
+          <li><a href="chrome://tagger/content/help/action-condselect.xhtml">&tagger.window.actions.condselect;</a></li>
+          <li><a href="chrome://tagger/content/help/action-foreachselected.xhtml">&tagger.window.actions.foreachselected;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <h2>&td.actions.conditions.title;</h2>
+    <p>&td.actions.conditions;</p>
+    <ul>
+      <li><a href="chrome://tagger/content/help/action-match.xhtml">&tagger.window.actions.match;</a></li>
+      <li><a href="chrome://tagger/content/help/action-recond.xhtml">&tagger.window.actions.recond;</a></li>
+      <li><a href="chrome://tagger/content/help/action-subcondition.xhtml">&tagger.window.actions.subcondition;</a></li>
+    </ul>
+  </body>
+</html>

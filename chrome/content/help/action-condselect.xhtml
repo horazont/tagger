@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html [
+  <!ENTITY % taggerDTD SYSTEM "chrome://tagger/locale/tagger.dtd" >
+  %taggerDTD;
+  <!ENTITY % helpDTD SYSTEM "chrome://tagger/locale/tagger-help.dtd" >
+  %helpDTD;
+  <!ENTITY % actionsHelpDTD SYSTEM "chrome://tagger/locale/actions-help.dtd" >
+  %actionsHelpDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>&td.title;</title>
+  </head>
+  <body>
+    <div style="float:right;"><a href="chrome://tagger/content/help/actions.xhtml">&td.action.backtooverview;</a></div><h1>&td.actions.title;</h1>
+    <h2>&td.action.title; &tagger.window.actions.condselect;</h2>
+    <h3>&td.action.abstract;</h3>
+    <p>&td.action.condselect.abstract;</p>
+    <h3>&td.action.properties;</h3>
+    <ul>
+      <li><h4>&tagger.window.actions.conditionlink;</h4>
+      <p>&td.action.property.condlink;</p></li>
+      <li><h4>&tagger.window.actions.invert;</h4>
+      <p>&td.action.property.invert;</p></li>
+      <li><h4>&tagger.window.actions.optimize;</h4>
+      <p>&td.action.property.optimize;</p></li>
+      <li><h4>&tagger.window.actions.conditions;</h4>
+      <p>&td.action.property.conditions;</p></li>
+    </ul>
+    <h3>&td.action.context;</h3>
+    <ul>
+      <li><span style="font-weight: bold">&td.action.needscontext;</span>&td.action.condselect.needscontext;</li>
+      <li><span style="font-weight: bold">&td.action.providescontext;</span>&td.action.condselect.providescontext;</li>
+    </ul>
+    <div style="float:right;"><a href="chrome://tagger/content/help/actions.xhtml">&td.action.backtooverview;</a></div>
+  </body>
+</html>

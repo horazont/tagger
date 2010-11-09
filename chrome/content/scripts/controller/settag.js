@@ -181,5 +181,20 @@ TaggerSetTagController.prototype = {
     }
     if (autoCommit)
       autoCommit.commit();
+  },
+  
+ 
+  getTags: function() {
+    if (this._parent.getIsLocked())
+      return;
+    var item = this._parent.getSampleItem();  
+    for (var i=0;i<this.mapping.length;i++)
+    {
+      if (this.xul.checkbox[i].checked)
+      {
+        this.xul.value[i].value=item.getProperty("http://songbirdnest.com/data/1.0#"+this.mapping[i]);
+      }
+    }
   }
+
 }

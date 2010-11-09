@@ -318,6 +318,7 @@ Leave a comment at:
                   <caption label="&tagger.window.settings;"/>
                   <checkbox id="settags-keeptags" label="&tagger.window.tagfromfile.keeptags;" tooltiptext="&tagger.window.tagfromfile.keeptags.tooltip;" checked="true"/>
                 </groupbox>
+                <button id="set-gettags" label="&tagger.window.gettags;" oncommand="TaggerController.set.getTags();" tooltiptext="&tagger.window.gettags.tooltip;"/>
                 <checkbox id="settags-all" label="&tagger.window.all;" checked="false" 
                   oncommand="TaggerController.set.setAllClick(this);"/>
                 <grid>

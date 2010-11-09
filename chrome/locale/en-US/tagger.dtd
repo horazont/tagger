@@ -84,6 +84,8 @@
 <!ENTITY tagger.window.settags.caption "Set &amp; combine">
 <!ENTITY tagger.window.settags.description "Set the selected tags of all selected files to the given value. You may also use the extended tokens of the Tags-&gt;Name section.">
 <!ENTITY tagger.window.settags.button "Set tags on selected files">
+<!ENTITY tagger.window.gettags "Get enabled tags from selected file">
+<!ENTITY tagger.window.gettags.tooltip "Initialize enabled values with tags from selected file">
 <!ENTITY tagger.window.replace.caption "Replace">
 <!ENTITY tagger.window.replace.description "Use the controls below perform simple replacement actions.">
 <!ENTITY tagger.window.replace.regexp "Regular expression support">

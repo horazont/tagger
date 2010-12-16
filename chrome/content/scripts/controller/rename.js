@@ -247,6 +247,7 @@ TaggerRenameController.prototype = {
         continue;
       }
       newFileName = this.generateFileName(mediaItem);
+      newFileName = this._parent.filterFileName(newFileName);
       if (oldFileName == this.rootPath+this._parent._pathSeparator+newFileName)
         continue;
       lastSeparator = newFileName.lastIndexOf(this._parent._pathSeparator);

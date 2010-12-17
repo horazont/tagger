@@ -134,16 +134,19 @@ TaggerTokenparser.prototype = {
   
   _error: 0, // 1: ERR_MISSINGTAG
 
-  init: function(format, requiredTags) {
+  init: function(format, requiredTags, presenceFilter) {
     this.format = format;
     if (requiredTags != null)
     {
-      this.presenceFilter = 0;
+      this.presenceFilter = 2;
       this.requiredTags = requiredTags;
     }
     else
     {
-      this.presenceFilter = 1;
+      if (presenceFilter != null)
+        this.presenceFilter = presenceFilter;
+      else
+        this.presenceFilter = 1;
       this.requiredTags = new Array();
     }
     this.instructions = new Array();

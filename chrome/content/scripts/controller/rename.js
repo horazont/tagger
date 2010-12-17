@@ -132,7 +132,7 @@ TaggerRenameController.prototype = {
     else
       this.requiredTags = null;
     
-    this.parser.init(this.xul.pattern.value, this.requiredTags);
+    this.parser.init(this.xul.pattern.value, this.requiredTags, this.presenceFilter);
   },
   
   generateFileName: function(item) {
@@ -246,7 +246,23 @@ TaggerRenameController.prototype = {
         alert("DEBUG: Skipped due to exception.");
         continue;
       }
-      newFileName = this.generateFileName(mediaItem);
+      try
+      {
+        newFileName = this.generateFileName(mediaItem);
+        if (!newFileName )
+        {
+          switch (this.parser._error)
+          {
+            case 1: alert(this._parent._strings.getString("taggerWindowMissingTags")); continue; //alert(this._parent._strings.getString("taggerWindowMissingTags")); break;
+            default: alert(this._parent._strings.getString("taggerWindowUnknownError")); continue; //alert(this._parent._strings.getString("taggerWindowUnknownError"));
+          }
+          continue;
+        }
+      } catch (e)
+      {
+        alert("DEBUG: Skipped due to exception.");
+        continue;
+      }
       newFileName = this._parent.filterFileName(newFileName);
       if (oldFileName == this.rootPath+this._parent._pathSeparator+newFileName)
         continue;

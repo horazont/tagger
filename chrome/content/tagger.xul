@@ -662,10 +662,15 @@ Leave a comment at:
                 <groupbox>
                   <caption><button id="tagtofile-preview" label="&tagger.window.preview;" tooltiptext="&tagger.window.previewbtn.tooltip;" oncommand="TaggerController.rename.previewRename();"/></caption>
                   <vbox style="overflow: auto">
-                    <label value="&tagger.window.tagtofile.oldname;"/>
-                    <label id="tagtofile-oldname" value=""/>
-                    <label value="&tagger.window.tagtofile.newname;"/>
-                    <label id="tagtofile-newname" value=""/>
+                    <hbox flex="1">
+                      <label value="&tagger.window.tagtofile.oldname;"/>
+                      <label id="tagtofile-oldname" value=""/>
+                    </hbox>
+                    <hbox flex="1">
+                      <label value="&tagger.window.tagtofile.newname;"/>
+                      <label id="tagtofile-newname" value=""/>
+                    </hbox>
+                    <label value=""/>
                   </vbox>
                 </groupbox>
                 <groupbox>

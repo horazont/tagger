@@ -222,6 +222,7 @@ TaggerRenameController.prototype = {
     var dirStructure, subPath;
     var skipAll = false;
     var file = this.Cc["@mozilla.org/file/local;1"].createInstance(this.Ci.nsILocalFile);
+    var newFile = this.Cc["@mozilla.org/file/local;1"].createInstance(this.Ci.nsILocalFile);
     var dir = this.Cc["@mozilla.org/file/local;1"].createInstance(this.Ci.nsILocalFile);
     var parentDir = this.Cc["@mozilla.org/file/local;1"].createInstance(this.Ci.nsILocalFile);
     
@@ -278,7 +279,20 @@ TaggerRenameController.prototype = {
         }
       } catch (e)
       {
-        alert("Could not enforce path.\nFrom: "+oldFileName+"\nTo: "+newFileName+"\nError: "+e);
+        alert("Could not enforce path.\nFrom: "+oldFileName+"\nTo: "+this.rootPath+this._parent._pathSeparator+newFileName+"\nError: "+e);
+        continue;
+      }
+      try
+      {
+        newFile.initWithPath(this.rootPath+this._parent._pathSeparator+newFileName);
+        if (newFile.exists())
+        {
+          alert("File with new name already exists.\nFrom: "+oldFileName+"\nTo: "+this.rootPath+this._parent._pathSeparator+newFileName);
+          continue;
+        }
+      } catch (e)
+      {
+        alert("DEBUG: Skipped due to exception.\nFrom: "+oldFileName+"\nTo: "+this.rootPath+this._parent._pathSeparator+newFileName+"\nError: "+e);
         continue;
       }
       try
@@ -286,7 +300,7 @@ TaggerRenameController.prototype = {
         file.moveTo(dir, newFileName.substr(lastSeparator+1));
       } catch (e)
       {
-        alert("Could not move file\n"+oldFileName+"\nto new location:\n"+newFileName+"\nException: "+e);
+        alert("Could not move file\n"+oldFileName+"\nto new location:\n"+this.rootPath+this._parent._pathSeparator+newFileName+"\nException: "+e);
         continue;
       }
       mediaItem.setProperty(SBProperties.contentURL, this._parent.fileNameToURI(this.rootPath+this._parent._pathSeparator+newFileName));

@@ -150,15 +150,16 @@ TaggerRenameController.prototype = {
     this.loadGeneratorStates();
     var item = this._parent.getSampleItem();
     var fileName = this.generateFileName(item);
+    oldFileName = this._parent.fileNameFromURI(item.getProperty(SBProperties.contentURL));    
     if (!fileName)
     {
       switch (this.parser._error)
       {
-        case 1: alert(this._parent._strings.getString("taggerWindowMissingTags")); return; //alert(this._parent._strings.getString("taggerWindowMissingTags")); break;
-        default: alert(this._parent._strings.getString("taggerWindowUnknownError")); return; //alert(this._parent._strings.getString("taggerWindowUnknownError"));
+        case 1: alert(this._parent._strings.getString("taggerWindowMissingTags")+"\n "+oldFileName); return; //alert(this._parent._strings.getString("taggerWindowMissingTags")); break;
+        default: alert(this._parent._strings.getString("taggerWindowUnknownError")+"\n "+oldFileName); return; //alert(this._parent._strings.getString("taggerWindowUnknownError"));
       }
     }
-    this.xul.preview.oldName.value = this._parent.fileNameFromURI(item.getProperty(SBProperties.contentURL));
+    this.xul.preview.oldName.value = oldFileName;
     this.xul.preview.newName.value = this.rootPath + this._parent._pathSeparator + this._parent.filterFileName(fileName);
   },
 
@@ -254,8 +255,8 @@ TaggerRenameController.prototype = {
         {
           switch (this.parser._error)
           {
-            case 1: alert(this._parent._strings.getString("taggerWindowMissingTags")); continue; //alert(this._parent._strings.getString("taggerWindowMissingTags")); break;
-            default: alert(this._parent._strings.getString("taggerWindowUnknownError")); continue; //alert(this._parent._strings.getString("taggerWindowUnknownError"));
+            case 1: alert(this._parent._strings.getString("taggerWindowMissingTags")+"\n "+oldFileName); continue; //alert(this._parent._strings.getString("taggerWindowMissingTags")); break;
+            default: alert(this._parent._strings.getString("taggerWindowUnknownError")+"\n "+oldFileName); continue; //alert(this._parent._strings.getString("taggerWindowUnknownError"));
           }
           continue;
         }
@@ -300,7 +301,7 @@ TaggerRenameController.prototype = {
         file.moveTo(dir, newFileName.substr(lastSeparator+1));
       } catch (e)
       {
-        alert("Could not move file\n"+oldFileName+"\nto new location:\n"+this.rootPath+this._parent._pathSeparator+newFileName+"\nException: "+e);
+        alert(this._parent._strings.getString("taggerWindowFileNotMoved").replace("%s1",oldFileName).replace("%s2",this.rootPath+this._parent._pathSeparator+newFileName)+"\n\nException: "+e);
         continue;
       }
       mediaItem.setProperty(SBProperties.contentURL, this._parent.fileNameToURI(this.rootPath+this._parent._pathSeparator+newFileName));

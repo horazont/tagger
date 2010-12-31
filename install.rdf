@@ -5,7 +5,7 @@
     <em:id>tagger@sotecware.net</em:id>
     <em:type>2</em:type>
     <em:name>Tagger</em:name>
-    <em:version>0.9.1.6</em:version> <!-- change also in tracktype-query.js and about.xul -->
+    <em:version>0.9.1.7</em:version> <!-- change also in tracktype-query.js and about.xul -->
     <em:creator>Jonas Wielicki</em:creator>
 
 
@@ -16,7 +16,7 @@
       <Description>
         <em:id>songbird@songbirdnest.com</em:id>
         <em:minVersion>1.2.0</em:minVersion>
-        <em:maxVersion>1.9.0</em:maxVersion>
+        <em:maxVersion>1.10a</em:maxVersion>
       </Description>
     </em:targetApplication>
 

@@ -1,0 +1,11 @@
+<!ENTITY tagger.matchfail.title "Matchning misslyckades">
+<!ENTITY tagger.matchfail.description "Ett spår matchade inte det angivna schemat.">
+<!ENTITY tagger.matchfail.fileName "Filnamn: ">
+<!ENTITY tagger.matchfail.trackName "Spårnamn: ">
+<!ENTITY tagger.matchfail.albumName "Albumnamn: ">
+<!ENTITY tagger.matchfail.artistName "Artistnamn: ">
+<!ENTITY tagger.matchfail.skip "Hoppa över det här spåret">
+<!ENTITY tagger.matchfail.setinfo "Manuell tagg">
+<!ENTITY tagger.matchfail.skipall "Hoppa över alla spår med problem">
+<!ENTITY tagger.matchfail.manual.caption "Manuell taggning">
+<!ENTITY tagger.matchfail.manual.description "Du kan ange värden för de tre attributen istället för att hoppa över filen.">

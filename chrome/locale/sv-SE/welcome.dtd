@@ -1,0 +1,16 @@
+<!ENTITY tagger.welcome.headline "Välkommen till Tagger!">
+<!ENTITY tagger.welcome.description "Den här sidan ger dig en kortfattad introduktion av Tagger.">
+<!ENTITY tagger.welcome.features "Vad Tagger kan göra:">
+<!ENTITY tagger.welcome.feature1 "Generera taggar utifrån en medieposts filnamn genom att använda ett användardefinierat mönster.">
+<!ENTITY tagger.welcome.feature2 "Byta namn på och flytta filer m.h.a. deras tagginformation.">
+<!ENTITY tagger.welcome.feature3 "Läsa data från en textfil och bygga taggar genom att använda ett angivet datamönster.">
+<!ENTITY tagger.welcome.feature4 "Utföra sök- &amp; ersätt-operationer på taggar.">
+<!ENTITY tagger.welcome.feature5 "Fylla i tomma taggar med användardefinierade värden eller åsidosätta alla taggar.">
+<!ENTITY tagger.welcome.feature6 "Spara ändringar av taggar till disk.">
+<!ENTITY tagger.welcome.feature7 "Genom att använda makron kan du utföra ett helt knippe av åtgärder med ett enda klick.">
+<!ENTITY tagger.welcome.howtouse "Hur använder jag Tagger?">
+<!ENTITY tagger.welcome.howtouse.description "För att använda Tagger, öppna det i den högra sidopanelen. På så vis har du kraften i Tagger nära till hands.">
+<!ENTITY tagger.welcome.howtouse.noteaboutfocustrack "Observera: En samtidig användning av tillägg som ändrar markerade objekt (t.ex. FocusTrack) kan vara skadligt, eftersom Tagger alltid opererar på den aktuella markeringen. Så se till att inaktivera dem eller säkerställ åtminstone att de inte oförhappandes ändrar markeringen.">
+<!ENTITY tagger.welcome.howtouse.tooltips "För att göra det ännu enklare att använda har Tagger verktygstips som ger dig grundläggande information om funktionerna. Men även utan dem skall Tagger enkelt kunna användas av alla som tidigare har använt ett taggenereringsprogram.">
+<!ENTITY tagger.welcome.about "Tagger har också en post i Hjälp-menyn som öppnar en dialog med information om Tagger-versionen och dess utvecklare.">
+<!ENTITY tagger.welcome.stoptalking "Då sätter vi igång. Lycka till!">

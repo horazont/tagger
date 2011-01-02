@@ -1,0 +1,474 @@
+<!ENTITY td.actions.overview1 "Sedan version 0.9.0.0 kan Tagger 
+
+
+
+
+
+
+  skapa, lagra, läsa in och köra små skript som kallas makron.">
+<!ENTITY td.actions.overview2 "Dessa makron är ingenting annat än en kombination av fördefinierade 
+
+
+
+
+
+
+  åtgärder. Till skillnad från vanliga Tagger-åtgärder arbetar makroåtgärder med ett 
+
+
+
+  virtuellt urval av medieobjekt. Urvalet kan dessutom ändras 
+
+
+
+  genom vissa åtgärder. Det här gör att makron är flexibla och kapabla att utföra 
+
+
+
+  en mängd olika arbetsuppgifter.">
+<!ENTITY td.actions.overview3 "Observera att du p.g.a. det virtuella urvalets beskaffenhet
+
+
+
+
+
+
+  antagligen vill ha en &quot;&tagger.window.actions.importselection;&quot;-åtgärd som det
+
+
+
+  första av dina skript. Det här kommer att hämta urvalet du gjorde i medievyn
+
+
+
+  och använda det som det virtuella urvalet.">
+<!ENTITY td.actions.title "Makroåtgärder">
+<!ENTITY td.actions.conditions.title "Villkor">
+<!ENTITY td.actions.conditions "En del åtgärder kan innehålla villkor. 
+
+
+
+
+
+
+  Beroende på åtgärdens art, så bestäms det faktiska slutresultatet
+
+
+
+  av om villkoren möts eller inte.">
+<!ENTITY td.action.title "Åtgärdsdokumentation: ">
+<!ENTITY td.action.abstract "Beskrivning">
+<!ENTITY td.action.properties "Egenskaper">
+<!ENTITY td.action.context "Kontext">
+<!ENTITY td.action.context.item "medieobjekt">
+<!ENTITY td.action.context.none "<em>ingen</em>">
+<!ENTITY td.action.needscontext "Behov av kontext: ">
+<!ENTITY td.action.providescontext "Tillhandahåller kontext: ">
+<!ENTITY td.action.backtooverview "Tillbaka till översikten">
+<!ENTITY td.condition.title "Villkorsdokumentation: ">
+<!ENTITY td.action.property.actions "Den här egenskapen innehåller listan
+
+
+
+
+
+
+  över åtgärder, som kommer att utföras i angiven ordning.">
+<!ENTITY td.action.property.condlink "Det här definierar hur 
+
+
+
+
+
+
+  villkoren är sammankopplade. Antingen måste samtliga, eller ett eller fler, 
+
+
+
+  eller ett udda antal villkor beräknas till SANT, d.v.s. mötas (även känt som
+
+
+
+  exklusiv disjunktion, XOR).">
+<!ENTITY td.action.property.invert "Inverterar resultatet av den 
+
+
+
+
+
+
+  sammantagna beräkningen av alla villkor.">
+<!ENTITY td.action.property.optimize "Om det här anges till SANT, så
+
+
+
+
+
+
+  avbryts beräkningen så snart ett resultat har fastställts. Det här sker, till exempel,
+
+
+
+  om &tagger.window.actions.conditionlink; anges till 
+
+
+
+  &tagger.window.actions.condlink_and; och ett villkor beräknas till FALSKT. I
+
+
+
+  sådana fall är det ingen mening med att beräkna de övriga villkoren, om
+
+
+
+">
+<!ENTITY td.action.property.conditions "Det finns en lista över villkor som
+
+
+
+
+
+
+  kontrolleras i tur och ordning.">
+<!ENTITY td.action.property.trueactions "Åtgärderna endast utförs
+
+
+
+
+
+
+  om den sammantagna villkorsberäkningen returnerar ett positivt värde.">
+<!ENTITY td.action.property.falseactions "Åtgärderna endast utförs
+
+
+
+
+
+
+  om den sammantagna villkorsberäkningen returnerar ett negativt värde.">
+<!ENTITY td.action.property.replace.attribute "Det här är det attribut på vilket
+
+
+
+
+
+
+  ersättningsoperationen kommer att tillämpas. Om det här anges till &quot;&tagger.window.all;&quot;, 
+
+
+
+  kommer ersättningsoperationen att utföras på samtliga attribut.">
+<!ENTITY td.action.property.attribute "Det här attributet för det aktuella medieobjektet 
+
+
+
+
+
+
+  kommer att användas av den här operationen.">
+<!ENTITY td.action.property.pattern "Den här egenskapen definierar det mönster
+
+
+
+
+
+
+  som åtgärden kommer att leta efter.">
+<!ENTITY td.action.property.replacewith "Alla förekomster av
+
+
+
+
+
+
+  mönstret kommer att ersättas med värdet för den här egenskapen.">
+<!ENTITY td.action.property.regexpsupport "Om stödet för reguljära
+
+
+
+
+
+
+  uttryck är aktiverat kommer mönstret att analyseras som ett reguljärt uttryck.
+
+
+
+  I sådana fall kan du, i ersättningsmönstret, referera till alla delmönster som finns i 
+
+
+
+  sökuttrycket genom &quot;$n&quot;, där &quot;n&quot; är delmönstrets ordningsnummer, 
+
+
+
+  med början på n=1.">
+<!ENTITY td.action.property.ignorecase "Huruvida skiftläget för
+
+
+
+
+
+
+  bokstäverna i indatan skall ignoreras eller inte.">
+<!ENTITY td.action.property.globalmatch "Huruvida mönstret
+
+
+
+
+
+
+  skall matchas flera gånger på samma attribut.">
+<!ENTITY td.action.property.source "Definierar den källa från vilken
+
+
+
+
+
+
+  objekten som skall filtreras av villkoret skall hämtas.">
+<!ENTITY td.action.property.matchmode "Det här definierar var villkoret kommer
+
+
+
+
+
+
+  leta efter den angivna strängen.">
+<!ENTITY td.action.property.value "Strängen som söks efter i attributet.">
+<!ENTITY td.action.property.trim "Om det här är aktiverat kommer inledande och avslutande
+
+
+
+
+
+
+  blanksteg eller nya rader i indatasträngen att tas bort innan matchningen
+
+
+
+  slutförs.">
+<!ENTITY td.action.property.expression "Det reguljära uttrycket som används av
+
+
+
+
+
+
+  den här operationen.">
+<!ENTITY td.action.property.attributes "Ett urval av attribut som kommer att
+
+
+
+
+
+
+  skrivas till filerna.">
+<!ENTITY td.action.property.filenameformat "Precis som i originalfunktionen för &quot;Från filnamn&quot;
+
+
+
+
+
+
+  måste du ange ett mönster som beskriver var 
+
+
+
+  metadatan hittas i filnamnet.">
+<!ENTITY td.action.property.keeptags "Om det här aktiveras kommer taggar som skall 
+
+
+
+
+
+
+  ändras men som redan innehåller data att hoppas över.">
+<!ENTITY td.action.property.replace_ "Om det här aktiveras kommer alla _ (understreck) i
+
+
+
+
+
+
+  indatafilnamnet att ersättas av mellanslag.">
+<!ENTITY td.action.property.dirsupport "Det här låter dig inkludera mappnamn
+
+
+
+
+
+
+  när du bygger filnamnsmönstret.">
+<!ENTITY td.action.property.autoupcase "Den här funktionen tillåter en heuristik för att 
+
+
+
+
+
+
+  avgöra vilka delar av filnamnet som skall skrivas med versaler och vilka som inte 
+
+
+
+  skall det. Det här behövs inte på Unix-liknande operativsystem, eftersom de tar med
+
+
+
+  filnamnens skiftläge i beräkningen, vilket gör att Songbird sparar varje
+
+
+
+  filnamn i sin originalform.">
+<!ENTITY td.action.actionlist.abstract "Innehåller en lista över åtgärder vilka
+
+
+
+
+
+
+  utförs i den ordning de står.">
+<!ENTITY td.action.actionlist.needscontext "<em>Beror på tilldelade åtgärder.</em>">
+<!ENTITY td.action.actionlist.providescontext "&td.action.context.none;">
+<!ENTITY td.action.conditional.abstract "Kontrollerar ett villkor. Utför olika
+
+
+
+
+
+
+  åtgärder beroende på om villkoret möts eller inte.">
+<!ENTITY td.action.conditional.needscontext "<em>Beror på tilldelade villkor och åtgärder.</em>">
+<!ENTITY td.action.conditional.providescontext "&td.action.context.none;">
+<!ENTITY td.action.set.abstract "Ersätt eller kombinera flera av ett
+
+
+
+
+
+
+  medieobjekts attribut.">
+<!ENTITY td.action.set.properties "De här egenskaperna motsvarar de du anger
+
+
+
+
+
+
+  i &tagger.window.settags.caption;-fliken i Tagger. Om du emellertid
+
+
+
+  anger ett värde till null (genom att använda kryssrutan i egenskapsredigeringsdialogen,
+
+
+
+  inte strängen &quot;null&quot;), så kommer det att ignoreras.">
+<!ENTITY td.action.set.needscontext "&td.action.context.item;">
+<!ENTITY td.action.set.providescontext "&td.action.context.none;">
+<!ENTITY td.action.replace.abstract "Utför en sök- &amp; ersätt-operation
+
+
+
+
+
+
+  på samtliga attribut till ett medieobjekt.">
+<!ENTITY td.action.replace.needscontext "&td.action.context.item;">
+<!ENTITY td.action.replace.providescontext "&td.action.context.none;">
+<!ENTITY td.action.importselection.abstract "Använd det verkliga urvalet i
+
+
+
+
+
+
+  medievyn för att bygga ett virtuellt urval.">
+<!ENTITY td.action.importselection.needscontext "&td.action.context.none;">
+<!ENTITY td.action.importselection.providescontext "&td.action.context.none;">
+<!ENTITY td.action.clearcommitcache.abstract "Ta bort alla objekt från commit-cachen
+
+
+
+
+
+
+  (dedikerad cache).">
+<!ENTITY td.action.clearcommitcache.needscontext "&td.action.context.none;">
+<!ENTITY td.action.clearcommitcache.providescontext "&td.action.context.none;">
+<!ENTITY td.action.flushcommitcache.abstract "Spara metadatan för alla objekt
+
+
+
+
+
+
+  i commit-cachen tillbaka till filerna.">
+<!ENTITY td.action.flushcommitcache.needscontext "&td.action.context.none;">
+<!ENTITY td.action.flushcommitcache.providescontext "&td.action.context.none;">
+<!ENTITY td.action.commitcache.abstract "Lägg till det aktuella objektet i commit-cachen. 
+
+
+
+
+
+
+  ">
+<!ENTITY td.action.commitcache.needscontext "&td.action.context.item;">
+<!ENTITY td.action.commitcache.providescontext "&td.action.context.none;">
+<!ENTITY td.action.fromfilename.abstract "Den här åtgärden parsar filnamnet för
+
+
+
+
+
+
+  det aktuella medieobjektet genom att använda det angivna mönstret för att extrahera metadata.">
+<!ENTITY td.action.fromfilename.needscontext "&td.action.context.item;">
+<!ENTITY td.action.fromfilename.providescontext "&td.action.context.none;">
+<!ENTITY td.action.condselect.abstract "Bygg ett virtuellt urval från en viss
+
+
+
+
+
+
+  källa genom att använda ett villkor för att välja medieobjekt.">
+<!ENTITY td.action.condselect.needscontext "<em>Beror på tilldelade villkor.</em>">
+<!ENTITY td.action.condselect.providescontext "&td.action.context.item;">
+<!ENTITY td.action.foreachselected.abstract "Går igenom urvalet och
+
+
+
+
+
+
+  utför de angivna åtgärderna på varje objekt.">
+<!ENTITY td.action.foreachselected.needscontext "<em>Beror på tilldelade åtgärder.</em>">
+<!ENTITY td.action.foreachselected.providescontext "&td.action.context.item;">
+<!ENTITY td.action.match.abstract "Utför en strängmatchningsoperation på ett
+
+
+
+
+
+
+  attribut till ett medieobjekt.">
+<!ENTITY td.action.match.needscontext "&td.action.context.item;">
+<!ENTITY td.action.recond.abstract "Utför en matchningsoperation 
+
+
+
+
+
+
+  med ett reguljärt uttryck på ett attribut till ett medieobjekt.">
+<!ENTITY td.action.recond.needscontext "&td.action.context.item;">
+<!ENTITY td.action.subcondition.abstract "Grupperar flera villkor tillsammans, 
+
+
+
+
+
+
+  vilket tillåter att en annan villkorsoperator används, och inverterar det beräknade resultatet.">
+<!ENTITY td.action.subcondition.needscontext "<em>Beror på tilldelade villkor.</em>">

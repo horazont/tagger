@@ -1,0 +1,23 @@
+<!ENTITY tagger.options.title "Inställningar för Tagger">
+<!ENTITY tagger.options.enabled "Aktiverat">
+<!ENTITY tagger.options.general.title "Allmänt">
+<!ENTITY tagger.options.general.description "De här inställningarna påverkar Taggers allmänna funktioner.">
+<!ENTITY tagger.options.general.autocommit "Skriv automatiskt ändrade taggar till fil">
+<!ENTITY tagger.options.general.autocommit.tooltip "Om det här är förkryssat kommer alla ändringar du utför med Tagger att automatiskt sparas till filerna. Det här påverkar inte &quot;Taggar--&gt;Namn&quot;-delen eftersom den alltid sparas.">
+<!ENTITY tagger.options.general.donotask "Inaktivera bekräftelse av åtgärdsutförande">
+<!ENTITY tagger.options.general.donotask.tooltip "Det här inaktiverar dialogen som talar om för dig hur många av filerna som kommer att påverkas och som ger dig en möjlighet att avbryta operationen.">
+<!ENTITY tagger.options.filter.title "Filtrera filnamn">
+<!ENTITY tagger.options.filter.description "Om du använder ett filsystem som inte tillåter specialtecken utöver / (snedstreck) och NUL-tecknet, så bör du aktivera det här alternativet för att undvika fel.">
+<!ENTITY tagger.options.filter.replace "Ersätt ogiltiga tecken">
+<!ENTITY tagger.options.filter.replace.tooltip "Om aktiverat kommer de tecken som är kända för att inte tillåtas på vissa operativsystem att ersättas av det du anger i textfältet nedan. Om inget anges kommer sådana tecken att tas bort från strängen.">
+<!ENTITY tagger.options.filter.replacement "Ersättning">
+<!ENTITY tagger.options.extended.title "Utökat">
+<!ENTITY tagger.options.osflag.title "Operativsystem">
+<!ENTITY tagger.options.osflag.description "Det här är nödvändigt för &quot;Taggar--&gt;Namn&quot;-funktionen för att avgöra vilket sökvägsschema som skall användas.">
+<!ENTITY tagger.options.osflag.unixoid "Unix-liknande (t.ex. /home)">
+<!ENTITY tagger.options.osflag.microsoftoid "Microsoft-liknande (t.ex. C:\)">
+<!ENTITY tagger.options.save "Spara">
+<!ENTITY tagger.options.cancel "Avbryt">
+<!ENTITY tagger.options.osflagwarning "En ändring av OS-inställningarna kan sätta &quot;Taggar--&gt;Namn&quot;-funktionen ur spel. Säkerställ att de avspeglar ditt operativsystem.">
+<!ENTITY tagger.options.osflagmustbeset "Operativsystemet är för närvarande inte angivet. Du bör ange det nu.">
+<!ENTITY tagger.options.refreshwarning "Du måste starta om alla instanser av Tagger för att ändringarna skall verkställas.">

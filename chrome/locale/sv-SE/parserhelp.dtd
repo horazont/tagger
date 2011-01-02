@@ -1,0 +1,62 @@
+<!ENTITY tagger.close "Stäng">
+<!ENTITY tagger.parserhelp.title "Textanalysatorn - Hjälp">
+<!ENTITY tagger.parserhelp.description "Textanalysatorn för filnamn använder en sträng som består av en samling token. Tillgängliga token är de som finns angivna här nedan. De anger på vilka platser i filnamnet textanalysatorn kan hitta den önskade datan. Allting som inte föregås av ett procenttecken (&#37;) är inget token och betraktas som en statisk del av filnamnet. Hädanefter kommer vi att använda begreppet &quot;term&quot; för att beskriva antingen en grupp av på varandra följande statiska delar i mönstret eller ett token.">
+<!ENTITY tagger.parserhelp.tokenlist "Textanalysatortoken">
+<!ENTITY tagger.parserhelp.token "Token">
+<!ENTITY tagger.parserhelp.tokendescription "Beskrivning">
+<!ENTITY tagger.parserhelp.matches "Matchar">
+<!ENTITY tagger.parserhelp.matches.numbers "siffror">
+<!ENTITY tagger.parserhelp.matches.anything "vad som helst">
+<!ENTITY tagger.parserhelp.matches.year "2 eller 4 siffror">
+<!ENTITY tagger.parserhelp.aliases "Alias">
+<!ENTITY tagger.parserhelp.keyt "Spårnamn, titel">
+<!ENTITY tagger.parserhelp.keya "Artist">
+<!ENTITY tagger.parserhelp.keyb "Albumnamn">
+<!ENTITY tagger.parserhelp.keyn "Spårnummer">
+<!ENTITY tagger.parserhelp.keyy "År">
+<!ENTITY tagger.parserhelp.keyc "Skivnummer">
+<!ENTITY tagger.parserhelp.keyx "Gammalt filtillägg (endast Taggar--&gt;Namn).">
+<!ENTITY tagger.parserhelp.keyr "Albumartistnamn">
+<!ENTITY tagger.parserhelp.keyo "Kompositör">
+<!ENTITY tagger.parserhelp.keycomment "Kommentar">
+<!ENTITY tagger.parserhelp.keytrackCount "Antal spår">
+<!ENTITY tagger.parserhelp.keydiscCount "Antal skivor">
+<!ENTITY tagger.parserhelp.keyg "Genre">
+<!ENTITY tagger.parserhelp.keyasterisk "Matchning kommer att ignoreras (endast Namn--&gt;Taggar).">
+<!ENTITY tagger.parserhelp.samplehead "Exempel">
+<!ENTITY tagger.parserhelp.sample1 "För ett filnamn enligt formatet &quot;01 - minartist - mintitel - andrasaker som jag inte behöver.ogg&quot;,">
+<!ENTITY tagger.parserhelp.sample2 "skulle det rekommenderade mönstret vara: ">
+<!ENTITY tagger.parserhelp.sample3 "För en filstruktur av typen &quot;Artist/Album/Spårnr Titel.ogg&quot;,">
+<!ENTITY tagger.parserhelp.sample4 "skulle det rekommenderade mönstret vara: ">
+<!ENTITY tagger.parserhelp.modhead "Modifierare">
+<!ENTITY tagger.parserhelp.moddescription "Det finns olika modifierare som du kan tillämpa på token. Men de är endast tillgängliga i &quot;Taggar--&gt;Namn&quot;-läget.">
+<!ENTITY tagger.parserhelp.modinit "Detta är det första tecknet i ett token. Det introducerar varje token och är obligatoriskt.">
+<!ENTITY tagger.parserhelp.moddot "Valfri. När det första tecknet efter &#37;-tecknet är ett kolon ( : ), så tas hela den delen som en literal och ingen ersättning eller parsning utförs, med undantag för den första punkten, &quot;.&quot;, som kommer att tas bort.">
+<!ENTITY tagger.parserhelp.moddefault "Ange standardvärdet som skall användas
+
+
+
+
+
+
+ifall fältet som hänvisas saknas eller är tomt. Nummer anges helt enkelt
+
+
+
+omedelbart efter frågetecknet ( ? ). Omslut en sträng med citationstecken
+
+
+
+på samma plats. Till exempel: &#37;?0:2c&#37; kommer att resultera i &apos;00&apos;
+
+
+
+om inget skivnummer anges. &#37;&quot;[Diverse]&quot;b&#37; resulterar i
+
+
+
+&apos;[Diverse]&apos; om albumfältet är tomt.">
+<!ENTITY tagger.parserhelp.modcolon "Valfri. Efter kolontecknet kan du ange ett nummer. Tagger kommer att lägga till motsvarande antal utfyllnadsnollor till vänster om varje nummer som förekommer i strängen som genereras av detta token.">
+<!ENTITY tagger.parserhelp.modquestion "Valfri. När den här modifieraren finns angiven är detta token valfritt. Det betyder att om taggen det motsvarar är tom eller inte finns, så kommer detta token att hoppas över (istället för att flagga för fel vid automatisk identifiering av nödvändiga taggar).">
+<!ENTITY tagger.parserhelp.modquestion2 "För varje ytterligare frågetecken som du anger kommer ytterligare en term att hoppas över om detta token inte finns eller är tomt. En term är antingen en statisk del av mönstret eller ett token.">
+<!ENTITY tagger.parserhelp.modkey "En av tangenterna som anges ovan.">

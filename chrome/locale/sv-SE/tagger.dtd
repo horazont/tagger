@@ -1,0 +1,211 @@
+<!ENTITY tagger.note "Observera: Tagger är inte felsäkert. Det kan vända upp och ner på hela din taggdatabas, särskilt om det inte är noggrant konfigurerat. Så dubbelkontrollera all ändrad data innan den slutgiltigt sparas till disk.">
+<!ENTITY tagger.window.title "Tagger">
+<!ENTITY tagger.window.trackName "Spårnamn">
+<!ENTITY tagger.window.albumName "Albumnamn">
+<!ENTITY tagger.window.artistName "Artist">
+<!ENTITY tagger.window.albumArtistName "Albumartist">
+<!ENTITY tagger.window.composerName "Kompositör">
+<!ENTITY tagger.window.genre "Genre">
+<!ENTITY tagger.window.year "År">
+<!ENTITY tagger.window.trackNumber "Spårnr.">
+<!ENTITY tagger.window.trackCount "Antal spår">
+<!ENTITY tagger.window.discNumber "Skivnr.">
+<!ENTITY tagger.window.discCount "Antal skivor">
+<!ENTITY tagger.window.comment "Kommentar">
+<!ENTITY tagger.window.all "Alla">
+<!ENTITY tagger.window.selcountlabel "Antal markerade: ">
+<!ENTITY tagger.window.parserhelp "?">
+<!ENTITY tagger.window.help "Hjälp">
+<!ENTITY tagger.window.previewbtn.tooltip "Generera en förhandsgranskning">
+<!ENTITY tagger.window.enabled "Aktiverat">
+<!ENTITY tagger.window.preview "Förhandsgranska">
+<!ENTITY tagger.window.fieldcolwith "12em">
+<!ENTITY tagger.window.replace "Ersätt med">
+<!ENTITY tagger.window.settings "Inställningar">
+<!ENTITY tagger.window.hookselection "Hooka markering">
+<!ENTITY tagger.window.hookselection.tooltip "Medan denna knapp är nedtryckt behöver du bara klicka på objekt i listan för att lägga till dem i listan.">
+<!ENTITY tagger.window.takeselection "Bifoga markering">
+<!ENTITY tagger.window.takeselection.tooltip "Bifoga det för närvarande markerade objektet till listan.">
+<!ENTITY tagger.window.moveup "Uppåt">
+<!ENTITY tagger.window.movedown "Nedåt">
+<!ENTITY tagger.window.remove "Ta bort">
+<!ENTITY tagger.window.clear "Rensa">
+<!ENTITY tagger.window.load "Läs in">
+<!ENTITY tagger.window.save "Spara">
+<!ENTITY tagger.window.execute "Kör">
+<!ENTITY tagger.window.delete "Ta bort">
+<!ENTITY tagger.window.true "ja">
+<!ENTITY tagger.window.false "nej">
+<!ENTITY tagger.window.null "null">
+<!ENTITY tagger.window.list.head.number "Nr.">
+<!ENTITY tagger.window.caseinsensitive "Inte skiftlägeskänslig">
+<!ENTITY tagger.window.selection "Markering">
+<!ENTITY tagger.window.regexpflags.g.tooltiptext "Matcha flera gånger">
+<!ENTITY tagger.window.gentools.caption "Skapa">
+<!ENTITY tagger.window.modtools.caption "Ändra">
+<!ENTITY tagger.window.storetools.caption "Spara">
+<!ENTITY tagger.window.macrotools.caption "Makron">
+<!ENTITY tagger.window.tagfromfile.caption "Från filnamn">
+<!ENTITY tagger.window.tagfromfile.description "Taggers kärnfunktion: Genom att använda de här kontrollerna kan du skapa metadata för dina spår baserat på hur filerna är namngivna och/eller i vilka mappar de finns.">
+<!ENTITY tagger.window.tagfromfile.autoupcase "Skriv automatiskt initialer versalt">
+<!ENTITY tagger.window.tagfromfile.autoupcase.tooltip "Om det här är förkryssat kommer varje tecken efter ett mellanslag att skrivas med en versal (t.ex. Hej Du Gamle Indian). Rekommenderas på OS som inte är av Unix-typ.">
+<!ENTITY tagger.window.tagfromfile.replace_ "Ersätt _ med mellanslag.">
+<!ENTITY tagger.window.tagfromfile.directorysupport "Mappstöd">
+<!ENTITY tagger.window.tagfromfile.directorysupport.tooltip "Om det här är förkryssat kommer inga token att tillämpas på mappavgränsaren och du kan ange snedstreck som statiskt tecken.">
+<!ENTITY tagger.window.tagfromfile.filenamefmt "Filnamnsformat">
+<!ENTITY tagger.window.tagfromfile.keeptags "Behåll befintliga taggar">
+<!ENTITY tagger.window.tagfromfile.keeptags.tooltip "Om det här är förkryssat kommer inte befintliga taggar att skrivas över.">
+<!ENTITY tagger.window.tagfromfile.retag "Skriv om taggar för markerade filer">
+<!ENTITY tagger.window.tagfromfile.labelwidth "7em">
+<!ENTITY tagger.window.tracktype.caption "TrackType.org">
+<!ENTITY tagger.window.tracktype.description "Sökning på TrackType.org har ännu inte implementerats.">
+<!ENTITY tagger.window.fromtextfile.caption "Textfil">
+<!ENTITY tagger.window.fromtextfile.description "Tilldela taggar till markerade filer utifrån datainnehållet i en angiven textfil enligt ett angivet mönster.">
+<!ENTITY tagger.window.fromtextfile.patterninfile "Mönster i fil">
+<!ENTITY tagger.window.fromtextfile.patterninfile.tooltip "Om det här är förkryssat kommer den första raden i filen att tolkas som mönstret. Annars måste du ange ett här ovan.">
+<!ENTITY tagger.window.fromtextfile.pattern "Datamönster">
+<!ENTITY tagger.window.fromtextfile.pattern.tooltip "Det här mönstret kommer att användas för att parsa textfilen. Du kan använda samma token som i &quot;Namn--&gt;Taggar&quot;-funktionen. Dessutom kan du använda \t för att ange ett tabbtecken (#9) och \n för att ange en ny rad (#10 och/eller #13).">
+<!ENTITY tagger.window.fromtextfile.textfile "Textfil:">
+<!ENTITY tagger.window.fromtextfile.textfile.tooltip "Det här är filen från vilken datan kommer att läsas.">
+<!ENTITY tagger.window.fromtextfile.selectfile "...">
+<!ENTITY tagger.window.fromtextfile.selectfile.tooltip "Klicka här för att öppna en dialog där du kan välja filen.">
+<!ENTITY tagger.window.fromtextfile.encoding "Teckenkodning">
+<!ENTITY tagger.window.fromtextfile.encoding.tooltip "Ange teckenkodningen för textfilen här. På nyare Linux-datorer är antagligen UTF-8 den teckenkodning du vill ha, annars kan du testa standardteckenkodningen.">
+<!ENTITY tagger.window.fromtextfile.skip "Hoppa över poster">
+<!ENTITY tagger.window.fromtextfile.skip.tooltip "Hoppa över så här många matchningar från indatan.">
+<!ENTITY tagger.window.fromtextfile.apply "Applicera data från textfil på spår i listan">
+<!ENTITY tagger.window.fromtextfile.apply.tooltip "Applicera datan i textfilen på objekten i listan.">
+<!ENTITY tagger.window.progress.caption "Förlopp">
+<!ENTITY tagger.window.progress.retagging "Skriver om filtaggar">
+<!ENTITY tagger.window.progress.lastobject "Senaste objekt: ">
+<!ENTITY tagger.window.savetags.caption "Till filmetadata">
+<!ENTITY tagger.window.savetags.selecttags "Markera taggarna som skall sparas. De kommer att skrivas som metadata till filerna enligt det angivna filformatet. Det här begränsas endast av Songbirds förmåga att skriva den här datan.">
+<!ENTITY tagger.window.savetags.button "Spara taggar för markerade objekt">
+<!ENTITY tagger.window.settags.caption "Ange &amp; kombinera">
+<!ENTITY tagger.window.settags.description "Ange de markerade taggarna för alla markerade filer till de värden som skrivs in nedan. Du kan även använda alla utökade token i &quot;Taggar--&gt;Namn&quot;-sektionen.">
+<!ENTITY tagger.window.settags.button "Skriv taggar till markerade filer">
+<!ENTITY tagger.window.gettags "Hämta aktiverade taggar från markerad fil">
+<!ENTITY tagger.window.gettags.tooltip "Fyll i fälten för aktiverade taggar med värden från den markerade filen">
+<!ENTITY tagger.window.replace.caption "Ersätt">
+<!ENTITY tagger.window.replace.description "Använd kontrollerna nedan för att utföra enkla ersättningsåtgärder.">
+<!ENTITY tagger.window.replace.regexp "Stöd för reguljära uttryck">
+<!ENTITY tagger.window.replace.regexp.tooltip "Om det här är förkryssat tolkas sökfälten som reguljära uttryck. Du kan hänvisa till varje delmönster med $n, där n är ordningsnumret för delmönstret med början på 1.">
+<!ENTITY tagger.window.replace.pattern "Sökmönster">
+<!ENTITY tagger.window.replace.button "Utför ersättning på markerade filer">
+<!ENTITY tagger.window.tools.caption "Verktyg">
+<!ENTITY tagger.window.tools.target.caption "Målfält">
+<!ENTITY tagger.window.tools.target.description "Dessa fält kommer att påverkas av verktygen.">
+<!ENTITY tagger.window.tools.casing.caption "Korrigera skiftläge">
+<!ENTITY tagger.window.tools.casing.description "Det här verktyget korrigerar automatiskt skiftläget för markerade metadatafält. Till exempel kommer &quot;ett godtyckligt spårnamn&quot; att ändras till &quot;Ett Godtyckligt Spårnamn&quot;.">
+<!ENTITY tagger.window.tools.casing.button "Korrigera skiftläge">
+<!ENTITY tagger.window.tools.utf8.caption "UTF-8-verktyg">
+<!ENTITY tagger.window.tools.utf8.description "Ibland dyker underliga teckenkombinationer som Ã¤ upp i taggar. Det här är ett UTF-8-kodningsfel som kan korrigeras av Tagger.">
+<!ENTITY tagger.window.tools.utf8.correct.button "Korrigera UTF-8">
+<!ENTITY tagger.window.tagtofile.caption "Till filnamn">
+<!ENTITY tagger.window.tagtofile.description "Använd tagginformationen för att konstruera filnamn och för att lokalisera filerna på den angivna platsen.">
+<!ENTITY tagger.window.tagtofile.targetdir "Målmapp">
+<!ENTITY tagger.window.tagtofile.targetdir.tooltip "Det här kommer att vara rotkatalogen till vilken filerna flyttas.">
+<!ENTITY tagger.window.tagtofile.oldname "Gammalt namn:">
+<!ENTITY tagger.window.tagtofile.newname "Nytt namn:">
+<!ENTITY tagger.window.tagtofile.selecttargetdir.tooltip "Klicka här för att öppna en dialogruta.">
+<!ENTITY tagger.window.tagtofile.pattern "Filnamnsmönster">
+<!ENTITY tagger.window.tagtofile.pattern.tooltip "Det här mönstret kommer att användas för att placera och namnge filerna. Klicka på &tagger.window.parserhelp;-knappen för att få mer hjälp.">
+<!ENTITY tagger.window.tagtofile.presencefilter "Taggnärvarofilter">
+<!ENTITY tagger.window.tagtofile.presencefilter.tooltip "Definierar vilka taggar som måste finnas för att byta namn på/flytta filerna. Filer som inte matchar dessa kriterier kommer inte att ändras.">
+<!ENTITY tagger.window.tagtofile.presencefilter.none "Ingen filtrering">
+<!ENTITY tagger.window.tagtofile.presencefilter.none.warning "Obs: Det här leder till problem om taggar som inte finns utgör den enda texten i ett filträdslager.">
+<!ENTITY tagger.window.tagtofile.presencefilter.auto "Identifiera m.h.a. mönster">
+<!ENTITY tagger.window.tagtofile.presencefilter.auto.note "Bra val">
+<!ENTITY tagger.window.tagtofile.presencefilter.custom "Anpassat filter">
+<!ENTITY tagger.window.tagtofile.presencefilter.custom.description "De förkryssade taggarna måste finnas och vara icke-tomma för att påverka filen.">
+<!ENTITY tagger.window.tagtofile.onlylocal "Endast lokala filer">
+<!ENTITY tagger.window.tagtofile.onlylocal.tooltip "Om det här är förkryssat kommer endast filer tillgängliga på den här datorn att flyttas runt.">
+<!ENTITY tagger.window.tagtofile.keepextension "Behåll filtillägg">
+<!ENTITY tagger.window.tagtofile.keepextension.tooltip "Om det här är förkryssat kommer det gamla filtillägget automatiskt att återbifogas till det slutgiltiga filnamnet.">
+<!ENTITY tagger.window.tagtofile.rename "Byt namn på markerade filer">
+<!ENTITY tagger.window.tracknumbers.caption "Spårnummer">
+<!ENTITY tagger.window.tracknumbers.description "Lägg till objekten du vill redigera i listan nedan genom att använda de två knapparna, sortera dem efter eget tycke och klicka sedan på &quot;Applicera...&quot; för att ge dem på varandra följande spårnummer.">
+<!ENTITY tagger.window.tracknumbers.apply "Applicera spårnummer på spår i listan">
+<!ENTITY tagger.window.tracknumbers.apply.tooltip "Applicera de visade spårnumren på spåren som finns i listan ovan.">
+<!ENTITY tagger.window.tracknumbers.offset "Förskjutning">
+<!ENTITY tagger.window.tracknumbers.offset.tooltip "Det här värdet kommer att läggas till de visade numren.">
+<!ENTITY tagger.window.macro.editor.caption "Makroredigeraren">
+<!ENTITY tagger.window.macro.editor.description "Tagger har stöd för att bygga makron. Ett makro är en lista, eller snarare ett träd, över åtgärder och villkor. Genom att använda en ganska liten uppsättning basinstruktioner kan du enkelt bygga komplexa skript som du sedan kan köra för att sortera om ditt bibliotek. Eftersom redigeraren är lite mer utrymmeskrävande är den placerad i en egen flik. Du kan även öppna den via Verktyg-menyn.">
+<!ENTITY tagger.window.macro.editor.open "Öppna makroredigeraren">
+<!ENTITY tagger.window.macro.list.caption "Tillgängliga makron">
+<!ENTITY tagger.window.macro.list.execute.tooltip "Kör det för närvarande markerade makrot.">
+<!ENTITY tagger.window.macro.list.edit "Redigera">
+<!ENTITY tagger.window.macro.list.edit.tooltip "Öppnar det markerade makrot i en ny flik, för redigering.">
+<!ENTITY tagger.window.macro.list.import "Importera">
+<!ENTITY tagger.window.macro.list.import.tooltip "Importera ett makro från en fil.">
+<!ENTITY tagger.window.macro.list.export "Exportera">
+<!ENTITY tagger.window.macro.list.export.tooltip "Exportera det markerade makrot till en fil.">
+<!ENTITY tagger.window.macro.list.delete "&tagger.window.delete;">
+<!ENTITY tagger.window.macro.list.delete.tooltip "Ta bort det markerade makrot från biblioteket.">
+<!ENTITY tagger.window.macro.list.nomacros "Inga tillgängliga makron">
+<!ENTITY tagger.window.macro.exporttarget "Välj en fil att exportera till">
+<!ENTITY tagger.window.actions.actionlistplaceholder "[Åtgärdslista]">
+<!ENTITY tagger.window.actions.conditionlistplaceholder "[Villkorslista]">
+<!ENTITY tagger.window.actions.recond "Matchning med reguljärt uttryck">
+<!ENTITY tagger.window.actions.expression "Uttryck">
+<!ENTITY tagger.window.actions.attribute "Attribut">
+<!ENTITY tagger.window.actions.actions "Åtgärder">
+<!ENTITY tagger.window.actions.trueactions "Åtgärder vid matchning">
+<!ENTITY tagger.window.actions.falseactions "Åtgärder vid icke-matchning">
+<!ENTITY tagger.window.actions.conditions "Villkor">
+<!ENTITY tagger.window.actions.condlink_and "Samtliga villkor måste matcha">
+<!ENTITY tagger.window.actions.condlink_or "Ett eller flera villkor måste matcha">
+<!ENTITY tagger.window.actions.condlink_xor "Ett udda antal villkor måste matcha">
+<!ENTITY tagger.window.actions.conditionlink "Villkorsoperator">
+<!ENTITY tagger.window.actions.conditional "Villkorade åtgärder">
+<!ENTITY tagger.window.actions.invert "Invertera villkor">
+<!ENTITY tagger.window.actions.match "Matchning med sträng">
+<!ENTITY tagger.window.actions.value "Värde">
+<!ENTITY tagger.window.actions.matchmode "Matchningsläge">
+<!ENTITY tagger.window.actions.match.exact "Exakt matchning">
+<!ENTITY tagger.window.actions.match.begin "Börjar med">
+<!ENTITY tagger.window.actions.match.end "Slutar med">
+<!ENTITY tagger.window.actions.match.contains "Innehåller">
+<!ENTITY tagger.window.actions.subcondition "Villkorslista">
+<!ENTITY tagger.window.actions.actionlist "Åtgärdslista">
+<!ENTITY tagger.window.actions.trim "Ta bort inledande/avslutande blanksteg">
+<!ENTITY tagger.window.actions.confirmdelete "Vill du verkligen ta bort det här objektet och hela dess innehåll?">
+<!ENTITY tagger.window.actions.caption "Taggers makroredigerare">
+<!ENTITY tagger.window.actions.addaction "Lägg till åtgärd">
+<!ENTITY tagger.window.actions.addaction.general "Allmänt">
+<!ENTITY tagger.window.actions.addaction.peritem "Tillämpa på enskilt objekt">
+<!ENTITY tagger.window.actions.addaction.selection "Tillämpa på markering">
+<!ENTITY tagger.window.actions.addcondition "Lägg till villkor">
+<!ENTITY tagger.window.actions.editproperty "Redigera egenskap">
+<!ENTITY tagger.window.actions.delete "&tagger.window.delete;">
+<!ENTITY tagger.window.actions.newmacro "Nytt makro">
+<!ENTITY tagger.window.actions.load "&tagger.window.load;">
+<!ENTITY tagger.window.actions.save "&tagger.window.save;">
+<!ENTITY tagger.window.actions.execute "&tagger.window.execute;">
+<!ENTITY tagger.window.actions.action "Åtgärd / Egenskap">
+<!ENTITY tagger.window.actions.parameter "Parameter">
+<!ENTITY tagger.window.actions.cut "Klipp ut">
+<!ENTITY tagger.window.actions.copy "Kopiera">
+<!ENTITY tagger.window.actions.paste "Klistra in">
+<!ENTITY tagger.window.actions.foreachselected "Tillämpa på varje objekt i markeringen">
+<!ENTITY tagger.window.actions.condselect "Välj efter villkor">
+<!ENTITY tagger.window.actions.source "Källa">
+<!ENTITY tagger.window.actions.wholelibrary "Hela medielistan">
+<!ENTITY tagger.window.actions.filteredlibrary "Aktuell medievy">
+<!ENTITY tagger.window.actions.currentselection "Aktuell markering">
+<!ENTITY tagger.window.actions.importselection "Importera markering">
+<!ENTITY tagger.window.actions.optimize "Kort beräkning">
+<!ENTITY tagger.window.actions.noconditions "En &quot;&tagger.window.actions.conditional;&quot;-åtgärd kunde inte beräknas eftersom inga villkor var tilldelade. Inga åtgärder utfördes.">
+<!ENTITY tagger.window.actions.emptyselection "En &quot;&tagger.window.actions.foreachselected;&quot;-åtgärd kunde inte utföras eftersom markeringen var tom.">
+<!ENTITY tagger.window.actions.workinprogress "Ett makro körs... ">
+<!ENTITY tagger.window.actions.metadata "Makrometadata">
+<!ENTITY tagger.window.actions.commitcache "Lägg till i commit-cachen">
+<!ENTITY tagger.window.actions.flushcommitcache "Töm commit-cachen">
+<!ENTITY tagger.window.actions.clearcommitcache "Rensa commit-cachen">
+<!ENTITY tagger.window.actions.attributes "Attribut">
+<!ENTITY tagger.window.macrodlg.manage "Hantera makron">
+<!ENTITY tagger.window.macrodlg.list.caption "&tagger.window.macro.list.caption;">
+<!ENTITY tagger.window.macrodlg.list.new "� Nytt (dubbelklicka)">
+<!ENTITY tagger.window.macrodlg.askoverwrite "Makrot &quot;&#37;s&quot; finns redan. Vill du ersätta det?">
+<!ENTITY tagger.window.macrodlg.askdelete "Vill du verkligen ta bort &quot;&#37;s&quot;?">
+<!ENTITY tagger.window.macrodlg.newfilename "Ange ett namn för den nya makrofilen">

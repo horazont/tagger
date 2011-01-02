@@ -84,6 +84,8 @@
 <!ENTITY tagger.window.settags.caption "Assigner et combiner">
 <!ENTITY tagger.window.settags.description "Assignez une valeur aux balises choisies dans tous les fichiers sélectionnés. Vous pouvez aussi y utiliser l'ensemble des mots-clés disponible dans la section &quot;Écrire les balises dans le nom du fichier&quot;.">
 <!ENTITY tagger.window.settags.button "Mettre à jour les balises des pistes sélectionnées">
+<!ENTITY tagger.window.gettags "Récupérer les balises cochées depuis la piste sélectionnée">
+<!ENTITY tagger.window.gettags.tooltip "Initialisez les valeurs des balises cochées en les lisant dans la piste sélectionnée">
 <!ENTITY tagger.window.replace.caption "Remplacer">
 <!ENTITY tagger.window.replace.description "Effectuez des actions de remplacement simples à l'intérieur des balises.">
 <!ENTITY tagger.window.replace.regexp "Prendre en compte les expressions régulières">

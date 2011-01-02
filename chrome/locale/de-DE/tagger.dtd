@@ -84,6 +84,8 @@
 <!ENTITY tagger.window.settags.caption "Setzen &amp; Kombinieren">
 <!ENTITY tagger.window.settags.description "Die ausgewählten Tags der ausgewählten Lieder neu setzen. Sie können auch Tokens wie in der Tags-&gt;Dateinamen-Sparte verwenden.">
 <!ENTITY tagger.window.settags.button "Tags bei den ausgewählten Liedern setzen">
+<!ENTITY tagger.window.gettags "Get enabled tags from selected file">
+<!ENTITY tagger.window.gettags.tooltip "Initialize enabled values with tags from selected file">
 <!ENTITY tagger.window.replace.caption "Ersetzen">
 <!ENTITY tagger.window.replace.description "Benutzen Sie die Elemente hier drunter um einfache Suchen-und-Ersetzen Operationen durchzuführen.">
 <!ENTITY tagger.window.replace.regexp "Unterstützung für Reguläre Ausdrücke.">

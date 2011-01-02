@@ -1,0 +1,11 @@
+<!ENTITY tagger.matchfail.title "Erro de correspondência">
+<!ENTITY tagger.matchfail.description "Uma faixa não corresponde ao esquema dado.">
+<!ENTITY tagger.matchfail.fileName "Nome do arquivo: ">
+<!ENTITY tagger.matchfail.trackName "Nome da faixa: ">
+<!ENTITY tagger.matchfail.albumName "Nome do álbum: ">
+<!ENTITY tagger.matchfail.artistName "Nome do artista: ">
+<!ENTITY tagger.matchfail.skip "Pular esta faixa">
+<!ENTITY tagger.matchfail.setinfo "Tag manual">
+<!ENTITY tagger.matchfail.skipall "Pular todas as faixas com problemas">
+<!ENTITY tagger.matchfail.manual.caption "Tagging manual">
+<!ENTITY tagger.matchfail.manual.description "Você pode determinar valores para os três atributos ao invés de pular o arquivo.">

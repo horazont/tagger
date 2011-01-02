@@ -1,0 +1,39 @@
+<!ENTITY tagger.close "Fechar">
+<!ENTITY tagger.parserhelp.title "Ajuda do analisador">
+<!ENTITY tagger.parserhelp.description "O analisador para nomes de arquivos pega um texto que consiste de alguns tokens. Os tokens conhecidos são os especificados abaixo. Eles determinam a localização no nome do arquivo onde podem ser encontrados os dados desejados. Tudo o que não é precedido por um caractere de percentagem não é um token e considerado como uma parte estática do nome do arquivo. Em seguida, um &quot;termo&quot; é tanto um grupo de partes estáticas consecutivas no padrão quanto um token.&quot;&gt;">
+<!ENTITY tagger.parserhelp.tokenlist "Tokens do analisador">
+<!ENTITY tagger.parserhelp.token "Token">
+<!ENTITY tagger.parserhelp.tokendescription "Descrição">
+<!ENTITY tagger.parserhelp.matches "Combinação de">
+<!ENTITY tagger.parserhelp.matches.numbers "dígitos">
+<!ENTITY tagger.parserhelp.matches.anything "qualquer coisa">
+<!ENTITY tagger.parserhelp.matches.year "2 ou 4 dígitos">
+<!ENTITY tagger.parserhelp.aliases "Nomes alternativos">
+<!ENTITY tagger.parserhelp.keyt "Nome da faixa, título">
+<!ENTITY tagger.parserhelp.keya "Artista">
+<!ENTITY tagger.parserhelp.keyb "Nome do álbum">
+<!ENTITY tagger.parserhelp.keyn "Nome da faixa">
+<!ENTITY tagger.parserhelp.keyy "Ano">
+<!ENTITY tagger.parserhelp.keyc "Número do disco">
+<!ENTITY tagger.parserhelp.keyx "Extensão antiga do nome do arquivo (Tags-&gt;Name apenas).">
+<!ENTITY tagger.parserhelp.keyr "Nome do artista do álbum">
+<!ENTITY tagger.parserhelp.keyo "Compositor">
+<!ENTITY tagger.parserhelp.keycomment "Comentário">
+<!ENTITY tagger.parserhelp.keytrackCount "Quantidade de faixas">
+<!ENTITY tagger.parserhelp.keydiscCount "Quantidade de discos">
+<!ENTITY tagger.parserhelp.keyg "Gênero">
+<!ENTITY tagger.parserhelp.keyasterisk "Acertos serão ignorados (Name-&gt;Tags apenas).">
+<!ENTITY tagger.parserhelp.samplehead "Simples">
+<!ENTITY tagger.parserhelp.sample1 "Exemplo de nome de arquivo: 01 - artista - título - coisas desnecessárias.ogg">
+<!ENTITY tagger.parserhelp.sample2 "O padrão recomendado seria:">
+<!ENTITY tagger.parserhelp.sample3 "Exemplo de estrutura de arquivo: Artista/Álbum/NºFaixa Título.ogg">
+<!ENTITY tagger.parserhelp.sample4 "O padrão recomendado seria:">
+<!ENTITY tagger.parserhelp.modhead "Modificadores">
+<!ENTITY tagger.parserhelp.moddescription "Há vários modificadores que você pode aplicar aos tokens. Disponível apenas no modo Tags-&gt;Name.">
+<!ENTITY tagger.parserhelp.modinit "Este é o primeiro caractere de cada token. Introduz o token e é obrigatório.">
+<!ENTITY tagger.parserhelp.moddot "Opcional. Quando o primeiro caractere após &#37; é dois pontos, toda a parte é dada como literal, não sendo executada nenhuma substituição ou análise, exceto o primeiro ”.”, que será removido.">
+<!ENTITY tagger.parserhelp.moddefault "Defina o valor padrão a ser usado caso o campo de referência esteja vazio ou faltando. Para números simplesmente determine-os imediatamente após o sinal de interrogação (?). Determine uma string entre apóstrofos duplos na mesma posição. Por exemplo, &#37;?0:2c&#37; terá como resultado '00' de nenhum número de disco for especificado. &#37;&quot;[Misc]&quot;b&#37; resultaria em '[Misc]' se o campo do álbum estiver vazio.">
+<!ENTITY tagger.parserhelp.modcolon "Opcional. Após o dois pontos você pode especificar um número. O Tagger irá adicionar esta quantidade de zeros à esquerda de cada número em qual ocorre a string gerada por este token.">
+<!ENTITY tagger.parserhelp.modquestion "Opcional. Quando este é especificado, o token é opcional. Isto é, se a tag que o representa estiver vazia ou não existir, o token será pulado (ao invés do erro quando é feita a detecção automática das tags necessárias).">
+<!ENTITY tagger.parserhelp.modquestion2 "Para cada sinal de interrogação adicional especificado, será pulado mais um termo se o token não existir ou estiver vazio. Um termo é tanto uma parte estática do padrão quanto um token.">
+<!ENTITY tagger.parserhelp.modkey "Uma das teclas especificadas acima.">

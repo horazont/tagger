@@ -1,0 +1,16 @@
+<!ENTITY tagger.welcome.headline "Bem-vindo ao Tagger!">
+<!ENTITY tagger.welcome.description "Esta página lhe apresentará uma breve introdução sobre o Tagger.">
+<!ENTITY tagger.welcome.features "O que o Tagger pode fazer:">
+<!ENTITY tagger.welcome.feature1 "Gerar tags a partir de nomes de arquivos de uma mídia de entrada utilizando um padrão definido pelo usuário.">
+<!ENTITY tagger.welcome.feature2 "Renomear e mover os arquivos de acordo com a informação das suas tags.">
+<!ENTITY tagger.welcome.feature3 "Ler dados de um arquivo de texto e contruir tags usando um padrão especificado.">
+<!ENTITY tagger.welcome.feature4 "Executa uma operação de busca &amp; substituição nas tags.">
+<!ENTITY tagger.welcome.feature5 "Preenche tags vazias com valores definidos pelo usuário ou anula todas as tags.">
+<!ENTITY tagger.welcome.feature6 "Salva as mudanças de tag no disco.">
+<!ENTITY tagger.welcome.feature7 "Usando macros, pode-se executar um monte de ações em um clique.">
+<!ENTITY tagger.welcome.howtouse "Como usar o Tagger?">
+<!ENTITY tagger.welcome.howtouse.description "Para usar o Tagger, apenas carregue-o na barra lateral direita. Agora você tem o poder total do Tagger nas suas mãos.">
+<!ENTITY tagger.welcome.howtouse.noteaboutfocustrack "Nota: O uso de complementos que mudam a seleção (ex. FocusTrack) pode ser perigoso,uma vez que o Tagger sempre opera na seleção atual. Favor desabilitá-los ou ao menos certifique-se de que eles não mudarão a seleção inesperadamente.">
+<!ENTITY tagger.welcome.howtouse.tooltips "Para torná-lo ainda mais fácil de usar, o Tagger apresenta dicas que lhe dão informações essenciais sobre os recursos. Contudo, o Tagger pode ser facilmente utilizado por todos que já usaram um programa gerador de tags.">
+<!ENTITY tagger.welcome.about "O Tagger também tem uma entrada no menu Ajuda que mostra um diálogo com informações sobre a versão do Tagger e seu desenvolvedor.">
+<!ENTITY tagger.welcome.stoptalking "Chega de conversa, deixe-me testá-lo!">

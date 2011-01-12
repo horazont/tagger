@@ -173,7 +173,13 @@ TaggerSetTagController.prototype = {
       {
         for (var j = 0;j<properties.length;j++)
         {
-          item.setProperty(properties[j].prop, properties[j].parser.execute(item));
+          try
+          {
+            item.setProperty(properties[j].prop, properties[j].parser.execute(item));
+          } catch (e)
+          {
+            //
+          }
         }
       }
       if (autoCommit)

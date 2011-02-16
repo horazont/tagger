@@ -195,7 +195,13 @@ TaggerReplaceController.prototype = {
         if (property != "")
         {
           property = property.replace(action.search, action.replace);
-          mediaItem.setProperty(action.property, property);
+          try
+          {
+            mediaItem.setProperty(action.property, property);
+          } catch (e)
+          {
+            //
+          }
         }
       }
       this._parent.updateProgress(i+1);

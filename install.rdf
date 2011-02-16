@@ -5,7 +5,7 @@
     <em:id>tagger@sotecware.net</em:id>
     <em:type>2</em:type>
     <em:name>Tagger</em:name>
-    <em:version>0.9.1.8</em:version> <!-- change also in tracktype-query.js and about.xul -->
+    <em:version>0.9.1.9</em:version> <!-- change also in tracktype-query.js and about.xul -->
     <em:creator>Jonas Wielicki</em:creator>
 
 

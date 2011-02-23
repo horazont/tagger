@@ -644,6 +644,7 @@ Leave a comment at:
                 <groupbox>
                   <caption label="&tagger.window.settings;"/>
                   <checkbox id="tagtofile-keepextension" label="&tagger.window.tagtofile.keepextension;" tooltiptext="&tagger.window.tagtofile.keepextension.tooltip;" checked="true"/>
+                  <checkbox id="tagtofile-keepcopy" label="&tagger.window.tagtofile.keepcopy;" tooltiptext="&tagger.window.tagtofile.keepcopy.tooltip;" checked="false"/>
                 </groupbox>
                 <groupbox>
                   <caption label="&tagger.window.tagtofile.targetdir;"/>

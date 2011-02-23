@@ -43,7 +43,11 @@ Leave a comment at:
       <separator class="thin"/>
       <hbox>
         <text value="&createdBy;" style="font-weight: bold; width:15em"/>
-        <text value="Jonas Wielicki and contributors"/>
+        <text value="Jonas Wielicki"/>
+      </hbox>
+      <hbox>
+        <text value="&contributedBy;" style="font-weight: bold; width:15em"/>
+        <text value="klint"/>
       </hbox>
       <hbox>
         <text value="&bugsAndCo;" style="font-weight: bold; width:15em"/>

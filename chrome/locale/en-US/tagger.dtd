@@ -121,7 +121,9 @@
 <!ENTITY tagger.window.tagtofile.onlylocal "Only local files">
 <!ENTITY tagger.window.tagtofile.onlylocal.tooltip "If checked, only files available on this computer will be moved around.">
 <!ENTITY tagger.window.tagtofile.keepextension "Keep extension">
+<!ENTITY tagger.window.tagtofile.keepcopy "Preserve files outside of Target directory">
 <!ENTITY tagger.window.tagtofile.keepextension.tooltip "If checked, the old file extension will be automatically re-appended to the final file name.">
+<!ENTITY tagger.window.tagtofile.keepcopy.tooltip "If checked, any original file which is not located under the Target Directory folder structure will be kept intact: this file will be copied to the Target directory instead of being renamed.">
 <!ENTITY tagger.window.tagtofile.rename "Rename selected files">
 <!ENTITY tagger.window.tracknumbers.caption "Track numbers">
 <!ENTITY tagger.window.tracknumbers.description "Add the items you want to edit to the list below using the two buttons, order them like you want and then hit apply to give them consecutive track numbers.">

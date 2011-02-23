@@ -36,6 +36,7 @@ function TaggerRenameController(parentController)
   this.xul.targetDir = document.getElementById("tagtofile-targetdir");
   this.xul.pattern = document.getElementById("tagtofile-pattern");
   this.xul.keepextension = document.getElementById("tagtofile-keepextension");
+  this.xul.keepcopy = document.getElementById("tagtofile-keepcopy");
   this.xul.preview = {};
   this.xul.preview.oldName = document.getElementById("tagtofile-oldname");
   this.xul.preview.newName = document.getElementById("tagtofile-newname");
@@ -93,18 +94,22 @@ TaggerRenameController.prototype = {
       this.xul.pattern.value = value.value;
     if ((value = Application.prefs.get("extensions.tagger.rename.keepextension")) != null)
       this.xul.keepextension.checked = value.value;
+    if ((value = Application.prefs.get("extensions.tagger.rename.keepcopy")) != null)
+      this.xul.keepcopy.checked = value.value;
   },
 
   saveSettings: function() {
     Application.prefs.setValue("extensions.tagger.rename.targetdir", this.xul.targetDir.value);
     Application.prefs.setValue("extensions.tagger.rename.pattern", this.xul.pattern.value);
-    Application.prefs.setValue("extensions.tagger.rename.keepextension", this.xul.keepextension.checked);
+    Application.prefs.setValue("extensions.tagger.rename.keepextension", this.xul.keepextension.checked);     
+    Application.prefs.setValue("extensions.tagger.rename.keepcopy", this.xul.keepcopy.checked);
   },
   
   loadGeneratorStates: function() {
     //this.onlyLocal = this.xul.onlyLocalFiles.checked;
     this.presenceFilter = this.xul.presenceFilter.selectedIndex;
     this.keepExtension = this.xul.keepextension.checked;
+    this.keepCopy = this.xul.keepcopy.checked;
     
     var rootDir = this.Cc["@mozilla.org/file/local;1"].createInstance(this.Ci.nsILocalFile);
     try
@@ -298,7 +303,11 @@ TaggerRenameController.prototype = {
       }
       try
       {
-        file.moveTo(dir, newFileName.substr(lastSeparator+1));
+        //if a copy of the original not already in the Target Dir has to be kept, copy instead of move. 
+        if ((this.keepCopy) && (oldFileName.toLowerCase().indexOf(this.rootPath.toLowerCase())==-1))
+           file.copyTo(dir, newFileName.substr(lastSeparator+1));
+        else
+           file.moveTo(dir, newFileName.substr(lastSeparator+1));
       } catch (e)
       {
         alert(this._parent._strings.getString("taggerWindowFileNotMoved").replace("%s1",oldFileName).replace("%s2",this.rootPath+this._parent._pathSeparator+newFileName)+"\n\nException: "+e);

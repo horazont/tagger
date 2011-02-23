@@ -1,4 +1,5 @@
 pref("extensions.tagger.rename.keepextension", true);
+pref("extensions.tagger.rename.keepcopy", false);
 pref("extensions.tagger.rename.pattern", "%a/%??b/%a - %??n %t");
 pref("extensions.tagger.retag.autoupcase", false);
 pref("extensions.tagger.retag.keeptags", true);

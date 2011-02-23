@@ -39,7 +39,7 @@ Leave a comment at:
         <image src="chrome://tagger/skin/addon-icon.png" style="width: 32px; height: 32px"/>
         <text value="Tagger" style="font-weight: bold; font-size: x-large; vertical-align: middle" flex="1"/>
       </hbox>
-      <text value="&version; 0.9.2.0"/>
+      <text value="&version; 0.9.2.1"/>
       <separator class="thin"/>
       <hbox>
         <text value="&createdBy;" style="font-weight: bold; width:15em"/>

@@ -5,8 +5,24 @@
 
 
 
+
+
+
+
+
+
+
+
   skapa, lagra, läsa in och köra små skript som kallas makron.">
 <!ENTITY td.actions.overview2 "Dessa makron är ingenting annat än en kombination av fördefinierade 
+
+
+
+
+
+
+
+
 
 
 
@@ -17,11 +33,23 @@
 
 
 
+
+
+
+
   virtuellt urval av medieobjekt. Urvalet kan dessutom ändras 
 
 
 
+
+
+
+
   genom vissa åtgärder. Det här gör att makron är flexibla och kapabla att utföra 
+
+
+
+
 
 
 
@@ -33,11 +61,27 @@
 
 
 
+
+
+
+
+
+
+
+
   antagligen vill ha en &quot;&tagger.window.actions.importselection;&quot;-åtgärd som det
 
 
 
+
+
+
+
   första av dina skript. Det här kommer att hämta urvalet du gjorde i medievyn
+
+
+
+
 
 
 
@@ -51,7 +95,19 @@
 
 
 
+
+
+
+
+
+
+
+
   Beroende på åtgärdens art, så bestäms det faktiska slutresultatet
+
+
+
+
 
 
 
@@ -73,8 +129,24 @@
 
 
 
+
+
+
+
+
+
+
+
   över åtgärder, som kommer att utföras i angiven ordning.">
 <!ENTITY td.action.property.condlink "Det här definierar hur 
+
+
+
+
+
+
+
+
 
 
 
@@ -85,12 +157,28 @@
 
 
 
+
+
+
+
   eller ett udda antal villkor beräknas till SANT, d.v.s. mötas (även känt som
+
+
+
+
 
 
 
   exklusiv disjunktion, XOR).">
 <!ENTITY td.action.property.invert "Inverterar resultatet av den 
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +193,19 @@
 
 
 
+
+
+
+
+
+
+
+
   avbryts beräkningen så snart ett resultat har fastställts. Det här sker, till exempel,
+
+
+
+
 
 
 
@@ -113,7 +213,15 @@
 
 
 
+
+
+
+
   &tagger.window.actions.condlink_and; och ett villkor beräknas till FALSKT. I
+
+
+
+
 
 
 
@@ -121,8 +229,20 @@
 
 
 
+
+
+
+
 ">
 <!ENTITY td.action.property.conditions "Det finns en lista över villkor som
+
+
+
+
+
+
+
+
 
 
 
@@ -137,8 +257,24 @@
 
 
 
+
+
+
+
+
+
+
+
   om den sammantagna villkorsberäkningen returnerar ett positivt värde.">
 <!ENTITY td.action.property.falseactions "Åtgärderna endast utförs
+
+
+
+
+
+
+
+
 
 
 
@@ -153,12 +289,32 @@
 
 
 
+
+
+
+
+
+
+
+
   ersättningsoperationen kommer att tillämpas. Om det här anges till &quot;&tagger.window.all;&quot;, 
+
+
+
+
 
 
 
   kommer ersättningsoperationen att utföras på samtliga attribut.">
 <!ENTITY td.action.property.attribute "Det här attributet för det aktuella medieobjektet 
+
+
+
+
+
+
+
+
 
 
 
@@ -173,8 +329,24 @@
 
 
 
+
+
+
+
+
+
+
+
   som åtgärden kommer att leta efter.">
 <!ENTITY td.action.property.replacewith "Alla förekomster av
+
+
+
+
+
+
+
+
 
 
 
@@ -189,7 +361,19 @@
 
 
 
+
+
+
+
+
+
+
+
   uttryck är aktiverat kommer mönstret att analyseras som ett reguljärt uttryck.
+
+
+
+
 
 
 
@@ -197,12 +381,28 @@
 
 
 
+
+
+
+
   sökuttrycket genom &quot;$n&quot;, där &quot;n&quot; är delmönstrets ordningsnummer, 
+
+
+
+
 
 
 
   med början på n=1.">
 <!ENTITY td.action.property.ignorecase "Huruvida skiftläget för
+
+
+
+
+
+
+
+
 
 
 
@@ -217,6 +417,14 @@
 
 
 
+
+
+
+
+
+
+
+
   skall matchas flera gånger på samma attribut.">
 <!ENTITY td.action.property.source "Definierar den källa från vilken
 
@@ -225,8 +433,24 @@
 
 
 
+
+
+
+
+
+
+
+
   objekten som skall filtreras av villkoret skall hämtas.">
 <!ENTITY td.action.property.matchmode "Det här definierar var villkoret kommer
+
+
+
+
+
+
+
+
 
 
 
@@ -242,12 +466,32 @@
 
 
 
+
+
+
+
+
+
+
+
   blanksteg eller nya rader i indatasträngen att tas bort innan matchningen
+
+
+
+
 
 
 
   slutförs.">
 <!ENTITY td.action.property.expression "Det reguljära uttrycket som används av
+
+
+
+
+
+
+
+
 
 
 
@@ -262,8 +506,24 @@
 
 
 
+
+
+
+
+
+
+
+
   skrivas till filerna.">
 <!ENTITY td.action.property.filenameformat "Precis som i originalfunktionen för &quot;Från filnamn&quot;
+
+
+
+
+
+
+
+
 
 
 
@@ -274,8 +534,20 @@
 
 
 
+
+
+
+
   metadatan hittas i filnamnet.">
 <!ENTITY td.action.property.keeptags "Om det här aktiveras kommer taggar som skall 
+
+
+
+
+
+
+
+
 
 
 
@@ -290,8 +562,24 @@
 
 
 
+
+
+
+
+
+
+
+
   indatafilnamnet att ersättas av mellanslag.">
 <!ENTITY td.action.property.dirsupport "Det här låter dig inkludera mappnamn
+
+
+
+
+
+
+
+
 
 
 
@@ -306,7 +594,19 @@
 
 
 
+
+
+
+
+
+
+
+
   avgöra vilka delar av filnamnet som skall skrivas med versaler och vilka som inte 
+
+
+
+
 
 
 
@@ -314,12 +614,28 @@
 
 
 
+
+
+
+
   filnamnens skiftläge i beräkningen, vilket gör att Songbird sparar varje
+
+
+
+
 
 
 
   filnamn i sin originalform.">
 <!ENTITY td.action.actionlist.abstract "Innehåller en lista över åtgärder vilka
+
+
+
+
+
+
+
+
 
 
 
@@ -336,10 +652,26 @@
 
 
 
+
+
+
+
+
+
+
+
   åtgärder beroende på om villkoret möts eller inte.">
 <!ENTITY td.action.conditional.needscontext "<em>Beror på tilldelade villkor och åtgärder.</em>">
 <!ENTITY td.action.conditional.providescontext "&td.action.context.none;">
 <!ENTITY td.action.set.abstract "Ersätt eller kombinera flera av ett
+
+
+
+
+
+
+
+
 
 
 
@@ -354,7 +686,19 @@
 
 
 
+
+
+
+
+
+
+
+
   i &tagger.window.settags.caption;-fliken i Tagger. Om du emellertid
+
+
+
+
 
 
 
@@ -362,10 +706,22 @@
 
 
 
+
+
+
+
   inte strängen &quot;null&quot;), så kommer det att ignoreras.">
 <!ENTITY td.action.set.needscontext "&td.action.context.item;">
 <!ENTITY td.action.set.providescontext "&td.action.context.none;">
 <!ENTITY td.action.replace.abstract "Utför en sök- &amp; ersätt-operation
+
+
+
+
+
+
+
+
 
 
 
@@ -382,10 +738,26 @@
 
 
 
+
+
+
+
+
+
+
+
   medievyn för att bygga ett virtuellt urval.">
 <!ENTITY td.action.importselection.needscontext "&td.action.context.none;">
 <!ENTITY td.action.importselection.providescontext "&td.action.context.none;">
 <!ENTITY td.action.clearcommitcache.abstract "Ta bort alla objekt från commit-cachen
+
+
+
+
+
+
+
+
 
 
 
@@ -402,10 +774,26 @@
 
 
 
+
+
+
+
+
+
+
+
   i commit-cachen tillbaka till filerna.">
 <!ENTITY td.action.flushcommitcache.needscontext "&td.action.context.none;">
 <!ENTITY td.action.flushcommitcache.providescontext "&td.action.context.none;">
 <!ENTITY td.action.commitcache.abstract "Lägg till det aktuella objektet i commit-cachen. 
+
+
+
+
+
+
+
+
 
 
 
@@ -422,10 +810,26 @@
 
 
 
+
+
+
+
+
+
+
+
   det aktuella medieobjektet genom att använda det angivna mönstret för att extrahera metadata.">
 <!ENTITY td.action.fromfilename.needscontext "&td.action.context.item;">
 <!ENTITY td.action.fromfilename.providescontext "&td.action.context.none;">
 <!ENTITY td.action.condselect.abstract "Bygg ett virtuellt urval från en viss
+
+
+
+
+
+
+
+
 
 
 
@@ -442,10 +846,26 @@
 
 
 
+
+
+
+
+
+
+
+
   utför de angivna åtgärderna på varje objekt.">
 <!ENTITY td.action.foreachselected.needscontext "<em>Beror på tilldelade åtgärder.</em>">
 <!ENTITY td.action.foreachselected.providescontext "&td.action.context.item;">
 <!ENTITY td.action.match.abstract "Utför en strängmatchningsoperation på ett
+
+
+
+
+
+
+
+
 
 
 
@@ -461,9 +881,25 @@
 
 
 
+
+
+
+
+
+
+
+
   med ett reguljärt uttryck på ett attribut till ett medieobjekt.">
 <!ENTITY td.action.recond.needscontext "&td.action.context.item;">
 <!ENTITY td.action.subcondition.abstract "Grupperar flera villkor tillsammans, 
+
+
+
+
+
+
+
+
 
 
 

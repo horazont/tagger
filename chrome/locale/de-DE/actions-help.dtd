@@ -1,23 +1,45 @@
 <!ENTITY td.actions.overview1 "Seit Version 0.9.0.0 kann Tagger kleine
 
 
+
+
+
+
   Scripts, sogenannte Macros, erzeugen, speichern, laden und ausführen.">
 <!ENTITY td.actions.overview2 "Diese „Macros” sind nicht mehr und nicht weniger als eine Kombination aus
 
 
+
+
+
+
   vorgegebenen Aktionen. Anders als beim normalen Arbeiten mit Tagger, arbeiten
+
+
 
   Macro-Aktionen mit einer „virtuellen Auswahl” von Media Items, wobei diese
 
+
+
   Auswahl sogar von bestimmten Aktionen geändert werden kann. Das macht Macros
+
+
 
   sehr flexibel, was es erlaubt, ein großes Aufgabenfeld abzudecken.">
 <!ENTITY td.actions.overview3 "Aufgrund der Natur von virtuellen Auswahlen, wird es wahrscheinlich nötig
 
 
+
+
+
+
   sein, eine „&tagger.window.actions.importselection;” als erste Aktion im
 
+
+
   Macro zu haben. Dies wird die Auswahl aus der Medienansicht importieren und
+
+
 
   als virtuelle Auswahl für das Macro hinterlegen.">
 <!ENTITY td.actions.title "Macro-Aktionen">
@@ -25,7 +47,13 @@
 <!ENTITY td.actions.conditions "Einige Aktionen können Bedingungen enthalten.
 
 
+
+
+
+
   Was letztendlich passieren wird, wenn die Bedingung zutrifft (oder auch nicht)
+
+
 
   hängt von der Aktion ab.">
 <!ENTITY td.action.title "Aktionsdokumentation: ">
@@ -41,134 +69,268 @@
 <!ENTITY td.action.property.actions "Diese Eigenschaft enthält eine Liste von
 
 
+
+
+
+
   Aktionen, welche dann in der Reihenfolge ausgeführt werden.">
 <!ENTITY td.action.property.condlink "Dies gibt an, wie die Bedingungen 
 
 
+
+
+
+
   miteinander verknüpft sind. Entweder müssen alle Bedingungen zutreffen oder
+
+
 
   eine oder mehr oder eine ungerade Anzahl an Bedingungen (auch bekannt als
 
+
+
   „ausschließendes Oder“ (xor)).">
 <!ENTITY td.action.property.invert "Kehr das Ergebnis der Auswertung der 
+
+
+
+
 
 
   gesamten Bedingung um.">
 <!ENTITY td.action.property.optimize "Wenn dies aktiviert ist, bricht die 
 
 
+
+
+
+
   Auswertung ab, sobald das Ergebnis fest bestimmt wurde. Das trifft zum
+
+
 
   Beispiel zu, wenn die Bedingungsverknüpfung auf &tagger.window.actions.condlink_and;
 
+
+
   gesetzt ist und eine Bedingung nicht zutraf. In diesem Fall ergibt es keinen
+
+
 
   Sinn die restlichen Bedingungen ebenfalls auszuwerten, da es keine Möglichkeit
 
+
+
 ">
 <!ENTITY td.action.property.conditions "Eine Liste aus Bedingungen, die in der
+
+
+
+
 
 
   gegebenen Reihenfolge überprüft werden.">
 <!ENTITY td.action.property.trueactions "Diese Aktionen werden ausgeführt, 
 
 
+
+
+
+
   wenn die Auswertung der Bedingung ein positives Ergebnis brachte.">
 <!ENTITY td.action.property.falseactions "Diese Aktionen hingegen werden 
+
+
+
+
 
 
   ausgeführt, ">
 <!ENTITY td.action.property.replace.attribute "Dies ist das Medienattribut, 
 
 
+
+
+
+
   mit dem die Aktion arbeiten wird. Wenn dies auf „&tagger.window.all;” gesetzt
+
+
 
   ist, wird die Aktion alle Attribute in der Liste bearbeiten.">
 <!ENTITY td.action.property.attribute "Dieses Attribut des aktuellen 
+
+
+
+
 
 
   Medienobjektes wird von der Operation verwendet.">
 <!ENTITY td.action.property.pattern "Diese Eigenschaft gibt das Suchmuster an, 
 
 
+
+
+
+
   nach dem die Aktion suchen wird.">
 <!ENTITY td.action.property.replacewith "Jedes Vorkommen des Suchmusters wird
+
+
+
+
 
 
   mit dem Inhalt dieser Eigenschaft ersetzt.">
 <!ENTITY td.action.property.regexpsupport "Wenn die Unterstützung für reguläre
 
 
+
+
+
+
   Ausdrücke aktiviert ist, wird das Suchmuster als eben solche betrachtet.
+
+
 
   Dann kann in der Ersetzung auf jedes Subpattern des Regulären Ausdrucks mit
 
+
+
   „$n” zugegriffen werden, wobei das „n“ die Nummer des Subpatterns darstellt,
+
+
 
   beginnend bei 1.">
 <!ENTITY td.action.property.ignorecase "Legt fest, ob die Groß-/Kleinschreibung
+
+
+
+
 
 
   beachtet werden soll oder nicht.">
 <!ENTITY td.action.property.globalmatch "Legt fest, ob nur ein Treffer oder alle
 
 
+
+
+
+
   ersetzt werden sollen.">
 <!ENTITY td.action.property.source "Legt fest, von wo die Medienobjekte für die
+
+
+
+
 
 
   Selektion geholt werden sollen.">
 <!ENTITY td.action.property.matchmode "Dies gibt an, wo im Attributsinhalt
 
 
+
+
+
+
   der Vergleich nach dem Suchmuster sucht.">
 <!ENTITY td.action.property.value "Der Text nach dem im Attribut gesucht werden 
+
+
+
+
 
 
   soll.">
 <!ENTITY td.action.property.trim "Wenn dies aktiviert ist, werden führende
 
 
+
+
+
+
   und nachfolgende Leerzeichen in der Eingabe entfernt, bevor die Bedingung
+
+
 
   überprüft wird.">
 <!ENTITY td.action.property.expression "Der reguläre Ausdruck, der von dieser
+
+
+
+
 
 
   Aktion verwendet werden soll.">
 <!ENTITY td.action.property.attributes "Eine Auswahl aus Attributen, die in die
 
 
+
+
+
+
   Dateien geschrieben werden sollen.">
 <!ENTITY td.action.property.filenameformat "Wie die echte 
 
 
+
+
+
+
   Aus Dateinamen-Funktion, muss ein Suchmuster angegeben werden, welches 
+
+
 
   beschreibt, wo in dem Dateinamen die Werte für die Attribute zu finden sind.">
 <!ENTITY td.action.property.keeptags "Wenn aktiviert, werden Tags, die bereits
+
+
+
+
 
 
   existieren und Inhalt haben nicht überschrieben.">
 <!ENTITY td.action.property.replace_ "Wenn aktiviert, werden alle „_”
 
 
+
+
+
+
   (Unterstriche) im Eingabedateinamen durch Leerzeichen ersetzt.">
 <!ENTITY td.action.property.dirsupport "Dies erlaubt es auch, die 
+
+
+
+
 
 
   Ordnernamen mit in das Suchmuster einzubeziehen.">
 <!ENTITY td.action.property.autoupcase "Dieses Feature aktiviert eine Art
 
 
+
+
+
+
   Heuristik, um festzustellen, welche Teile eines Dateinamens in Großbuchstaben
+
+
 
   sein sollten und welche nicht. Dies wird auf Unixoiden Betriebssystemen nicht
 
+
+
   gebraucht, da diese die Groß- und Kleinschreibung von Dateinamen beachten, 
+
+
 
   was dafür sorgt, dass Songbird diese ebenfalls richtig speichert.">
 <!ENTITY td.action.actionlist.abstract "Enthält eine Liste von Aktionen, die in
+
+
+
+
 
 
   der gegebenen Reihenfolge ausgeführt werden.">
@@ -177,22 +339,40 @@
 <!ENTITY td.action.conditional.abstract "Überprüft eine oder mehrere Bedingungen
 
 
+
+
+
+
   und führt Aktionen abhängig davon aus, ob die Bedingung zutraf oder nicht.">
 <!ENTITY td.action.conditional.needscontext "<em>Hängt von den zugewiesenen Bedingungen und Aktionen ab.</em>">
 <!ENTITY td.action.conditional.providescontext "&td.action.context.none;">
 <!ENTITY td.action.set.abstract "Ersetzen und Kombinieren mehrerer Attribute
 
 
+
+
+
+
   eines Medienobjektes.">
 <!ENTITY td.action.set.properties "Diese Eigenschaften sind genau das, was sonst
 
 
+
+
+
+
   im &tagger.window.settags.caption;-Tab in Tagger angegeben wird. Zusätzlich
+
+
 
   werden Werte, die auf &tagger.window.null; gesetzt wurden ignoriert.">
 <!ENTITY td.action.set.needscontext "&td.action.context.item;">
 <!ENTITY td.action.set.providescontext "&td.action.context.none;">
 <!ENTITY td.action.replace.abstract "Eine Suchen &amp; Ersetzen-Operation auf
+
+
+
+
 
 
   ein oder alle Attribute eines Medienobjektes durchführen.">
@@ -201,10 +381,18 @@
 <!ENTITY td.action.importselection.abstract "Die echte Selektion aus der
 
 
+
+
+
+
   Medienansicht verwenden, um eine virtuelle Auswahl zu erzeugen.">
 <!ENTITY td.action.importselection.needscontext "&td.action.context.none;">
 <!ENTITY td.action.importselection.providescontext "&td.action.context.none;">
 <!ENTITY td.action.clearcommitcache.abstract "Alle Objekte aus dem Commit-Cache
+
+
+
+
 
 
   entfernen.">
@@ -213,10 +401,18 @@
 <!ENTITY td.action.flushcommitcache.abstract "Die Metadaten aller Objekte im
 
 
+
+
+
+
   Commit-Cache in deren Dateien speichern.">
 <!ENTITY td.action.flushcommitcache.needscontext "&td.action.context.none;">
 <!ENTITY td.action.flushcommitcache.providescontext "&td.action.context.none;">
 <!ENTITY td.action.commitcache.abstract "Fügt das aktuelle Medienobjekt zum
+
+
+
+
 
 
   Commit-Cache hinzu.">
@@ -225,7 +421,13 @@
 <!ENTITY td.action.fromfilename.abstract "Diese Aktion verarbeitet den Dateinamen
 
 
+
+
+
+
   des aktuellen Medienobjektes unter Verwendung des gegebenen Suchmusters um
+
+
 
   Metadaten zu extrahieren.">
 <!ENTITY td.action.fromfilename.needscontext "&td.action.context.item;">
@@ -233,12 +435,22 @@
 <!ENTITY td.action.condselect.abstract "Erzeugt eine virtuelle Selektion von
 
 
+
+
+
+
   einer gegebenen Quelle unter Verwendung einer Bedingung, um Medienobjekte zu
+
+
 
   filtern.">
 <!ENTITY td.action.condselect.needscontext "<em>Hängt von den zugewiesenen Bedingungen ab.</em>">
 <!ENTITY td.action.condselect.providescontext "&td.action.context.item;">
 <!ENTITY td.action.foreachselected.abstract "Iteriert über die gesamte virtuelle
+
+
+
+
 
 
   Selektion und führt die gegebenen Aktionen für jedes Medienobjekt aus.">
@@ -247,9 +459,17 @@
 <!ENTITY td.action.match.abstract "Führt einen Textvergleich mit dem aktuellen
 
 
+
+
+
+
   Medienobjekt aus.">
 <!ENTITY td.action.match.needscontext "&td.action.context.item;">
 <!ENTITY td.action.recond.abstract "Führt eine Prüfung mittels eines regulären
+
+
+
+
 
 
   Ausdrucks mit dem aktuellen Medienobjekt durch.">
@@ -257,7 +477,13 @@
 <!ENTITY td.action.subcondition.abstract "Gruppiert mehrere Bedingungen zu einer
 
 
+
+
+
+
   und erlaubt so, einen anderen Bedingungsoperator zu verwenden und das Ergebnis
+
+
 
   zu invertieren.">
 <!ENTITY td.action.subcondition.needscontext "<em>Hängt von den zugewiesenen Bedingungen ab.</em>">

@@ -39,7 +39,19 @@
 
 
 
+
+
+
+
+
+
+
+
 ifall fältet som hänvisas saknas eller är tomt. Nummer anges helt enkelt
+
+
+
+
 
 
 
@@ -47,11 +59,23 @@ omedelbart efter frågetecknet ( ? ). Omslut en sträng med citationstecken
 
 
 
+
+
+
+
 på samma plats. Till exempel: &#37;?0:2c&#37; kommer att resultera i &apos;00&apos;
 
 
 
+
+
+
+
 om inget skivnummer anges. &#37;&quot;[Diverse]&quot;b&#37; resulterar i
+
+
+
+
 
 
 

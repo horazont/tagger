@@ -121,7 +121,9 @@
 <!ENTITY tagger.window.tagtofile.onlylocal "Apenas arquivos locais">
 <!ENTITY tagger.window.tagtofile.onlylocal.tooltip "Se marcado, apenas arquivos disponíveis neste computador serão movidos.">
 <!ENTITY tagger.window.tagtofile.keepextension "Manter extensão">
+<!ENTITY tagger.window.tagtofile.keepcopy "Preserve files outside of Target directory">
 <!ENTITY tagger.window.tagtofile.keepextension.tooltip "Se marcado, a antiga extensão do arquivo será autmaticamente re-acrescentada ao nome de arquivo final.">
+<!ENTITY tagger.window.tagtofile.keepcopy.tooltip "If checked, any original file which is not located under the Target Directory folder structure will be kept intact: this file will be copied to the Target directory instead of being renamed.">
 <!ENTITY tagger.window.tagtofile.rename "Renomear arquivos selecionados">
 <!ENTITY tagger.window.tracknumbers.caption "Números das faixas">
 <!ENTITY tagger.window.tracknumbers.description "Adicione os itens que você quer editar à lista abaixo usando os dois botões, ordene-os como queira e clique em aplicar para atribuir números de faixa consecutivos.">

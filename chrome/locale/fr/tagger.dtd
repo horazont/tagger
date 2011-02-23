@@ -121,7 +121,9 @@
 <!ENTITY tagger.window.tagtofile.onlylocal "Fichiers locaux seulement">
 <!ENTITY tagger.window.tagtofile.onlylocal.tooltip "Si activé, seuls les fichiers présents sur cet ordinateur seront déplacés.">
 <!ENTITY tagger.window.tagtofile.keepextension "Conserver l'extension">
+<!ENTITY tagger.window.tagtofile.keepcopy "Préserver les fichiers hors du Dossier cible">
 <!ENTITY tagger.window.tagtofile.keepextension.tooltip "Si activé, l'ancienne extension du nom de fichier sera automatiquement ajoutée au nom de fichier final.">
+<!ENTITY tagger.window.tagtofile.keepcopy.tooltip "Si activé, tout fichier d'origine qui ne se trouve pas déjà sous le Dossier cible sera préservé : un tel fichier sera copié vers le Dossier cible au lieu d'y être déplacé.">
 <!ENTITY tagger.window.tagtofile.rename "Renommer les fichiers sélectionnés">
 <!ENTITY tagger.window.tracknumbers.caption "Numéros de piste">
 <!ENTITY tagger.window.tracknumbers.description "Ajoutez les éléments que vous voulez modifier à la liste ci-dessous en utilisant les deux boutons, puis validez pour leur donner des numéros de piste consécutifs.">

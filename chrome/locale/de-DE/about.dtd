@@ -1,6 +1,7 @@
 <!ENTITY about "Über Tagger">
 <!ENTITY version "Version:">
 <!ENTITY createdBy "Erstellt von:">
+<!ENTITY contributedBy "Mitwirkende:">
 <!ENTITY homepage "Website:">
 <!ENTITY bugsAndCo "Fehlerberichte und Rückmeldungen an:">
 <!ENTITY iconSet "Icons basierend auf dem Silk-Iconset:">

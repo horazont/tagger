@@ -121,7 +121,9 @@
 <!ENTITY tagger.window.tagtofile.onlylocal "Nur lokale Dateien">
 <!ENTITY tagger.window.tagtofile.onlylocal.tooltip "Wenn ausgewählt, werden nur Dateien auf diesem Computer verschoben.">
 <!ENTITY tagger.window.tagtofile.keepextension "Dateierweiterung erhalten">
+<!ENTITY tagger.window.tagtofile.keepcopy "Dateien außerhalb vom Zielverzeichnis erhalten">
 <!ENTITY tagger.window.tagtofile.keepextension.tooltip "Festlegen, ob die Dateierweiterung wieder ans Ende des Namens angehängt werden soll.">
+<!ENTITY tagger.window.tagtofile.keepcopy.tooltip "Wenn aktiviert, werden Dateien außerhalb des Zielverzeichnisses erhalten: Die Dateien werden nur in das Zielverzeichnis kopiert anstatt verschoben.">
 <!ENTITY tagger.window.tagtofile.rename "Ausgewählte Dateien umbenennen">
 <!ENTITY tagger.window.tracknumbers.caption "Liednummern">
 <!ENTITY tagger.window.tracknumbers.description "Add the items you want to edit to the list below using the two buttons, order them like you want and then hit apply to give them consecutive track numbers.">

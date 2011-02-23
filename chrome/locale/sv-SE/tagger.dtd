@@ -99,7 +99,7 @@
 <!ENTITY tagger.window.tools.casing.description "Det här verktyget korrigerar automatiskt skiftläget för markerade metadatafält. Till exempel kommer &quot;ett godtyckligt spårnamn&quot; att ändras till &quot;Ett Godtyckligt Spårnamn&quot;.">
 <!ENTITY tagger.window.tools.casing.button "Korrigera skiftläge">
 <!ENTITY tagger.window.tools.utf8.caption "UTF-8-verktyg">
-<!ENTITY tagger.window.tools.utf8.description "Ibland dyker underliga teckenkombinationer som Ã¤ upp i taggar. Det här är ett UTF-8-kodningsfel som kan korrigeras av Tagger.">
+<!ENTITY tagger.window.tools.utf8.description "Ibland dyker underliga teckenkombinationer som ÃƒÂ¤ upp i taggar. Det här är ett UTF-8-kodningsfel som kan korrigeras av Tagger.">
 <!ENTITY tagger.window.tools.utf8.correct.button "Korrigera UTF-8">
 <!ENTITY tagger.window.tagtofile.caption "Till filnamn">
 <!ENTITY tagger.window.tagtofile.description "Använd tagginformationen för att konstruera filnamn och för att lokalisera filerna på den angivna platsen.">
@@ -121,7 +121,9 @@
 <!ENTITY tagger.window.tagtofile.onlylocal "Endast lokala filer">
 <!ENTITY tagger.window.tagtofile.onlylocal.tooltip "Om det här är förkryssat kommer endast filer tillgängliga på den här datorn att flyttas runt.">
 <!ENTITY tagger.window.tagtofile.keepextension "Behåll filtillägg">
+<!ENTITY tagger.window.tagtofile.keepcopy "Behåll filer utanför Targets mapp">
 <!ENTITY tagger.window.tagtofile.keepextension.tooltip "Om det här är förkryssat kommer det gamla filtillägget automatiskt att återbifogas till det slutgiltiga filnamnet.">
+<!ENTITY tagger.window.tagtofile.keepcopy.tooltip "Om det här är förkryssat kommer alla originalfiler som inte finns under Targets mappstruktur att behållas intakta. En sådan fil kommer att kopieras till Targets mapp istället för att namnas om.">
 <!ENTITY tagger.window.tagtofile.rename "Byt namn på markerade filer">
 <!ENTITY tagger.window.tracknumbers.caption "Spårnummer">
 <!ENTITY tagger.window.tracknumbers.description "Lägg till objekten du vill redigera i listan nedan genom att använda de två knapparna, sortera dem efter eget tycke och klicka sedan på &quot;Applicera...&quot; för att ge dem på varandra följande spårnummer.">
@@ -205,7 +207,7 @@
 <!ENTITY tagger.window.actions.attributes "Attribut">
 <!ENTITY tagger.window.macrodlg.manage "Hantera makron">
 <!ENTITY tagger.window.macrodlg.list.caption "&tagger.window.macro.list.caption;">
-<!ENTITY tagger.window.macrodlg.list.new "� Nytt (dubbelklicka)">
+<!ENTITY tagger.window.macrodlg.list.new "» Nytt (dubbelklicka)">
 <!ENTITY tagger.window.macrodlg.askoverwrite "Makrot &quot;&#37;s&quot; finns redan. Vill du ersätta det?">
 <!ENTITY tagger.window.macrodlg.askdelete "Vill du verkligen ta bort &quot;&#37;s&quot;?">
 <!ENTITY tagger.window.macrodlg.newfilename "Ange ett namn för den nya makrofilen">

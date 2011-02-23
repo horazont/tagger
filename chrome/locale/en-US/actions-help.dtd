@@ -1,23 +1,45 @@
 <!ENTITY td.actions.overview1 "Since version 0.9.0.0, Tagger is capable of 
 
 
+
+
+
+
   creating, storing, loading and executing little scripts, called macros.">
 <!ENTITY td.actions.overview2 "These macros are not more and not less than a combination of predefined 
 
 
+
+
+
+
   actions. Other than the normal Tagger actions, macro actions operate on a 
+
+
 
   virtual selection of media items, whereas this selection may even be changed 
 
+
+
   by certain actions. This makes these macros flexible, allowing to execute a 
+
+
 
   huge variety of jobs.">
 <!ENTITY td.actions.overview3 "Please note that, due to the nature of the virtual selection, you will
 
 
+
+
+
+
   propably want to have an “&tagger.window.actions.importselection;” action as the
 
+
+
   first of your script. This will fetch the selection you made in the mediaview
+
+
 
   and use it as the virtual selection.">
 <!ENTITY td.actions.title "Macro actions">
@@ -25,7 +47,13 @@
 <!ENTITY td.actions.conditions "Some actions can contain conditions. 
 
 
+
+
+
+
   Depending on the kind of the action, it is different what will actually
+
+
 
   happen if the condition matches or if it does not.">
 <!ENTITY td.action.title "Action documentation: ">
@@ -41,84 +69,168 @@
 <!ENTITY td.action.property.actions "This property contains the list
 
 
+
+
+
+
   of actions which will be executed in order.">
 <!ENTITY td.action.property.condlink "This defines how the 
 
 
+
+
+
+
   conditions are linked together. Either all conditions must evaluate to true
+
+
 
   (i.e. match) or one or more or an uneven number of conditions (also known as
 
+
+
   “exclusive or”).">
 <!ENTITY td.action.property.invert "Inverts the result of the 
+
+
+
+
 
 
   whole evaluation of all conditions.">
 <!ENTITY td.action.property.optimize "If this is set to true, the
 
 
+
+
+
+
   evaluation aborts as soon as a result is determined. This is, for example,
+
+
 
   if the &tagger.window.actions.conditionlink; is set to 
 
+
+
   &tagger.window.actions.condlink_and; and a condition evaluates to false. In
+
+
 
   that case, it does not make sense to evaluate the other conditions, since
 
+
+
 ">
 <!ENTITY td.action.property.conditions "A list of conditions which
+
+
+
+
 
 
   are checked in order.">
 <!ENTITY td.action.property.trueactions "These actions are executed
 
 
+
+
+
+
   if the whole condition evaluation returned a positive value.">
 <!ENTITY td.action.property.falseactions "These actions are however
+
+
+
+
 
 
   executed when the whole condition evaluation returned a negative value.">
 <!ENTITY td.action.property.replace.attribute "This is the attribute on which
 
 
+
+
+
+
   the replace operation will operate. If this is set to “&tagger.window.all;”, 
+
+
 
   the replace operation will be performed on all of the attributes.">
 <!ENTITY td.action.property.attribute "This attribute of the current media item 
+
+
+
+
 
 
   will be used by this operation.">
 <!ENTITY td.action.property.pattern "This property specifies the pattern
 
 
+
+
+
+
   for which the action will look.">
 <!ENTITY td.action.property.replacewith "Any found occurence of the
+
+
+
+
 
 
   pattern will be replaced with the value in this property.">
 <!ENTITY td.action.property.regexpsupport "If the support for regular
 
 
+
+
+
+
   expressions is enabled, the pattern will be parsed as a regular expression.
+
+
 
   You may then, in the replacement pattern, reference any subpattern placed in 
 
+
+
   the search expression by “$n“, where “n“ is the number of the subpattern, 
+
+
 
   starting with 1.">
 <!ENTITY td.action.property.ignorecase "Whether to ignore the case of
+
+
+
+
 
 
   letters in the input data or not.">
 <!ENTITY td.action.property.globalmatch "Whether to match the pattern
 
 
+
+
+
+
   multiple times on one attribute.">
 <!ENTITY td.action.property.source "Defines from which source to
 
 
+
+
+
+
   fetch the items which are to be filtered by the condition.">
 <!ENTITY td.action.property.matchmode "This defines where the condition will
+
+
+
+
 
 
   look for the string specified.">
@@ -126,46 +238,92 @@
 <!ENTITY td.action.property.trim "If this is enabled, leading and trailing
 
 
+
+
+
+
   blanks or newlines in the input string will be removed before the match is
+
+
 
   done.">
 <!ENTITY td.action.property.expression "The regular expression to be used by
+
+
+
+
 
 
   this operation.">
 <!ENTITY td.action.property.attributes "A selection of attributes which will be
 
 
+
+
+
+
   written to the files.">
 <!ENTITY td.action.property.filenameformat "Like in the original From file name
 
 
+
+
+
+
   functionallity, you need to specifiy a pattern which describes where the 
+
+
 
   metadata is found in the file name.">
 <!ENTITY td.action.property.keeptags "If enabled, tags which are to be 
+
+
+
+
 
 
   changed but which do already contain data will be skipped.">
 <!ENTITY td.action.property.replace_ "If enabled, any _ (underscores) in the
 
 
+
+
+
+
   input file name will be replaced by spaces.">
 <!ENTITY td.action.property.dirsupport "This allows you to include directory
+
+
+
+
 
 
   names into consideration when you build the file name pattern.">
 <!ENTITY td.action.property.autoupcase "This feature enables a heuristic to 
 
 
+
+
+
+
   determine which parts of the file name should be in capital letters and which 
+
+
 
   not. This is not needed on unixoid operating systems, since these take the
 
+
+
   casing of file names into consideration, which makes Songbird to store the
+
+
 
   file name in its original form.">
 <!ENTITY td.action.actionlist.abstract "Holds a list of actions which are
+
+
+
+
 
 
   executed in order.">
@@ -174,24 +332,44 @@
 <!ENTITY td.action.conditional.abstract "Checks a condition. Executes different
 
 
+
+
+
+
   actions depending on whether the condition met or not.">
 <!ENTITY td.action.conditional.needscontext "<em>Depends on assigned conditions and actions.</em>">
 <!ENTITY td.action.conditional.providescontext "&td.action.context.none;">
 <!ENTITY td.action.set.abstract "Replace or combine multiple attributes
 
 
+
+
+
+
   of a media item.">
 <!ENTITY td.action.set.properties "These properties are equal to what you would
 
 
+
+
+
+
   specify in the &tagger.window.settags.caption; tab in Tagger, however, if you
 
+
+
   set a value to null (using the checkbox in the property editor dialog, not
+
+
 
   the string “null”), it will be ignored.">
 <!ENTITY td.action.set.needscontext "&td.action.context.item;">
 <!ENTITY td.action.set.providescontext "&td.action.context.none;">
 <!ENTITY td.action.replace.abstract "Perform a search &amp; replace operation
+
+
+
+
 
 
   on any attribute of a media item.">
@@ -200,10 +378,18 @@
 <!ENTITY td.action.importselection.abstract "Use the real selection in the
 
 
+
+
+
+
   media view to build a virtual selection.">
 <!ENTITY td.action.importselection.needscontext "&td.action.context.none;">
 <!ENTITY td.action.importselection.providescontext "&td.action.context.none;">
 <!ENTITY td.action.clearcommitcache.abstract "Remove all items from the commit
+
+
+
+
 
 
   cache.">
@@ -212,10 +398,18 @@
 <!ENTITY td.action.flushcommitcache.abstract "Save the metadata of all items
 
 
+
+
+
+
   in the commit cache back to the files.">
 <!ENTITY td.action.flushcommitcache.needscontext "&td.action.context.none;">
 <!ENTITY td.action.flushcommitcache.providescontext "&td.action.context.none;">
 <!ENTITY td.action.commitcache.abstract "Add the current item to the commit 
+
+
+
+
 
 
   cache.">
@@ -224,10 +418,18 @@
 <!ENTITY td.action.fromfilename.abstract "This action parses the file name of
 
 
+
+
+
+
   the current media item using the given pattern to extract metadata.">
 <!ENTITY td.action.fromfilename.needscontext "&td.action.context.item;">
 <!ENTITY td.action.fromfilename.providescontext "&td.action.context.none;">
 <!ENTITY td.action.condselect.abstract "Build a virtual selection form a given
+
+
+
+
 
 
   source using a condition to select media items.">
@@ -236,10 +438,18 @@
 <!ENTITY td.action.foreachselected.abstract "Iterate over the selection and
 
 
+
+
+
+
   perform the given actions on each item.">
 <!ENTITY td.action.foreachselected.needscontext "<em>Depends on assigned actions.</em>">
 <!ENTITY td.action.foreachselected.providescontext "&td.action.context.item;">
 <!ENTITY td.action.match.abstract "Performs a string match operation on an
+
+
+
+
 
 
   attribute of a media item.">
@@ -247,9 +457,17 @@
 <!ENTITY td.action.recond.abstract "Performs a regular expression match 
 
 
+
+
+
+
   operation on an attribute of a media item.">
 <!ENTITY td.action.recond.needscontext "&td.action.context.item;">
 <!ENTITY td.action.subcondition.abstract "Groups multiple conditions to one, 
+
+
+
+
 
 
   allowing to use another condition operator and invert the evaluated result.">

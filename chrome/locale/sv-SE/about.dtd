@@ -1,6 +1,7 @@
 <!ENTITY about "Om Tagger">
 <!ENTITY version "Version:">
 <!ENTITY createdBy "Skapat av:">
+<!ENTITY contributedBy "Medarbetare:">
 <!ENTITY homepage "Webbplats:">
 <!ENTITY bugsAndCo "Buggrapporter och feedback till:">
 <!ENTITY iconSet "Ikonerna är baserade på ikonuppsättningen &quot;Silk&quot;.">

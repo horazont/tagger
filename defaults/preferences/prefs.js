@@ -8,3 +8,6 @@ pref("extensions.tagger.retag.replace_", true);
 pref("extensions.tagger.retag.dirsupport", false);
 pref("extensions.tagger.settags.keeptags", true);
 pref("extensions.tagger.firstrun", true);
+pref("extensions.tagger.filterfilenames", true);
+pref("extensions.tagger.filter.replace", true);
+pref("extensions.tagger.filter.replacement", " ");

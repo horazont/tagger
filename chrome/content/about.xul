@@ -48,7 +48,7 @@ Leave a comment at:
       <hbox>
         <text value="&contributedBy;" style="font-weight: bold; width:15em"/>
         <text value="klint"/>
-        <text value="Kyle Altendorf <sda@fstab.net>"/>
+        <text value="Kyle Altendorf &lt;sda@fstab.net&gt;"/>
       </hbox>
       <hbox>
         <text value="&bugsAndCo;" style="font-weight: bold; width:15em"/>

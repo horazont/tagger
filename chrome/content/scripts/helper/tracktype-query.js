@@ -2,7 +2,7 @@ function TrackTypeQuery(kind, keywords, server)
 {
   if ((kind != "album") && (kind != "track"))
     throw "Invalid kind parameter.";
-  hello = "songbird addons.songbirdnest.com Tagger 0.9.2.3";
+  hello = "songbird addons.songbirdnest.com Tagger 0.9.2.4";
   url = server + "?cmd=cddb%20" + kind+"%20"+encodeURIComponent(keywords)+"&hello="+encodeURIComponent(hello);
   
   request = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance();

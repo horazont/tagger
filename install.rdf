@@ -17,7 +17,7 @@ tracktype-query.js and about.xul -->
       <Description>
         <em:id>songbird@songbirdnest.com</em:id>
         <em:minVersion>1.2.0</em:minVersion>
-        <em:maxVersion>1.10.1</em:maxVersion>
+        <em:maxVersion>2.*</em:maxVersion>
       </Description>
     </em:targetApplication>
 
